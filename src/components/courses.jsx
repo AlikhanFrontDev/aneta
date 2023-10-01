@@ -20,7 +20,7 @@ export default function Courses() {
       </div>
       <div className="cards">
         <motion.div className="card" whileHover={{ scale: 1.1 }}>
-          <img src={bannerimage} alt="image" />
+          <img src={bannerimage} alt="a" />
           <div className="summary">
             <h1>Matvatsa trening</h1>
             <p>
@@ -37,7 +37,7 @@ export default function Courses() {
           </div>
         </motion.div>
         <motion.div className="card" whileHover={{ scale: 1.1 }}>
-          <img src={bannerimage} alt="image" />
+          <img src={bannerimage} alt="a" />
           <div className="summary">
             <h1>Matvatsa trening</h1>
             <p>
@@ -54,7 +54,7 @@ export default function Courses() {
           </div>
         </motion.div>
         <motion.div className="card" whileHover={{ scale: 1.1 }}>
-          <img src={bannerimage} alt="image" />
+          <img src={bannerimage} alt="a" />
           <div className="summary">
             <h1>Matvatsa trening</h1>
             <p>
@@ -71,7 +71,7 @@ export default function Courses() {
           </div>
         </motion.div>
         <motion.div className="card" whileHover={{ scale: 1.1 }}>
-          <img src={bannerimage} alt="image" />
+          <img src={bannerimage} alt="a" />
           <div className="summary">
             <h1>Matvatsa trening</h1>
             <p>
@@ -88,7 +88,7 @@ export default function Courses() {
           </div>
         </motion.div>
         <motion.div className="card" whileHover={{ scale: 1.1 }}>
-          <img src={bannerimage} alt="image" />
+          <img src={bannerimage} alt="a" />
           <div className="summary">
             <h1>Matvatsa trening</h1>
             <p>
@@ -105,7 +105,7 @@ export default function Courses() {
           </div>
         </motion.div>
         <motion.div className="card" whileHover={{ scale: 1.1 }}>
-          <img src={bannerimage} alt="image" />
+          <img src={bannerimage} alt="a" />
           <div className="summary">
             <h1>Matvatsa trening</h1>
             <p>
