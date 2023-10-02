@@ -1,34 +1,17 @@
-import React, { useState } from "react";
+import React, {useState} from 'react'
 import styled from "styled-components";
-import bannerimage from "../assets/img/bannerimage.webp";
-
 import { motion } from "framer-motion";
-import Registereform from "./registereform";
-export default function Courses() {
-  const [modal, setModal] = useState(false);
-  const toggleModal = () => {
-    setModal(!modal);
-  };
 
-  if (modal) {
-    document.body.classList.add("active-modal");
-  } else {
-    document.body.classList.remove("active-modal");
-  }
+import bannerimage from "../assets/img/bannerimage.webp";
+import Navbar from '../components/navbar';
+
+export default function CoursesPage() {
+  
   return (
     <Container>
+      <Navbar/>
       <div className="circle"></div>
       <div className="circle1"></div>
-      <div className="title">
-        {/* <h3 className="courses">Courses</h3> */}
-        <motion.div
-          className="allcourses"
-          whileHover={{ scale: 1.1 }}
-          whileTap={{ scale: 0.95 }}
-        >
-          All courses
-        </motion.div>
-      </div>
       <div className="cards">
         <motion.div className="card" whileHover={{ scale: 1.1 }}>
           <img src={bannerimage} alt="a" />
@@ -138,52 +121,123 @@ export default function Courses() {
             </motion.button>
           </div>
         </motion.div>
-      </div>
-      {modal && (
-        <div>
-          <div className="modal">
-            <div onClick={toggleModal} className="overlay"></div>
-            <div className="modal-content">
-              <h2>
-                <Registereform />
-              </h2>
-            </div>
+        <motion.div className="card" whileHover={{ scale: 1.1 }}>
+          <img src={bannerimage} alt="a" />
+          <div className="summary">
+            <h1>Matvatsa trening</h1>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat
+              aspernatur ullam expedita tempora quod porro magni odio error,
+              doloribus iure!
+            </p>
+            <motion.button
+              whileHover={{ scale: 1.1 }}
+              whileTap={{ scale: 0.95 }}
+              // onClick={toggleModal}
+            >
+              subscribe
+            </motion.button>
           </div>
-        </div>
-      )}
+        </motion.div>
+        <motion.div className="card" whileHover={{ scale: 1.1 }}>
+          <img src={bannerimage} alt="a" />
+          <div className="summary">
+            <h1>Matvatsa trening</h1>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat
+              aspernatur ullam expedita tempora quod porro magni odio error,
+              doloribus iure!
+            </p>
+            <motion.button
+              whileHover={{ scale: 1.1 }}
+              whileTap={{ scale: 0.95 }}
+              // onClick={toggleModal}
+            >
+              subscribe
+            </motion.button>
+          </div>
+        </motion.div>
+        <motion.div className="card" whileHover={{ scale: 1.1 }}>
+          <img src={bannerimage} alt="a" />
+          <div className="summary">
+            <h1>Matvatsa trening</h1>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat
+              aspernatur ullam expedita tempora quod porro magni odio error,
+              doloribus iure!
+            </p>
+            <motion.button
+              whileHover={{ scale: 1.1 }}
+              whileTap={{ scale: 0.95 }}
+              // onClick={toggleModal}
+            >
+              subscribe
+            </motion.button>
+          </div>
+        </motion.div>
+        <motion.div className="card" whileHover={{ scale: 1.1 }}>
+          <img src={bannerimage} alt="a" />
+          <div className="summary">
+            <h1>Matvatsa trening</h1>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat
+              aspernatur ullam expedita tempora quod porro magni odio error,
+              doloribus iure!
+            </p>
+            <motion.button
+              whileHover={{ scale: 1.1 }}
+              whileTap={{ scale: 0.95 }}
+              // onClick={toggleModal}
+            >
+              subscribe
+            </motion.button>
+          </div>
+        </motion.div>
+        <motion.div className="card" whileHover={{ scale: 1.1 }}>
+          <img src={bannerimage} alt="a" />
+          <div className="summary">
+            <h1>Matvatsa trening</h1>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat
+              aspernatur ullam expedita tempora quod porro magni odio error,
+              doloribus iure!
+            </p>
+            <motion.button
+              whileHover={{ scale: 1.1 }}
+              whileTap={{ scale: 0.95 }}
+              // onClick={toggleModal}
+            >
+              subscribe
+            </motion.button>
+          </div>
+        </motion.div>
+        <motion.div className="card" whileHover={{ scale: 1.1 }}>
+          <img src={bannerimage} alt="a" />
+          <div className="summary">
+            <h1>Matvatsa trening</h1>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat
+              aspernatur ullam expedita tempora quod porro magni odio error,
+              doloribus iure!
+            </p>
+            <motion.button
+              whileHover={{ scale: 1.1 }}
+              whileTap={{ scale: 0.95 }}
+              // onClick={toggleModal}
+            >
+              subscribe
+            </motion.button>
+          </div>
+        </motion.div>
+      </div>
     </Container>
-  );
+  )
 }
 
-const Container = styled.div`
-  margin-top: 100px;
-  height: 120vh;
-  width: 100%;
-  /* background-color: #fff; */
-  /* z-index: -1; */
 
-  /* box-shadow:-1px -16px 140px -27px rgba(255, 255, 255, 0.62); */
-  .circle {
-    width: 500px;
-    height: 500px;
-    border-radius: 50%;
-    border: 5px dashed #6d6d6d;
-    position: absolute;
-    top: 1000px;
-    left: 100px;
-    z-index: -1;
-  }
-  .circle1 {
-    width: 500px;
-    height: 500px;
-    border-radius: 50%;
-    border: 5px dashed #6d6d6d;
-    position: absolute;
-    top: 1300px;
-    left: 800px;
-    z-index: -1;
-  }
-  .card {
+const Container = styled.div`
+min-height: 200vh;
+.card {
     width: 300px;
     height: 370px;
     background-color: #fff;
@@ -192,7 +246,7 @@ const Container = styled.div`
   }
   .cards {
     width: 70%;
-    margin: 0 15%;
+    margin: 200px 15%;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-evenly;
@@ -247,41 +301,4 @@ const Container = styled.div`
     margin: 0 15%;
     align-items: center;
   }
-  .allcourses {
-    background-color: #11101d;
-    color: #fff;
-    border-radius: 12px;
-    padding: 15px;
-    margin: 30px 0;
-  }
-  .allcourses:hover {
-    background-color: #6d6d6d;
-    color: #11101d;
-    cursor: pointer;
-  }
-  @media only screen and (max-width: 768px) {
-    margin: 0;
-    /* background-color: red; */
-    width: 100%;
-    .circle1 {
-      top: 1300px;
-      left: 200px;
-    }
-    .circle {
-      top: 800px;
-      left: 0px;
-    }
-    .card {
-      width: 200px;
-      height: 250px;
-    }
-    img {
-      width: 200px;
-      height: 100px;
-      padding: 0;
-    }
-    .summary p {
-      font-size: 12px;
-    }
-  }
-`;
+`

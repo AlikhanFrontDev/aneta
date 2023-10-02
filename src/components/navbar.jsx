@@ -1,7 +1,9 @@
-import React from "react";
+import React, {useState} from "react";
 import styled from "styled-components";
 import logo from "../assets/img/logo.png";
 import { motion } from "framer-motion";
+import "../toggle.css"
+import SingIn from "./singIn";
 
 const variants = {
   open: {
@@ -21,6 +23,16 @@ const variants = {
 };
 
 export default function Navbar() {
+  const [modal, setModal] = useState(false);
+  const toggleModal = () => {
+    setModal(!modal);
+  };
+
+  if (modal) {
+    document.body.classList.add("active-modal");
+  } else {
+    document.body.classList.remove("active-modal");
+  }
   return (
     <Nav>
       <div>
@@ -54,6 +66,7 @@ export default function Navbar() {
           variants={variants}
           whileHover={{ scale: 1.1 }}
           whileTap={{ scale: 0.95 }}
+          onClick={toggleModal}
         >
           Sign in
         </motion.li>
@@ -66,6 +79,18 @@ export default function Navbar() {
           Sign up
         </motion.li>
       </ul>
+      {modal && (
+        <div>
+          <div className="modal">
+            <div onClick={toggleModal} className="overlay"></div>
+            <div className="modal-content">
+              <h2>
+                <SingIn/>
+              </h2>
+            </div>
+          </div>
+        </div>
+      )}
     </Nav>
   );
 }
@@ -117,8 +142,8 @@ const Nav = styled.div`
     li {
       font-size: 11px;
     }
-    ul{
+    ul {
       width: 100px;
-    } 
+    }
   }
 `;

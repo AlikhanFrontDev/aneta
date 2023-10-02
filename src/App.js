@@ -1,9 +1,12 @@
+import CoursesPage from "./pages/coursesPge";
 import Mainpage from "./pages/mainpage";
+import SingleCourse from "./pages/singleCourse";
 
 function App() {
   return (
     <div className="App">
-       <Mainpage/>
+       {/* <CoursesPage/> */}
+       <SingleCourse/>
     </div>
   );
 }
