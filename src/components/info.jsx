@@ -54,21 +54,25 @@ export default function Info() {
 }
 
 const Container = styled.div`
-  height: 90vh;
-  /* background-color: red; */
+  /* height: 100vh; */
+  background-color: #0b0e13;
   .container {
     display: flex;
     flex-direction: column;
     width: 70%;
-    margin: 15%;
+    /* margin: 15%; */
   }
   .title {
-    margin: 30px 0;
+    font-weight: 700;
+    text-align: center;
+    margin: 50px 0;
     font-size: 3rem;
     color: #fff;
   }
   li{
     margin: 20px 0;
     font-size: 20px;
+    color: #fff;
+    font-weight: 600;
   }
 `;

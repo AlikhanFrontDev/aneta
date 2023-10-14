@@ -5,6 +5,7 @@ import bannerimage from "../assets/img/bannerimage.webp";
 import { motion } from "framer-motion";
 import Registereform from "./registereform";
 import "../toggle.css";
+import MyCarousel from "./carusel";
 
 export default function Banner() {
   const [modal, setModal] = useState(false);
@@ -13,10 +14,16 @@ export default function Banner() {
   };
 
   if (modal) {
-    document.body.classList.add("active-modal");
+    document.body.classList.add("active-modall");
   } else {
-    document.body.classList.remove("active-modal");
+    document.body.classList.remove("active-modall");
   }
+  const items = [
+    { src: `${bannerimage}`, alt: "Image 1", caption: "First Slide", text: "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Oditprovident"},
+    { src: `${bannerimage}`, alt: "Image 2", caption: "Second Slide", text: "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Oditprovident" },
+    { src: `${bannerimage}`, alt: "Image 3", caption: "Third Slide", text: "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Oditprovident" },
+    // Add more items here
+  ];
   return (
     <Baanner>
       <div className="banner">
@@ -29,19 +36,13 @@ export default function Banner() {
         >
           <h1 className="theme">Digital Marketing</h1>
           <h1 className="moto">Social Media Marketing</h1>
-          <h1 className="moto2">Matvatsa ;)</h1>
+          <h1 className="moto2">Matvatsa ;</h1>
           <h3 className="summary">
             Lorem ipsum dolor sit amet consectetur, adipisicing elit. Odit,
+            provident! Lorem ipsum dolor sit amet consectetur, adipisicing elit. Odit,
+            provident! Lorem ipsum dolor sit amet consectetur, adipisicing elit. Odit,
             provident!
           </h3>
-          <motion.button
-            className="button"
-            whileHover={{ scale: 1.1 }}
-            whileTap={{ scale: 0.95 }}
-            onClick={toggleModal}
-          >
-            Get started
-          </motion.button>
         </motion.div>
         <motion.div
           className="img"
@@ -50,8 +51,9 @@ export default function Banner() {
           exit={{ y: -10, opacity: 0 }}
           transition={{ duration: 1.5 }}
         >
-          <motion.img
-            src={imgBanner}
+          <MyCarousel
+            items={items}
+            // src={imgBanner}
             alt=""
             className="image"
             initial={{ scale: 1 }}
@@ -61,9 +63,9 @@ export default function Banner() {
       </div>
       {modal && (
         <div>
-          <div className="modal">
-            <div onClick={toggleModal} className="overlay"></div>
-            <div className="modal-content">
+          <div className="modall">
+            <div onClick={toggleModal} className="overlayy"></div>
+            <div className="modal-contentt">
               <h2>
                 <Registereform />
               </h2>
@@ -76,19 +78,21 @@ export default function Banner() {
 }
 
 const Baanner = styled.div`
-  background-color: linear-gradient(
+  /* background-color: linear-gradient(
     144.39deg,
     #ffffff -278.56%,
     #6d6d6d -78.47%,
     #11101d 91.61%
-  );
-  
+  ); */
+  background-color: #0b0e13;
+
   /* background-image: url(${bannerimage}); */
   width: 100%;
   height: 90vh;
   .banner {
     display: flex;
-    width: 100%;
+    width: 90%;
+    margin: 0 5%;
     justify-content: space-evenly;
     align-items: center;
     height: 87vh;
@@ -102,27 +106,25 @@ const Baanner = styled.div`
   }
   .img {
     width: 600px;
-    height: 600px;
+    /* height: 600px; */
     /* background-color: red; */
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    border: 5px dashed #6d6d6d;
-    border-radius: 50%;
   }
   .img:hover {
     border-color: #ffffff;
   }
   .image {
-    width: 550px;
-    /* rotate: 180deg; */
-    /* margin-left: 50px; */
+    width: 650px;
+    border-radius: 12px;
+    height: 450px;
     /* background-color: red; */
   }
   .container {
     /* background-color: red; */
-    width: 40%;
+    width: 50%;
     display: flex;
     flex-direction: column;
     /* align-items: center;  */
@@ -155,14 +157,14 @@ const Baanner = styled.div`
   }
   @media only screen and (max-width: 768px) {
     height: 60vh;
-    .img{
+    .img {
       width: 300px;
-      height: 300px
+      height: 300px;
     }
-    .image{
+    .image {
       width: 300px;
     }
-    .banner{
+    .banner {
       height: 65vh;
     }
   }

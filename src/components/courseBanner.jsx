@@ -1,9 +1,21 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 import { motion } from "framer-motion";
 import image from "../assets/img/bannerimage.webp";
+import "../toggle.css";
+import Registereform from "./registereform";
 
 export default function CourseBanner() {
+  const [modal, setModal] = useState(false);
+  const toggleModal = () => {
+    setModal(!modal);
+  };
+
+  if (modal) {
+    document.body.classList.add("active-modal");
+  } else {
+    document.body.classList.remove("active-modal");
+  }
   return (
     <Container>
       <h1 className="title">Matvatsa kursi</h1>
@@ -61,6 +73,26 @@ export default function CourseBanner() {
           </li>
         </ul>
       </div>
+      <motion.button
+        className="button"
+        whileHover={{ scale: 1.1 }}
+        whileTap={{ scale: 0.95 }}
+        onClick={toggleModal}
+      >
+        Get started
+      </motion.button>
+      {modal && (
+        <div>
+          <div className="modal">
+            <div onClick={toggleModal} className="overlay"></div>
+            <div className="modal-content">
+              <h2>
+                <Registereform />
+              </h2>
+            </div>
+          </div>
+        </div>
+      )}
     </Container>
   );
 }
@@ -105,10 +137,28 @@ const Container = styled.div`
     font-size: 20px;
   }
 
-  .box{
+  .box {
     height: 60vh;
   }
-  .rules{
+  .rules {
     margin: 60px;
+  }
+  .button {
+    height: 40px;
+    width: 300px;
+    padding: 10px;
+    border: none;
+    border-radius: 12px;
+    background-color: #11101d;
+    color: #ffffff;
+    cursor: pointer;
+    margin: 100px 200px;
+  }
+  .modal-content{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* background-color: ; */
+    padding: 20px;
   }
 `;

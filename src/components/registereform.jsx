@@ -39,10 +39,10 @@ const Container = styled.div`
   align-items: center;
   justify-content: center;
   width: 600px;
-  min-height: 600px;
+  height: 800px;
   .container {
     min-width: 600px;
-    height: 600px;
+    min-height: 600px;
     background-image: linear-gradient(
       144.39deg,
       #ffffff -278.56%,
@@ -74,8 +74,8 @@ const Container = styled.div`
   }
   button {
     margin: 50px;
-    width: 100px;
-    height: 30px;
+    width: 200px;
+    height: 50px;
     border-radius: 12px;
     border: none;
     background-color: #11101d;

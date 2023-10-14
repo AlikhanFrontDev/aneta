@@ -66,7 +66,7 @@ export default function Navbar() {
           variants={variants}
           whileHover={{ scale: 1.1 }}
           whileTap={{ scale: 0.95 }}
-          onClick={toggleModal}
+          // onClick={toggleModal}
         >
           Sign in
         </motion.li>
@@ -97,7 +97,7 @@ export default function Navbar() {
 
 const Nav = styled.div`
   height: 100px;
-  /* background-color: #0b0b0c; */
+  background-color: #0b0e13;
   display: flex;
   justify-content: space-between;
   padding: 0 8%;

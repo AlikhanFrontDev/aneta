@@ -1,218 +1,19 @@
-import React, {useState} from 'react'
+import React, { useState } from "react";
 import styled from "styled-components";
 import { motion } from "framer-motion";
 
 import bannerimage from "../assets/img/bannerimage.webp";
-import Navbar from '../components/navbar';
+import Navbar from "../components/navbar";
 
 export default function CoursesPage() {
-  
   return (
     <Container>
-      <Navbar/>
+      <Navbar />
       <div className="circle"></div>
       <div className="circle1"></div>
       <div className="cards">
         <motion.div className="card" whileHover={{ scale: 1.1 }}>
-          <img src={bannerimage} alt="a" />
-          <div className="summary">
-            <h1>Matvatsa trening</h1>
-            <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat
-              aspernatur ullam expedita tempora quod porro magni odio error,
-              doloribus iure!
-            </p>
-            <motion.button
-              whileHover={{ scale: 1.1 }}
-              whileTap={{ scale: 0.95 }}
-              // onClick={toggleModal}
-            >
-              subscribe
-            </motion.button>
-          </div>
-        </motion.div>
-        <motion.div className="card" whileHover={{ scale: 1.1 }}>
-          <img src={bannerimage} alt="a" />
-          <div className="summary">
-            <h1>Matvatsa trening</h1>
-            <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat
-              aspernatur ullam expedita tempora quod porro magni odio error,
-              doloribus iure!
-            </p>
-            <motion.button
-              whileHover={{ scale: 1.1 }}
-              whileTap={{ scale: 0.95 }}
-              // onClick={toggleModal}
-            >
-              subscribe
-            </motion.button>
-          </div>
-        </motion.div>
-        <motion.div className="card" whileHover={{ scale: 1.1 }}>
-          <img src={bannerimage} alt="a" />
-          <div className="summary">
-            <h1>Matvatsa trening</h1>
-            <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat
-              aspernatur ullam expedita tempora quod porro magni odio error,
-              doloribus iure!
-            </p>
-            <motion.button
-              whileHover={{ scale: 1.1 }}
-              whileTap={{ scale: 0.95 }}
-              // onClick={toggleModal}
-            >
-              subscribe
-            </motion.button>
-          </div>
-        </motion.div>
-        <motion.div className="card" whileHover={{ scale: 1.1 }}>
-          <img src={bannerimage} alt="a" />
-          <div className="summary">
-            <h1>Matvatsa trening</h1>
-            <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat
-              aspernatur ullam expedita tempora quod porro magni odio error,
-              doloribus iure!
-            </p>
-            <motion.button
-              whileHover={{ scale: 1.1 }}
-              whileTap={{ scale: 0.95 }}
-              // onClick={toggleModal}
-            >
-              subscribe
-            </motion.button>
-          </div>
-        </motion.div>
-        <motion.div className="card" whileHover={{ scale: 1.1 }}>
-          <img src={bannerimage} alt="a" />
-          <div className="summary">
-            <h1>Matvatsa trening</h1>
-            <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat
-              aspernatur ullam expedita tempora quod porro magni odio error,
-              doloribus iure!
-            </p>
-            <motion.button
-              whileHover={{ scale: 1.1 }}
-              whileTap={{ scale: 0.95 }}
-              // onClick={toggleModal}
-            >
-              subscribe
-            </motion.button>
-          </div>
-        </motion.div>
-        <motion.div className="card" whileHover={{ scale: 1.1 }}>
-          <img src={bannerimage} alt="a" />
-          <div className="summary">
-            <h1>Matvatsa trening</h1>
-            <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat
-              aspernatur ullam expedita tempora quod porro magni odio error,
-              doloribus iure!
-            </p>
-            <motion.button
-              whileHover={{ scale: 1.1 }}
-              whileTap={{ scale: 0.95 }}
-              // onClick={toggleModal}
-            >
-              subscribe
-            </motion.button>
-          </div>
-        </motion.div>
-        <motion.div className="card" whileHover={{ scale: 1.1 }}>
-          <img src={bannerimage} alt="a" />
-          <div className="summary">
-            <h1>Matvatsa trening</h1>
-            <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat
-              aspernatur ullam expedita tempora quod porro magni odio error,
-              doloribus iure!
-            </p>
-            <motion.button
-              whileHover={{ scale: 1.1 }}
-              whileTap={{ scale: 0.95 }}
-              // onClick={toggleModal}
-            >
-              subscribe
-            </motion.button>
-          </div>
-        </motion.div>
-        <motion.div className="card" whileHover={{ scale: 1.1 }}>
-          <img src={bannerimage} alt="a" />
-          <div className="summary">
-            <h1>Matvatsa trening</h1>
-            <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat
-              aspernatur ullam expedita tempora quod porro magni odio error,
-              doloribus iure!
-            </p>
-            <motion.button
-              whileHover={{ scale: 1.1 }}
-              whileTap={{ scale: 0.95 }}
-              // onClick={toggleModal}
-            >
-              subscribe
-            </motion.button>
-          </div>
-        </motion.div>
-        <motion.div className="card" whileHover={{ scale: 1.1 }}>
-          <img src={bannerimage} alt="a" />
-          <div className="summary">
-            <h1>Matvatsa trening</h1>
-            <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat
-              aspernatur ullam expedita tempora quod porro magni odio error,
-              doloribus iure!
-            </p>
-            <motion.button
-              whileHover={{ scale: 1.1 }}
-              whileTap={{ scale: 0.95 }}
-              // onClick={toggleModal}
-            >
-              subscribe
-            </motion.button>
-          </div>
-        </motion.div>
-        <motion.div className="card" whileHover={{ scale: 1.1 }}>
-          <img src={bannerimage} alt="a" />
-          <div className="summary">
-            <h1>Matvatsa trening</h1>
-            <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat
-              aspernatur ullam expedita tempora quod porro magni odio error,
-              doloribus iure!
-            </p>
-            <motion.button
-              whileHover={{ scale: 1.1 }}
-              whileTap={{ scale: 0.95 }}
-              // onClick={toggleModal}
-            >
-              subscribe
-            </motion.button>
-          </div>
-        </motion.div>
-        <motion.div className="card" whileHover={{ scale: 1.1 }}>
-          <img src={bannerimage} alt="a" />
-          <div className="summary">
-            <h1>Matvatsa trening</h1>
-            <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat
-              aspernatur ullam expedita tempora quod porro magni odio error,
-              doloribus iure!
-            </p>
-            <motion.button
-              whileHover={{ scale: 1.1 }}
-              whileTap={{ scale: 0.95 }}
-              // onClick={toggleModal}
-            >
-              subscribe
-            </motion.button>
-          </div>
-        </motion.div>
-        <motion.div className="card" whileHover={{ scale: 1.1 }}>
-          <img src={bannerimage} alt="a" />
+          <img src={bannerimage} alt="a" className="cardImage" />
           <div className="summary">
             <h1>Matvatsa trening</h1>
             <p>
@@ -231,13 +32,12 @@ export default function CoursesPage() {
         </motion.div>
       </div>
     </Container>
-  )
+  );
 }
 
-
 const Container = styled.div`
-min-height: 200vh;
-.card {
+  min-height: 200vh;
+  .card {
     width: 300px;
     height: 370px;
     background-color: #fff;
@@ -252,7 +52,7 @@ min-height: 200vh;
     justify-content: space-evenly;
     gap: 35px;
   }
-  img {
+  .cardImage {
     width: 300px;
     height: 200px;
     object-fit: cover;
@@ -301,4 +101,4 @@ min-height: 200vh;
     margin: 0 15%;
     align-items: center;
   }
-`
+`;

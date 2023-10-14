@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import styled from "styled-components";
 import bannerimage from "../assets/img/bannerimage.webp";
-
 import { motion } from "framer-motion";
 import Registereform from "./registereform";
 export default function Courses() {
@@ -9,7 +8,7 @@ export default function Courses() {
   const toggleModal = () => {
     setModal(!modal);
   };
-
+  
   if (modal) {
     document.body.classList.add("active-modal");
   } else {
@@ -17,21 +16,29 @@ export default function Courses() {
   }
   return (
     <Container>
-      <div className="circle"></div>
-      <div className="circle1"></div>
+      {/* <Wave/> */}
       <div className="title">
-        {/* <h3 className="courses">Courses</h3> */}
-        <motion.div
+        <motion.h3 className="courses" whileHover={{ scale: 1.05 }}>
+          WHAT YOU WILL LEARN
+        </motion.h3>
+        {/* <motion.div
           className="allcourses"
           whileHover={{ scale: 1.1 }}
           whileTap={{ scale: 0.95 }}
         >
           All courses
-        </motion.div>
+        </motion.div> */}
+        <motion.h2
+          className="pretitle"
+          whileHover={{ scale: 1.05 }}
+        >
+          When a new technology revolutionises an industry, THE REAL WORLD will
+          be the first and only place to teach you how to profit from it.
+        </motion.h2>
       </div>
       <div className="cards">
-        <motion.div className="card" whileHover={{ scale: 1.1 }}>
-          <img src={bannerimage} alt="a" />
+        <motion.div className="card" whileHover={{ scale: 1.05 }}>
+          <img src={bannerimage} alt="a" className="cardImage" />
           <div className="summary">
             <h1>Matvatsa trening</h1>
             <p>
@@ -48,8 +55,8 @@ export default function Courses() {
             </motion.button>
           </div>
         </motion.div>
-        <motion.div className="card" whileHover={{ scale: 1.1 }}>
-          <img src={bannerimage} alt="a" />
+        <motion.div className="card" whileHover={{ scale: 1.05 }}>
+          <img src={bannerimage} alt="a" className="cardImage" />
           <div className="summary">
             <h1>Matvatsa trening</h1>
             <p>
@@ -66,8 +73,8 @@ export default function Courses() {
             </motion.button>
           </div>
         </motion.div>
-        <motion.div className="card" whileHover={{ scale: 1.1 }}>
-          <img src={bannerimage} alt="a" />
+        <motion.div className="card" whileHover={{ scale: 1.05 }}>
+          <img src={bannerimage} alt="a" className="cardImage" />
           <div className="summary">
             <h1>Matvatsa trening</h1>
             <p>
@@ -84,8 +91,8 @@ export default function Courses() {
             </motion.button>
           </div>
         </motion.div>
-        <motion.div className="card" whileHover={{ scale: 1.1 }}>
-          <img src={bannerimage} alt="a" />
+        <motion.div className="card" whileHover={{ scale: 1.05 }}>
+          <img src={bannerimage} alt="a" className="cardImage" />
           <div className="summary">
             <h1>Matvatsa trening</h1>
             <p>
@@ -102,8 +109,8 @@ export default function Courses() {
             </motion.button>
           </div>
         </motion.div>
-        <motion.div className="card" whileHover={{ scale: 1.1 }}>
-          <img src={bannerimage} alt="a" />
+        <motion.div className="card" whileHover={{ scale: 1.05 }}>
+          <img src={bannerimage} alt="a" className="cardImage" />
           <div className="summary">
             <h1>Matvatsa trening</h1>
             <p>
@@ -120,8 +127,8 @@ export default function Courses() {
             </motion.button>
           </div>
         </motion.div>
-        <motion.div className="card" whileHover={{ scale: 1.1 }}>
-          <img src={bannerimage} alt="a" />
+        <motion.div className="card" whileHover={{ scale: 1.05 }}>
+          <img src={bannerimage} alt="a" className="cardImage" />
           <div className="summary">
             <h1>Matvatsa trening</h1>
             <p>
@@ -151,13 +158,23 @@ export default function Courses() {
           </div>
         </div>
       )}
+      {/* <div className="startButton">
+        <motion.div
+          whileHover={{ scale: 1.1 }}
+          whileTap={{ scale: 0.95 }}
+          className="start"
+        >
+          <p>Join to the course</p>
+        </motion.div>
+      </div> */}
     </Container>
   );
 }
 
 const Container = styled.div`
-  margin-top: 100px;
-  height: 120vh;
+  background-color: #181b21;
+  /* margin-top: 100px; */
+  /* min-height: 150vh; */
   width: 100%;
   /* background-color: #fff; */
   /* z-index: -1; */
@@ -167,9 +184,9 @@ const Container = styled.div`
     width: 500px;
     height: 500px;
     border-radius: 50%;
-    border: 5px dashed #6d6d6d;
+    border: 5px dashed #6d6d6d56;
     position: absolute;
-    top: 1000px;
+    top: 600px;
     left: 100px;
     z-index: -1;
   }
@@ -184,23 +201,23 @@ const Container = styled.div`
     z-index: -1;
   }
   .card {
-    width: 300px;
-    height: 370px;
+    width: 670px;
+    height: 450px;
     background-color: #fff;
     border-radius: 12px;
     padding: 10px;
   }
   .cards {
-    width: 70%;
-    margin: 0 15%;
+    width: 90%;
+    margin: 0 5%;
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-evenly;
-    gap: 35px;
+    justify-content: space-between;
+    gap: 20px;
   }
-  img {
-    width: 300px;
-    height: 200px;
+  .cardImage {
+    width: 650px;
+    height: 280px;
     object-fit: cover;
     border-top-right-radius: 12px;
     border-top-left-radius: 12px;
@@ -235,17 +252,31 @@ const Container = styled.div`
     color: #11101d;
   }
   .courses {
+    font-weight: 800;
     font-size: 3rem;
-    margin: 3rem 0;
-    color: #11101d;
+    /* margin: 3rem 0; */
+    color: #fff;
     text-align: center;
+    margin: 20px;
   }
   .title {
     display: flex;
-    justify-content: flex-end;
+    flex-direction: column;
+    justify-content: space-around;
+    min-height: 120px;
     width: 70%;
     margin: 0 15%;
+    padding: 40px 0;
     align-items: center;
+    /* background-color: red; */
+    color: #fff;
+  }
+  .pretitle {
+    /* background-color: black; */
+    font-size: 2rem;
+    text-align: center;
+    margin: 40px 0;
+    color: #fff;
   }
   .allcourses {
     background-color: #11101d;
@@ -283,5 +314,25 @@ const Container = styled.div`
     .summary p {
       font-size: 12px;
     }
+  }
+  .startButton {
+    margin: 20px 0;
+    /* background-color: red; */
+    height: 20vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+  }
+  .start {
+    height: 100px;
+    width: 250px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 12px;
+    /* border: 1px solid red; */
+    background-color: #11101d;
+    color: #fff;
   }
 `;

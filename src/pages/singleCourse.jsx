@@ -1,7 +1,6 @@
 import React from "react";
 import Navbar from "../components/navbar";
 import styled from "styled-components";
-import { motion } from "framer-motion";
 import CourseBanner from "../components/courseBanner";
 
 export default function SingleCourse() {
@@ -14,5 +13,5 @@ export default function SingleCourse() {
 }
 
 const Container = styled.div`
-    min-height: 160vh;
+    min-height: 180vh;
 `

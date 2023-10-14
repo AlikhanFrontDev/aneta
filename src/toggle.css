@@ -1,14 +1,14 @@
-body.active-modal {
+body.active-modall {
     overflow-y: hidden;
     overflow-x: hidden;
 }
-/* .modal{   
+/* .modall{   
     width: 989px;
     height: 623px;
 } */
 
 
-.modal, .overlay {
+.modall, .overlayy {
     width: 100vw;
     height: 100vh;
     top: 0;
@@ -21,7 +21,7 @@ body.active-modal {
     justify-content: center;
 }
 
-.overlay {
+.overlayy {
     background: rgba(49, 49, 49, 0.744);
     z-index: -1;
 }
