@@ -205,12 +205,12 @@ export default function ControlledAccordions() {
 
 const Container = styled.div`
   background-color: #0b0e13;
-  min-height: 100vh;
+  min-height: 120vh;
   .button{
     height: 80px;
     width: 400px;
     margin: 80px auto;
-    background-color: #FF3131;
+    background-color: red;
     display: flex;
     align-items: center;
     justify-content: center;
