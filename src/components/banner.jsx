@@ -6,6 +6,7 @@ import { motion } from "framer-motion";
 import Registereform from "./registereform";
 import "../toggle.css";
 import MyCarousel from "./carusel";
+import background from "../assets/img/background.jpg"
 
 export default function Banner() {
   const [modal, setModal] = useState(false);
@@ -78,15 +79,10 @@ export default function Banner() {
 }
 
 const Baanner = styled.div`
-  /* background-color: linear-gradient(
-    144.39deg,
-    #ffffff -278.56%,
-    #6d6d6d -78.47%,
-    #11101d 91.61%
-  ); */
-  background-color: #0b0e13;
+  background-color: #0b0e13bc;
+  /* background-color: red; */
+  /* background-image: url(${background}); */
 
-  /* background-image: url(${bannerimage}); */
   width: 100%;
   height: 90vh;
   .banner {

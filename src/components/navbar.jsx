@@ -5,6 +5,9 @@ import { motion } from "framer-motion";
 import "../toggle.css"
 import SingIn from "./singIn";
 
+import background from "../assets/img/background.jpg"
+
+
 const variants = {
   open: {
     y: 0,
@@ -35,6 +38,7 @@ export default function Navbar() {
   }
   return (
     <Nav>
+      <img src={background} alt="fon" className="fon" />
       <div>
         <motion.div
           whileHover={{ scale: 1.1 }}
@@ -97,11 +101,19 @@ export default function Navbar() {
 
 const Nav = styled.div`
   height: 100px;
-  background-color: #0b0e13;
+  background-color: #0b0e13bc;
   display: flex;
   justify-content: space-between;
   padding: 0 8%;
   align-items: center;
+  .fon{
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    z-index: -1;
+    height: 133vh;
+  }
   .ul {
     display: flex;
     width: 350px;

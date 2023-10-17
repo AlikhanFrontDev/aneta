@@ -4,39 +4,59 @@ import { motion } from "framer-motion";
 
 import bannerimage from "../assets/img/bannerimage.webp";
 import Navbar from "../components/navbar";
+import Footer from "../components/footer";
+import CourseList from "../components/courseList";
 
 export default function CoursesPage() {
   return (
-    <Container>
+    <div>
       <Navbar />
-      <div className="circle"></div>
-      <div className="circle1"></div>
-      <div className="cards">
-        <motion.div className="card" whileHover={{ scale: 1.1 }}>
-          <img src={bannerimage} alt="a" className="cardImage" />
-          <div className="summary">
-            <h1>Matvatsa trening</h1>
-            <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat
-              aspernatur ullam expedita tempora quod porro magni odio error,
-              doloribus iure!
-            </p>
-            <motion.button
-              whileHover={{ scale: 1.1 }}
-              whileTap={{ scale: 0.95 }}
-              // onClick={toggleModal}
-            >
-              subscribe
-            </motion.button>
-          </div>
-        </motion.div>
-      </div>
-    </Container>
+      <Container>
+        <h1 className="header">READY TO ESCAPE? JOIN NOW</h1>
+        <p className="paragraf">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum libero
+          sapiente amet asperiores. Recusandae assumenda omnis doloremque
+          facilis laudantium a explicabo id? Perferendis rem dolor quam,
+          sapiente amet asperiores. Recusandae assumenda omnis doloremque
+          facilis laudantium a explicabo id? Perferendis rem dolor quam,
+          incidunt tenetur exercitationem amet.
+        </p>
+        <div className="button">
+          Join now
+        </div>
+      </Container>
+      <CourseList/>
+      <Footer/>
+    </div>
   );
 }
 
 const Container = styled.div`
-  min-height: 200vh;
+  height: 120vh;
+  background-color: #0b0e13bc;
+  /* background-color: red; */
+  .button{
+    padding: 50px;
+    background-color: #FF3131;
+    width: 20%;
+    margin: 40px 40%;
+    text-align: center;
+    border-radius: 12px;
+    cursor: pointer;
+  }
+  .paragraf{
+    color: #fff;
+    font-size: 22px;
+    text-align: center;
+  }
+  .header {
+    color: #fff;
+    text-align: center;
+    font-size: 45px;
+    padding: 200px 0 150px 0;
+    font-weight: 700;
+    letter-spacing: 2px;
+  }
   .card {
     width: 300px;
     height: 370px;
@@ -46,7 +66,7 @@ const Container = styled.div`
   }
   .cards {
     width: 70%;
-    margin: 200px 15%;
+    /* margin: 200px 15%; */
     display: flex;
     flex-wrap: wrap;
     justify-content: space-evenly;
