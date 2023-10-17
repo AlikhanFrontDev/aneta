@@ -3,12 +3,13 @@ import styled from "styled-components";
 import bannerimage from "../assets/img/bannerimage.webp";
 import { motion } from "framer-motion";
 import Registereform from "./registereform";
+import { Link } from "react-router-dom";
 export default function Courses() {
   const [modal, setModal] = useState(false);
   const toggleModal = () => {
     setModal(!modal);
   };
-  
+
   if (modal) {
     document.body.classList.add("active-modal");
   } else {
@@ -28,10 +29,7 @@ export default function Courses() {
         >
           All courses
         </motion.div> */}
-        <motion.h2
-          className="pretitle"
-          whileHover={{ scale: 1.05 }}
-        >
+        <motion.h2 className="pretitle" whileHover={{ scale: 1.05 }}>
           When a new technology revolutionises an industry, THE REAL WORLD will
           be the first and only place to teach you how to profit from it.
         </motion.h2>
@@ -51,7 +49,7 @@ export default function Courses() {
               whileTap={{ scale: 0.95 }}
               // onClick={toggleModal}
             >
-              subscribe
+              <Link to={'/courses'}>subscribe</Link>
             </motion.button>
           </div>
         </motion.div>

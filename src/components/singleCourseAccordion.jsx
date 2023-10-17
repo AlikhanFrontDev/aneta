@@ -5,6 +5,7 @@ import AccordionSummary from "@mui/material/AccordionSummary";
 import Typography from "@mui/material/Typography";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import styled from "styled-components";
+import { Link } from "react-router-dom";
 
 export default function SingleCoueseAccordion() {
   const [expanded, setExpanded] = React.useState(false);
@@ -450,7 +451,9 @@ export default function SingleCoueseAccordion() {
           </AccordionDetails>
         </Accordion>
       </div>
-      <div className="buttonn">Join Now</div>
+      <div className="buttonn">
+        <Link to={'/videPage'}> Lion Now</Link>
+      </div>
     </Container>
   );
 }

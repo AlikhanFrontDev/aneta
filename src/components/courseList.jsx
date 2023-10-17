@@ -1,7 +1,8 @@
 import { motion } from "framer-motion";
 import React from "react";
 import styled from "styled-components";
-import bannerimage from "../assets/img/bannerimage.webp"
+import bannerimage from "../assets/img/bannerimage.webp";
+import { Link } from "react-router-dom";
 
 export default function CourseList() {
   return (
@@ -16,12 +17,13 @@ export default function CourseList() {
               aspernatur ullam expedita tempora quod porro magni odio error,
               doloribus iure!
             </p>
+
             <motion.button
               whileHover={{ scale: 1.1 }}
               whileTap={{ scale: 0.95 }}
               // onClick={toggleModal}
             >
-              subscribe
+              <Link to={'/singleCourse'}>subscribe</Link>
             </motion.button>
           </div>
         </motion.div>
