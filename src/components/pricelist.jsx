@@ -58,7 +58,7 @@ export default function Pricelist() {
 
 const Container = styled.div`
   height: 100vh;
-  background-color: #fff;
+  background-color: #000;
   /* .mode{
     padding: 10px;
   } */

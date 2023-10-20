@@ -40,6 +40,10 @@ export default function ControlledAccordions() {
           </AccordionSummary>
           <AccordionDetails>
             <Typography className="text">
+              <h1>re</h1>
+              <h1>re</h1>
+              <h1>re</h1>
+              <h1>re</h1>
               Nulla facilisi. Phasellus sollicitudin nulla et quam mattis
               feugiat. Aliquam eget maximus est, id dignissim quam.
             </Typography>

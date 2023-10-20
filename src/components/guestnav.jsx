@@ -6,7 +6,7 @@ import "../toggle.css";
 
 import background from "../assets/img/background.jpg";
 
-export default function Navbar() {
+export default function GuestNan() {
   return (
     <Nav>
       <div>
@@ -14,37 +14,13 @@ export default function Navbar() {
           <img src={logo} alt="Logo" className="logo" />
         </motion.div>
       </div>
-      <ul className="ul">
-        <motion.li
-          className="li"
+        <motion.h1
+          className="user"
           whileHover={{ scale: 1.1 }}
           whileTap={{ scale: 0.95 }}
         >
-          All courses
-        </motion.li>
-        <motion.li
-          className="li"
-          whileHover={{ scale: 1.1 }}
-          whileTap={{ scale: 0.95 }}
-        >
-          About
-        </motion.li>
-        <motion.li
-          className="li"
-          whileHover={{ scale: 1.1 }}
-          whileTap={{ scale: 0.95 }}
-          // onClick={toggleModal}
-        >
-          Sign in
-        </motion.li>
-        <motion.li
-          className="li"
-          whileHover={{ scale: 1.1 }}
-          whileTap={{ scale: 0.95 }}
-        >
-          Sign up
-        </motion.li>
-      </ul>
+          Platformaga kirish
+        </motion.h1>
     </Nav>
   );
 }
@@ -53,27 +29,23 @@ const Nav = styled.nav`
   height: 100px;
   position: static;
   top: 0;
-  background-color: #000000b0;
+  background-color: #000;
   display: flex;
   justify-content: space-between;
-  padding: 0 8%;
+  padding: 0 2%;
   align-items: center;
   width: 100%;
   z-index: 1;
-  .ul {
-    display: flex;
-    width: 350px;
-    height: 70px;
-    /* background-color: red; */
-    justify-content: space-between;
-    align-items: center;
-    list-style: circle;
-  }
-  .ul li {
-    cursor: pointer;
-    /* background-color: red; */
+  .user{
     color: #fff;
-  }
+    background-color: red;
+    /* height: 50px; */
+    width: 300px;
+    padding: 10px;
+    text-align: center;
+    font-size: 25px;
+    border-radius: 12px;
+}
   .logo {
     height: 270px;
   }

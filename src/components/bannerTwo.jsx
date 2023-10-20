@@ -3,25 +3,26 @@ import styled from "styled-components";
 import image from "../assets/img/bannerimage.webp";
 import { motion } from "framer-motion";
 
-
 export default function BannerTwo() {
   return (
     <Container>
-      <motion.h1 className="title" whileHover={{ scale: 1.05 }}>YOU WILL GET ACCESS TO</motion.h1>
+      <motion.h1 className="title" whileHover={{ scale: 1.05 }}>
+        Pro Digital platformasiga qo'shiling va Hoziroq Barcha Kurslarga ega
+        bo'ling!
+      </motion.h1>
       <div className="boxes">
         <img src={image} alt="" />
         <div className="box">
-          <h1>Step-by-step learning</h1>
-          <p>
-            You will get access to 100+ video courses and well-structured
-            tutorials covering everything from the fundamentals of modern
-            business to niche money-making strategies.
-          </p>
+          <h1 className="title2">
+            Bo'sh va'dalarni emas, balki <span className="red">HAQIQIY KO'NIKMALARNI</span> taqdim etadigan
+            Marketing kurslariga sarmoya kiriting.
+          </h1>
+          <p>Platforma kimlar uchun to'gri keladi?</p>
+          <div className="options">Sohaga endi kirganlar uchun</div>
+          <div className="options">O'rta darajadagi mutaxassislar uchun</div>
           <div className="options">
-            Easy-to-follow program for financial success
+            Ko'nikmalarini mustahkamlashni xohlaydigan Professionallar uchun
           </div>
-          <div className="options">Quickly learn new high income skills</div>
-          <div className="options">Hyper advanced learning application</div>
         </div>
       </div>
       <div className="button">Join Now</div>
@@ -36,10 +37,15 @@ const Container = styled.div`
   flex-direction: column;
   background-color: #0b0e13;
   height: 100vh;
-  .button{
+  padding-top: 50px;
+  .red{
+    color: red;
+    font-size: 26px;
+  }
+  .button {
     height: 80px;
     width: 400px;
-    background-color: #FF3131;
+    background-color: #ff3131;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -59,17 +65,22 @@ const Container = styled.div`
     padding: 0 20px;
     color: #fff;
   }
+  .title2{
+    font-size: 26px;
+    font-weight: 600;
+  }
   .box p {
     font-size: x-large;
     color: #fff;
     margin: 14px 0;
   }
   .options {
+    text-align: start;
     background-color: #181b21;
     padding: 20px;
     border-radius: 12px;
     margin: 20px 0;
-    color: #fff;
+    color: #999;
     font-size: 22px;
   }
   .title {
@@ -77,6 +88,7 @@ const Container = styled.div`
     color: #fff;
     font-weight: 700;
     padding: 20px 0;
+    width: 60%;
   }
   img {
     width: 600px;

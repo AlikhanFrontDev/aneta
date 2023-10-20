@@ -10,6 +10,7 @@ import BannerTwo from '../components/bannerTwo'
 import CaruselTwo from '../components/caruselTwo'
 import Videos from '../components/videos'
 import Pricelist from '../components/pricelist'
+import ComingSoon from '../components/comingSoon'
 
 
 export default function Mainpage() {
@@ -18,7 +19,9 @@ export default function Mainpage() {
         <Navbar/>
         <Banner/>
         <Courses/>
-        <NewCourse/>
+        <ComingSoon/>
+        {/* <CaruselTwo/> */}
+        {/* <NewCourse/> */}
         <BannerTwo/>
         <CaruselTwo/>
         <Videos/>
