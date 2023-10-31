@@ -4,10 +4,9 @@ import styled from "styled-components";
 export default function Videos() {
   return (
     <Container>
-      <h1 className="title">READY TO ESCAPE? <span>JOIN NOW</span></h1>
+      <h1 className="title"> <span>TAN OLINISHNI</span> istaysizmi? Yechim -<span> Pro Digital !</span></h1>
       <p className="summary">
-        Our modern, practical approach to teaching has led to tens of thousands
-        of our students generating money from anywhere in the world.
+      Muvaffaqiyatli Yo'lingizni Pro Digital o'quvchilari kabi yarating ! <span>O'Z MATRITSANGIZNI BUZIB CHIQING !</span> 
       </p>
       <div className="boxes">
         <div className="box">
@@ -92,7 +91,7 @@ const Container = styled.div`
   min-height: 100vh;
   padding: 20px 0;
   span{
-    color: #FF3131;
+    color: red;
     font-size: 50px;
   }
   .summary{
@@ -101,6 +100,9 @@ const Container = styled.div`
     font-size: 25px;
     width: 70%;
     margin: 30px 15%;
+  }
+  .summary span{
+    font-size: 25px;
 
   }
   .title {
@@ -139,4 +141,10 @@ const Container = styled.div`
     margin: 0;
     border-radius: 12px;
   }
+
+  @media only screen and (max-width: 767px) {
+  video {
+    width: 100%;
+  }
+}
 `;

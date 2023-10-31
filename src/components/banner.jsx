@@ -1,29 +1,28 @@
 import React, { useState } from "react";
 import styled from "styled-components";
-import imgBanner from "../assets/img/banner.png";
-import bannerimage from "../assets/img/bannerimage.webp";
 import { motion } from "framer-motion";
-import Registereform from "./registereform";
-import "../toggle.css";
 import MyCarousel from "./carusel";
 import background from "../assets/img/background.jpg";
+import imageOne from "../assets/img/bannerCaruse/b1.jpg";
+import imageTwo from "../assets/img/bannerCaruse/b2.jpg";
+import imageThree from "../assets/img/bannerCaruse/Google.jpg";
 
 export default function Banner() {
   const items = [
     {
-      src: `${bannerimage}`,
+      src: `${imageOne}`,
       alt: "Image 1",
       caption: "First Slide",
       text: "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Oditprovident",
     },
     {
-      src: `${bannerimage}`,
+      src: `${imageTwo}`,
       alt: "Image 2",
       caption: "Second Slide",
       text: "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Oditprovident",
     },
     {
-      src: `${bannerimage}`,
+      src: `${imageThree}`,
       alt: "Image 3",
       caption: "Third Slide",
       text: "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Oditprovident",
@@ -99,6 +98,7 @@ const Baanner = styled.div`
     color: #fff;
     font-weight: 100;
   }
+  
   .img {
     width: 600px;
     /* height: 600px; */
@@ -132,15 +132,7 @@ const Baanner = styled.div`
     font-weight: 700;
     letter-spacing: 0.5px;
   }
-  .moto {
-    font-size: 3rem;
-    color: #ffffff;
-  }
-  .moto2 {
-    font-size: 3rem;
-    color: #11101d;
-    text-decoration: line-through;
-  }
+
   .button {
     height: 40px;
     width: 50%;
@@ -154,15 +146,38 @@ const Baanner = styled.div`
   }
   @media only screen and (max-width: 768px) {
     height: 60vh;
-    .img {
+    .image{
+      height: 300px;
+      width: 100vw;
+    }
+    .container{
+      width: 90%;
+    }
+    .summary{
+    font-size: 15px;
+    text-align: center;
+  }
+    .banner{
+      flex-direction: column;
+      /* margin: 0; */
+      /* padding: 0; */
+      height: 50vh;
+      justify-content: space-between;
+    }
+    .theme{
+      font-size: 25px;
+      text-align: center;
+    }
+    .banimage{
+      height: 70vh;
+      /* width: 100%; */
+    }
+    /* .img {
       width: 300px;
       height: 300px;
     }
     .image {
       width: 300px;
-    }
-    .banner {
-      height: 65vh;
-    }
+    } */
   }
 `;

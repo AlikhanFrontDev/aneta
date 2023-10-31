@@ -1,14 +1,14 @@
-body.active-modall {
+body.active-modal1 {
     overflow-y: hidden;
     overflow-x: hidden;
 }
-/* .modall{   
+.modal1{   
     width: 989px;
     height: 623px;
-} */
+}
 
 
-.modall, .overlayy {
+.modal1, .overlay1 {
     width: 100vw;
     height: 100vh;
     top: 0;
@@ -16,12 +16,35 @@ body.active-modall {
     right: 0;
     bottom: 0;
     position: fixed;
-    display: flex;
-    align-items: center;
-    justify-content: center;
 }
 
-.overlayy {
-    background: rgba(49, 49, 49, 0.744);
+.overlay1 {
+    background: rgba(49,49,49,0.8);
     z-index: -1;
 }
+body.active-modal2 {
+    overflow-y: hidden;
+    overflow-x: hidden;
+}
+.modal2{   
+    width: 989px;
+    height: 623px;
+}
+
+
+.modal2, .overlay2 {
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    position: fixed;
+}
+
+.overlay2 {
+    background: rgba(49,49,49,0.8);
+    z-index: -1;
+}
+
+

@@ -4,51 +4,70 @@ import styled from "styled-components";
 export default function Pricelist() {
   return (
     <Container>
-      <h1 className="title">THE CHOICE IS YOURS</h1>
+      <h1 className="title">
+        Tanlov faqat va faqat <span className="red">O'ZINGIZ</span> ga bog'liq !
+      </h1>
       <div className="boxes">
         <div className="box">
-          <h1 className="center mode">Standart</h1>
+          <h1 className="center mode">SHORT TERM</h1>
           {/* <p className="center">You need to act now.</p> */}
-          <p className="center price"><span className="discount">$147</span> $49.99</p>
+          <p className="center price">
+            <span className="discount">0% chegirma</span>147.000
+          </p>
           <ul>
-            <li>Simple-step-by-step tutorials</li>
-            <li>19 wealth creation methods</li>
-            <li>Access to millionaire mentors</li>
-            <li>Community chat groups</li>
-            <li>No experience needed</li>
-            <li className="line">Custom made learning application</li>
-            <li className="line">Cancel anytime, risk-free</li>
-            <li className="line">$49.99/month forever</li>
+            <li>1 OYLIK OBUNA</li>
+            <li>O'ZLASHTIRISH KO'RSATKICHI 25% </li>
+            <li>BARCHA KURSLARGA YO'LLANMA</li>
+            <li>ERKIN GRAFIKDA O'QISH</li>
+            <li>COMMUNITY CHAT</li>
+            <li>FOYDALI LINKLAR</li>
+            <li>QO'LLANMALAR</li>
+
+            <li className="line">YANGI KURSLARGA BEPUL YO'LLANMA</li>
+            <li className="line"> KUTUBXONA</li>
+            {/* <li className="line">$49.99/month forever</li> */}
           </ul>
         </div>
         <div className="box">
-          <h1 className="center mode">Standart</h1>
+          <h1 className="center mode">MEDIUM TERM</h1>
           {/* <p className="center">You need to act now.</p> */}
-          <p className="center price"><span className="discount">$147</span> $49.99</p>
+          <p className="center price">
+            <span className="discount">10% chegirma</span>397.000
+          </p>
           <ul>
-            <li>Simple-step-by-step tutorials</li>
-            <li>19 wealth creation methods</li>
-            <li>Access to millionaire mentors</li>
-            <li>Community chat groups</li>
-            <li>No experience needed</li>
-            <li className="line">Custom made learning application</li>
-            <li className="line">Cancel anytime, risk-free</li>
-            <li className="line">$49.99/month forever</li>
+            <li>3 OYLIK OBUNA</li>
+            <li>O'ZLASHTIRISH KO'RSATKICHI 50% </li>
+            <li>BARCHA KURSLARGA YO'LLANMA</li>
+            <li>ERKIN GRAFIKDA O'QISH</li>
+            <li>COMMUNITY CHAT</li>
+            <li>FOYDALI LINKLAR</li>
+            <li>QO'LLANMALAR</li>
+            <li>YANGI KURSLARGA BEPUL YO'LLANMA</li>
+            <li className="line"> KUTUBXONA</li>
+            {/* <li className="line">Cancel anytime, risk-free</li>
+            <li className="line">$49.99/month forever</li> */}
           </ul>
         </div>
         <div className="box">
-          <h1 className="center mode">Standart</h1>
+          <h1 className="center mode">LONG TERM</h1>
           {/* <p className="center">You need to act now.</p> */}
-          <p className="center price"><span className="discount">$147</span> $49.99</p>
+          <p className="center price">
+            <span className="discount">25% chegirma</span>662.000
+          </p>
           <ul>
-            <li>Simple-step-by-step tutorials</li>
-            <li>19 wealth creation methods</li>
-            <li>Access to millionaire mentors</li>
-            <li>Community chat groups</li>
-            <li>No experience needed</li>
-            <li className="line">Custom made learning application</li>
+            <li>1 OYLIK OBUNA</li>
+            <li>O'ZLASHTIRISH KO'RSATKICHI 75% </li>
+            <li>BARCHA KURSLARGA YO'LLANMA</li>
+            <li>ERKIN GRAFIKDA O'QISH</li>
+            <li>COMMUNITY CHAT</li>
+            <li>FOYDALI LINKLAR</li>
+            <li>QO'LLANMALAR</li>
+            <li>YANGI KURSLARGA BEPUL YO'LLANMA</li>
+
+            <li> KUTUBXONA</li>
+            {/* <li className="line">Custom made learning application</li>
             <li className="line">Cancel anytime, risk-free</li>
-            <li className="line">$49.99/month forever</li>
+            <li className="line">$49.99/month forever</li> */}
           </ul>
         </div>
       </div>
@@ -57,25 +76,29 @@ export default function Pricelist() {
 }
 
 const Container = styled.div`
-  height: 100vh;
+  height: 120vh;
   background-color: #000;
   /* .mode{
     padding: 10px;
   } */
-  .title{
+  .red {
+    color: red;
+    font-size: 50px;
+  }
+  .title {
     padding: 50px;
-    color: #0b0e13;
+    color: #fff;
     font-weight: 800;
     font-size: 44px;
     text-align: center;
   }
-  .boxes{
+  .boxes {
     display: flex;
     justify-content: space-evenly;
   }
   .box {
     background-color: #0b0e13;
-    height: 70vh;
+    height: 85vh;
     width: 400px;
     border-radius: 12px;
     padding: 20px;
@@ -84,29 +107,29 @@ const Container = styled.div`
     align-items: center;
     justify-content: center;
   }
-  .center{
+  .center {
     text-align: center;
     /* padding: 10px; */
     color: #fff;
     font-weight: 700;
   }
-  .price{
+  .price {
     font-size: 36px;
   }
-  .discount{
+  .discount {
     text-decoration: line-through;
-    color: #FF3131;
+    color: #ff3131;
   }
-  ul{
+  ul {
     list-style: circle;
   }
-  li{
+  li {
     padding: 5px;
     color: #fff;
     font-size: 20px;
   }
-  .line{
+  .line {
     text-decoration: line-through;
-    color: #FF3131;
+    color: #ff3131;
   }
 `;

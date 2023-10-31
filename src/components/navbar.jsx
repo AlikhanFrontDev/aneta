@@ -2,11 +2,25 @@ import React, { useState, useEffect } from "react";
 import styled from "styled-components";
 import logo from "../assets/img/logo.png";
 import { motion } from "framer-motion";
-import "../toggle.css";
+// import "../toggle.css";
+import { Link } from "react-router-dom";
+
 
 import background from "../assets/img/background.jpg";
+import Registereform from "./registereform";
 
 export default function Navbar() {
+  // const [modal, setModal] = useState(false);
+
+  // const toggleModal = () => {
+  //   setModal(!modal);
+  // };
+
+  // if (modal) {
+  //   document.body.classList.add("active-modal");
+  // } else {
+  //   document.body.classList.remove("active-modal");
+  // }
   return (
     <Nav>
       <div>
@@ -42,7 +56,7 @@ export default function Navbar() {
           whileHover={{ scale: 1.1 }}
           whileTap={{ scale: 0.95 }}
         >
-          Sign up
+            <Link to={"/loginPage"}>Sing In</Link>
         </motion.li>
       </ul>
     </Nav>
@@ -50,6 +64,7 @@ export default function Navbar() {
 }
 
 const Nav = styled.nav`
+
   height: 100px;
   position: static;
   top: 0;
@@ -87,6 +102,12 @@ const Nav = styled.nav`
   }
 
   @media only screen and (max-width: 768px) {
+    /* .ul{
+      display: none;
+    } */
+    flex-direction: column;
+    justify-content: center;
+    height: 20vh;
     justify-content: space-around;
     /* background-color: red; */
     width: 100%;
@@ -96,6 +117,20 @@ const Nav = styled.nav`
     }
     ul {
       width: 100px;
+      margin: 0 5px;
+      list-style: none;
+    }
+    .logoContainer {
+      height: 100px;
+      display: flex;
+      align-items: center;
+    }
+    .logo {
+      height: 250px;
+      padding: 0;
+      /* width: 200px; */
+      /* width: 150px; */
     }
   }
+
 `;

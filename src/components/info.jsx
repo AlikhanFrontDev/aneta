@@ -7,7 +7,7 @@ export default function Info() {
     <Container>
       <div className="container">
         <h1 className="title">
-          TAN OLINISHNI istaysizmi? Yechim - Pro Digital !
+          Aslida <span>2</span> turdagi odamlar mavjud...
         </h1>
         <h3 className="title2">
           Muvaffaqiyatli Yo'lingizni Pro Digital o'quvchilari kabi yarating !
@@ -41,26 +41,28 @@ export default function Info() {
               lekin ENG KUCHLI Maqsadlariga yetishganlarida, o'z komfort
               zonalarini BUZIB CHIQQANLIKLARIDAN rohatlanishadi.
             </p>
-            <p>
-              Hozir qaror qilishning ayni vaqti: siz qaysi yo'lni tanlaysiz?
-              "KUZATUVCHI" pozitsiyasida qolib, afsus qilishnimi yoki "HARAKAT
-              QILUVCHI"lar ichida ENG ZO'RI bo'lishni?
-            </p>
           </div>
         </div>
-        <h1 className="conclusion">Tanlov faqat va faqat o'zingizga bog'liq !</h1>
+        <h1 className="conclusion">
+          Hozir qaror qilishning ayni vaqti: siz qaysi yo'lni tanlaysiz?
+          "KUZATUVCHI" pozitsiyasida qolib, afsus qilishnimi yoki "HARAKAT
+          QILUVCHI"lar ichida ENG ZO'RI bo'lishni? Tanlov faqat va faqat
+          o'zingizga bog'liq !
+        </h1>
       </div>
     </Container>
   );
 }
 
 const Container = styled.div`
-  height: 110vh;
+  height: 120vh;
   background-color: #181b21;
-  .conclusion{
+  .conclusion {
     color: #fff;
     text-align: center;
-    margin: 50px;
+    margin: 40px 15%;
+    font-size: 26px;
+    width: 70%;
   }
   img {
     width: 25%;
@@ -77,9 +79,13 @@ const Container = styled.div`
     color: #fff;
   }
   .title {
-    color: red;
+    color: #fff;
     text-align: center;
     padding: 20px 0;
+  }
+  .title span {
+    color: red;
+    font-size: 36px;
   }
   .title2 {
     color: #fff;

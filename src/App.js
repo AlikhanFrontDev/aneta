@@ -6,6 +6,9 @@ import watermark from "./assets/img/watermark.png";
 import styled from "styled-components";
 import VideoPage from "./pages/videoPage";
 import { Route, Routes } from "react-router";
+import AdminkaProDigitaladmin0202 from "./pages/adminkaProDigitaladmin";
+import LoginPage from "./pages/loginPage";
+import UsefulLinks from "./pages/usefulLinks";
 
 function App() {
   return (
@@ -16,6 +19,9 @@ function App() {
           <Route path="/courses" element={<CoursesPage />} />
           <Route path="/singleCourse" element={<SingleCourse />} />
           <Route path="/videPage" element={<VideoPage />} />
+          <Route path="/AdminkaProDigitaladmin0202" element={<AdminkaProDigitaladmin0202 />} />
+          <Route path="/loginPage" element={<LoginPage />} />
+          <Route path="/links" element={<UsefulLinks />} />
         </Routes>
       </Container>
     </div>

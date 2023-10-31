@@ -25,7 +25,7 @@ export default function BannerTwo() {
           </div>
         </div>
       </div>
-      <div className="button">Join Now</div>
+      <div className="button">Hoziroq boshlang</div>
     </Container>
   );
 }
@@ -45,7 +45,7 @@ const Container = styled.div`
   .button {
     height: 80px;
     width: 400px;
-    background-color: #ff3131;
+    background-color: red;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -75,7 +75,7 @@ const Container = styled.div`
     margin: 14px 0;
   }
   .options {
-    text-align: start;
+    /* text-align: start; */
     background-color: #181b21;
     padding: 20px;
     border-radius: 12px;
@@ -96,4 +96,12 @@ const Container = styled.div`
     object-fit: cover;
     border-radius: 12px;
   }
-`;
+  @media only screen and (max-width: 770px) {
+    .boxes {
+    width: 100%;
+    }
+    img{
+      width: 50%;
+    }
+  }
+`
