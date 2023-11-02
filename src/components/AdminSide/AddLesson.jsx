@@ -134,6 +134,30 @@ export default function AddLesson() {
     return acc;
   }, {});
 
+  // delete video
+  const [empty, setEmpty] = useState("");
+  const deleteRequestHandler = async (id) => {
+    const emptyData = {
+      empty,
+    };
+    const token = JSON.parse(localStorage.getItem("token"));
+    const response = await axios.delete(
+      Endpoint + `v1/delete-lesson/${id}`,
+
+      {
+        headers: { Authorization: `Bearer ${token}` },
+      },
+      emptyData
+    );
+    console.log(token);
+
+    // if (response.data.id) {
+    //   setMessage(response.data.id);
+    // }
+    // window.location.reload(false);
+  };
+
+
   return (
     <Container>
       <div onClick={toggleModal1}>{/* <h4 className="addButton">+</h4> */}</div>
@@ -188,7 +212,7 @@ export default function AddLesson() {
                         </div>
                         <td className="delete">
                           <p
-                          // onClick={() => deleteRequestHandler(topic.id)}
+                          onClick={() => deleteRequestHandler(topic.id)}
                           >
                             delete
                           </p>

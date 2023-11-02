@@ -14,18 +14,39 @@ export default function AddTopic() {
   const [courseName, setCourseName] = useState("");
   const [name, setName] = useState("");
   const [empty, setEmpty] = useState("");
-  const [topicId, setTopicID] = useState("");
+  const [kursId, setKursID] = useState("");
+  const [topicId, topicID] = useState("");
 
   const submitHandler = (e) => {
     e.preventDefault();
     const token = JSON.parse(localStorage.getItem("token"));
     const postData = {
-      name,
-      topicId
+      empty,
     };
     console.log(postData);
     axios
-      .post(Endpoint + `v1/lesson/create/`, postData, {
+      .post(Endpoint + `v1/topic/create/${kursId}?name=${name}`, postData, {
+        headers: { Authorization: `Bearer ${token}` },
+      })
+
+      .then((res) => {
+        console.log(res);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  };
+  // =========================================================================================
+  const submitHandler2 = (e) => {
+    e.preventDefault();
+    const token = JSON.parse(localStorage.getItem("token"));
+    const postData = {
+      topicId,
+      name,
+    };
+    console.log(postData);
+    axios
+      .post(Endpoint + `v1/lesson/create`, postData, {
         headers: { Authorization: `Bearer ${token}` },
       })
 
@@ -55,7 +76,7 @@ export default function AddTopic() {
     // if (response.data.id) {
     //   setMessage(response.data.id);
     // }
-    window.location.reload(false);
+    // window.location.reload(false);
   };
   // ===========================================================================================
   const [modal1, setModal1] = useState(false);
@@ -75,7 +96,7 @@ export default function AddTopic() {
     document.body.classList.remove("active-modal");
   }
   const toggleModal2 = () => {
-    setModal1(!modal2);
+    setModal2(!modal2);
   };
 
   //   get data
@@ -115,41 +136,11 @@ export default function AddTopic() {
     setExpanded(isExpanded ? panel : false);
   };
   // ====================================================================================
-  const [file, setSelectedFile] = useState(null);
-
-  const onFileChange = (event) => {
-    setSelectedFile(event.target.files[0]);
-  };
-
-  const onUpload = (e) => {
-    e.preventDefault();
-    const token = JSON.parse(localStorage.getItem("token"));
-    if (file) {
-      const formData = new FormData();
-      formData.append("file", file);
-
-      // Replace 'your-upload-api-endpoint' with the actual API endpoint to upload the file.
-      axios
-        .post(Endpoint + `v1/course/add-cover/${courseName}`, formData, {
-          headers: {
-            Authorization: `Bearer ${token}`,
-            "Content-Type": "multipart/form-data",
-          },
-        })
-        .then((response) => {
-          console.log("File uploaded successfully:", response.data);
-        })
-        .catch((error) => {
-          console.error("Error uploading file:", error);
-        });
-    }
-  };
 
   const topicDtoMap = data.reduce((acc, item) => {
     acc[item.id] = item.topicDtoList;
     return acc;
   }, {});
-
 
   return (
     <Container>
@@ -191,30 +182,33 @@ export default function AddTopic() {
                         <div className="id">{topic.id}</div>
                         <div className="name">{topic.name}</div>
                         <td className="addVideo" onClick={toggleModal2}>
-                          <p onClick={() => setTopicID(topic.id)}>Add Lesson</p>
-                          {modal2 && (
-                            <div>
-                              <div className="modal2">
-                                <div
-                                  onClick={toggleModal1}
-                                  className="overlay2"
-                                ></div>
-                                <div className="modal-content1">
-                                  <div className="form">
-                                    <form onSubmit={submitHandler}>
-                                      <input
-                                        type="file"
-                                        onChange={onFileChange}
-                                      />
-                                      <button>Save</button>
-                                    </form>
-                                  </div>
+                          <p onClick={() => topicID(topic.id)}>Add Lesson</p>
+                        </td>
+
+                        {modal2 && (
+                          <div>
+                            <div className="modal2">
+                              <div
+                                onClick={toggleModal2}
+                                className="overlay2"
+                              ></div>
+                              <div className="modal-content1">
+                                <div className="form">
+                                  <form onSubmit={submitHandler2}>
+                                    {topicId} - id dagi Modul uchun mavzu
+                                    qo'shish
+                                    <input
+                                      type="text"
+                                      onChange={(e) => setName(e.target.value)}
+                                      placeholder="mavzu"
+                                    />
+                                    <button>Save</button>
+                                  </form>
                                 </div>
                               </div>
                             </div>
-                          )}
-                        </td>
-
+                          </div>
+                        )}
                         <td className="delete">
                           <p onClick={() => deleteRequestHandler(topic.id)}>
                             delete
@@ -245,10 +239,24 @@ export default function AddTopic() {
             <div className="modal-content1">
               <div className="form">
                 <form onSubmit={submitHandler}>
+                  {loading ? (
+                    <p>Loading data...</p>
+                  ) : data ? (
+                    <>
+                      <select onChange={(e) => setKursID(e.target.value)}>
+                        <option selected="selected">Kursni tanlang</option>
+                        {data.map((data) => (
+                          <option value={data.id}>{data.courseName}</option>
+                        ))}
+                      </select>
+                    </>
+                  ) : (
+                    <p>No data available.</p>
+                  )}
                   <input
                     type="text"
                     onChange={(e) => setName(e.target.value)}
-                    placeholder="Lesson name"
+                    placeholder="Modul name"
                   />
                   <button>Save</button>
                 </form>
@@ -262,6 +270,14 @@ export default function AddTopic() {
 }
 
 const Container = styled.div`
+  select {
+    padding: 10px 20px;
+    border: none;
+    background-color: #000000b0;
+    color: red;
+    margin: 2% 0;
+    border-radius: 7px;
+  }
   .addVideo {
     background-color: #000;
     width: 200px;

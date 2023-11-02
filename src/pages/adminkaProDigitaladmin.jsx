@@ -18,7 +18,9 @@ import CoverAdd from "../components/AdminSide/AddCover";
 import AddTopic from "../components/AdminSide/AddTopic";
 import AddLesson from "../components/AdminSide/AddLesson";
 import AddVideo from "../components/AdminSide/AddVideo";
-import UseFullFiles from "../components/AdminSide/useFullFiles";
+import AddCarusel from "../components/AdminSide/AddCarusel";
+import File from "../components/AdminSide/file";
+import Link from "../components/AdminSide/link";
 
 function TabPanel(props) {
   const { children, value, index, ...other } = props;
@@ -118,13 +120,18 @@ export default function VideoPage() {
             />
             <Tab
               sx={{ fontSize: "10px" }}
-              label="Usefull Files"
+              label="Carusel"
               {...a11yProps(4)}
             />
             <Tab
               sx={{ fontSize: "10px" }}
               label="File"
               {...a11yProps(5)}
+            />
+            <Tab
+              sx={{ fontSize: "10px" }}
+              label="Link"
+              {...a11yProps(6)}
             />
           </Tabs>
         </div>
@@ -152,10 +159,13 @@ export default function VideoPage() {
               <AddLesson/>
             </TabPanel>
             <TabPanel value={value} index={4} className="text">
-              <UseFullFiles/>
+              <AddCarusel/>
             </TabPanel>
             <TabPanel value={value} index={5} className="text">
-              6
+              <File/>
+            </TabPanel>
+            <TabPanel value={value} index={6} className="text">
+              <Link/>
             </TabPanel>
           </Box>
         </div>
