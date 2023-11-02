@@ -810,7 +810,7 @@ export default function VideoPage() {
             <TabPanel value={value} index={0} className="text">
               <video
                 className="courceVideo"
-                src="http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4"
+                // src="http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4"
                 controls
               ></video>
 
