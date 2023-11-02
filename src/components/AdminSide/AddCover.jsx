@@ -59,7 +59,7 @@ export default function CoverAdd() {
           headers: { Authorization: `Bearer ${token}` },
         });
 
-        setData(response.data);
+        setData(response.data.item);
       } catch (error) {
         console.error("Error:", error);
       } finally {
@@ -91,7 +91,7 @@ export default function CoverAdd() {
             <p>Loading data...</p>
           ) : data ? (
             <>
-              {data.item.map((data) => (
+              {data.map((data) => (
                 <tr key={data.id} value={data.id}>
                   <td>{data.id}</td>
                   <img src={`http://80.89.239.196:9898/api/photo/show/${data.coverPhotoId}`}/>
@@ -123,7 +123,7 @@ export default function CoverAdd() {
                     <>
                       <select onChange={(e) => setCourseName(e.target.value)}>
                         <option selected="selected">Kursni tanlang</option>
-                        {data.item.map((data) => (
+                        {data.map((data) => (
                           <option value={data.id}>{data.courseName}</option>
                         ))}
                       </select>

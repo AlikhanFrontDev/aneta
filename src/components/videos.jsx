@@ -22,7 +22,7 @@ export default function Videos() {
           </div>
           <div className="video">
             <video
-              src="http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4"
+              // src="http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4"
               controls
             />
           </div>
@@ -40,7 +40,7 @@ export default function Videos() {
           </div>
           <div className="video">
             <video
-              src="http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4"
+              // src="http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4"
               controls
             />
           </div>
@@ -58,7 +58,7 @@ export default function Videos() {
           </div>
           <div className="video">
             <video
-              src="http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4"
+              // src="http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4"
               controls
             />
           </div>
@@ -76,7 +76,7 @@ export default function Videos() {
           </div>
           <div className="video">
             <video
-              src="http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4"
+              // src="http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4"
               controls
             />
           </div>

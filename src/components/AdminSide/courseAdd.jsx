@@ -50,7 +50,7 @@ export default function CourseAdd() {
           headers: { Authorization: `Bearer ${token}` },
         });
 
-        setData(response.data);
+        setData(response.data.item);
       } catch (error) {
         console.error("Error:", error);
       } finally {
@@ -125,7 +125,7 @@ export default function CourseAdd() {
             <p>Loading data...</p>
           ) : data ? (
             <>
-              {data.item.map((data) => (
+              {data.map((data) => (
                 <tr key={data.id} value={data.id}>
                   <td>{data.id}</td>
                   <td>{data.courseName}</td>
