@@ -21,6 +21,7 @@ import AddVideo from "../components/AdminSide/AddVideo";
 import AddCarusel from "../components/AdminSide/AddCarusel";
 import File from "../components/AdminSide/file";
 import Link from "../components/AdminSide/link";
+import User from "../components/AdminSide/user";
 
 function TabPanel(props) {
   const { children, value, index, ...other } = props;
@@ -133,6 +134,11 @@ export default function VideoPage() {
               label="Link"
               {...a11yProps(6)}
             />
+            <Tab
+              sx={{ fontSize: "10px" }}
+              label="User"
+              {...a11yProps(7)}
+            />
           </Tabs>
         </div>
         <div className="box">
@@ -166,6 +172,9 @@ export default function VideoPage() {
             </TabPanel>
             <TabPanel value={value} index={6} className="text">
               <Link/>
+            </TabPanel>
+            <TabPanel value={value} index={7} className="text">
+              <User/>
             </TabPanel>
           </Box>
         </div>
