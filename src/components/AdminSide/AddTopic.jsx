@@ -16,6 +16,7 @@ export default function AddTopic() {
   const [empty, setEmpty] = useState("");
   const [kursId, setKursID] = useState("");
   const [topicId, topicID] = useState("");
+  const [messages, setMassage] = useState([]);
 
   const submitHandler = (e) => {
     e.preventDefault();
@@ -30,7 +31,8 @@ export default function AddTopic() {
       })
 
       .then((res) => {
-        console.log(res);
+        console.log(res.data.message);
+        setMassage(res.data.message);
       })
       .catch((err) => {
         console.log(err);
@@ -113,7 +115,10 @@ export default function AddTopic() {
             headers: { Authorization: `Bearer ${token}` },
           }
         );
+
+
         setData(response.data.item);
+        
         const { item } = response.data;
         // const topicList = item[0].topicDtoList;
         // setTopicDtoList(topicList);
@@ -123,9 +128,15 @@ export default function AddTopic() {
         // Set loading to false whether the request succeeds or fails
         setLoading(false);
       }
+      
     };
-
     fetchData();
+    const tokenn = setInterval(fetchData, 1000); // Every 5 seconds?
+    fetchData(); // Initial request
+    return () => {
+      // Don't forget to cleanup the interval when this effect is cleaned up.
+      clearInterval(tokenn);
+    };
   }, []);
 
   // console.log(topic);
@@ -237,6 +248,7 @@ export default function AddTopic() {
           <div className="modal1">
             <div onClick={toggleModal1} className="overlay1"></div>
             <div className="modal-content1">
+              <h1>{messages}</h1>
               <div className="form">
                 <form onSubmit={submitHandler}>
                   {loading ? (

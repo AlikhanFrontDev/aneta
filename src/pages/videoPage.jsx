@@ -1,4 +1,4 @@
-import * as React from "react";
+import React, { useEffect, useState } from "react";
 import PropTypes from "prop-types";
 import Tabs from "@mui/material/Tabs";
 import Tab from "@mui/material/Tab";
@@ -13,6 +13,9 @@ import Typography from "@mui/material/Typography";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import layer from "../assets/img/layer.png";
 import GuestNan from "../components/guestnav";
+import Endpoint from "../endpoint";
+import axios from "axios";
+
 
 function TabPanel(props) {
   const { children, value, index, ...other } = props;
@@ -59,6 +62,36 @@ export default function VideoPage() {
     setValue(newValue);
   };
 
+  // get data
+  const [data, setData] = useState([]);
+  const [loading, setLoading] = useState(true); // Add a loading state
+  useEffect(() => {
+    const token = JSON.parse(localStorage.getItem("token"));
+    const fetchData = async () => {
+      try {
+        const response = await axios.get(Endpoint + "v1/course/one/14", {
+          headers: { Authorization: `Bearer ${token}` },
+        });
+
+        setData(response);
+        console.log(data)
+      } catch (error) {
+        console.error("Error:", error);
+      } finally {
+        // Set loading to false whether the request succeeds or fails
+        setLoading(false);
+      }
+    };
+
+    fetchData();
+    const tokenn = setInterval(fetchData, 1000); // Every 5 seconds?
+    fetchData(); // Initial request
+    return () => {
+      // Don't forget to cleanup the interval when this effect is cleaned up.
+      clearInterval(tokenn);
+    };
+  }, []);
+
   return (
     // <div className="container">
     <Container>
@@ -66,775 +99,130 @@ export default function VideoPage() {
         <GuestNan />
       </div>
       <img src={layer} alt="" className="layer" />
-      <div className="screen">
-        <div className="accordion">
-          <h1 className="courseName">SMM</h1>
-          <Accordion
-            className="top"
-            expanded={expanded === "panel1"}
-            onChange={handleChange1("panel1")}
-          >
-            <AccordionSummary
-              expandIcon={<ExpandMoreIcon />}
-              aria-controls="panel1bh-content"
-              id="panel1bh-header"
-            >
-              <Typography
-                sx={{ width: "100%", flexShrink: 0 }}
-                className="summary"
-              >
-                1.Example module
-              </Typography>
-            </AccordionSummary>
-            <AccordionDetails style={{ padding: 0 }}>
-              <Tabs
-                sx={{
-                  "& button.Mui-selected": {
-                    color: "white",
-                    // fontStyle: "italic",
-                    backgroundColor: "#111",
-                  },
-                  "& button": {
-                    backgroundColor: "#000",
-                    // padding: "0 10px",
-                    color: "#fff",
-                    height: "15px",
-                    textDecoration: "underline",
-                  },
-                  backgroundColor: "#000",
-                  width: "300px",
-                  // borderRadius: "12px",
-                }}
-                orientation="vertical"
-                variant="scrollable"
-                value={value}
-                onChange={handleChange}
-                aria-label="Vertical tabs example"
-                TabIndicatorProps={{ sx: { backgroundColor: "white" } }}
-              >
-                <Tab
-                  sx={{ fontSize: "10px" }}
-                  label="Example Learn"
-                  {...a11yProps(0)}
-                />
-                <Tab
-                  sx={{ fontSize: "10px" }}
-                  label="Example Learn"
-                  {...a11yProps(1)}
-                />
-                <Tab
-                  sx={{ fontSize: "10px" }}
-                  label="Example Learn"
-                  {...a11yProps(2)}
-                />
-                <Tab
-                  sx={{ fontSize: "10px" }}
-                  label="Example Learn"
-                  {...a11yProps(3)}
-                />
-              </Tabs>
-            </AccordionDetails>
-          </Accordion>
-          <Accordion
-            className="top"
-            expanded={expanded === "panel2"}
-            onChange={handleChange1("panel2")}
-          >
-            <AccordionSummary
-              expandIcon={<ExpandMoreIcon />}
-              aria-controls="panel1bh-content"
-              id="panel1bh-header"
-            >
-              <Typography
-                sx={{ width: "100%", flexShrink: 0 }}
-                className="summary"
-              >
-                2.Example module
-              </Typography>
-            </AccordionSummary>
-            <AccordionDetails style={{ padding: 0, margin: 0 }}>
-              <Tabs
-                sx={{
-                  "& button.Mui-selected": {
-                    color: "white",
-                    // fontStyle: "italic",
-                    backgroundColor: "#111",
-                  },
-                  "& button": {
-                    backgroundColor: "#000",
-                    // padding: "0 10px",
-                    color: "#fff",
-                    height: "15px",
-                    textDecoration: "underline",
-                  },
-                  backgroundColor: "#000",
-                  width: "300px",
-                  // borderRadius: "12px",
-                }}
-                orientation="vertical"
-                variant="scrollable"
-                value={value}
-                onChange={handleChange}
-                aria-label="Vertical tabs example"
-                TabIndicatorProps={{ sx: { backgroundColor: "white" } }}
-              >
-                <Tab
-                  sx={{ fontSize: "10px" }}
-                  label="Example Learn"
-                  {...a11yProps(0)}
-                />
-                <Tab
-                  sx={{ fontSize: "10px" }}
-                  label="Example Learn"
-                  {...a11yProps(1)}
-                />
-                <Tab
-                  sx={{ fontSize: "10px" }}
-                  label="Example Learn"
-                  {...a11yProps(2)}
-                />
-                <Tab
-                  sx={{ fontSize: "10px" }}
-                  label="Example Learn"
-                  {...a11yProps(3)}
-                />
-              </Tabs>
-            </AccordionDetails>
-          </Accordion>
-          <Accordion
-            className="top"
-            expanded={expanded === "panel3"}
-            onChange={handleChange1("panel3")}
-          >
-            <AccordionSummary
-              expandIcon={<ExpandMoreIcon />}
-              aria-controls="panel1bh-content"
-              id="panel1bh-header"
-            >
-              <Typography
-                sx={{ width: "100%", flexShrink: 0 }}
-                className="summary"
-              >
-                3.Example module
-              </Typography>
-            </AccordionSummary>
-            <AccordionDetails style={{ padding: 0, margin: 0 }}>
-              <Tabs
-                sx={{
-                  "& button.Mui-selected": {
-                    color: "white",
-                    // fontStyle: "italic",
-                    backgroundColor: "#111",
-                  },
-                  "& button": {
-                    backgroundColor: "#000",
-                    // padding: "0 10px",
-                    color: "#fff",
-                    height: "15px",
-                    textDecoration: "underline",
-                  },
-                  backgroundColor: "#000",
-                  width: "300px",
-                  // borderRadius: "12px",
-                }}
-                orientation="vertical"
-                variant="scrollable"
-                value={value}
-                onChange={handleChange}
-                aria-label="Vertical tabs example"
-                TabIndicatorProps={{ sx: { backgroundColor: "white" } }}
-              >
-                <Tab
-                  sx={{ fontSize: "10px" }}
-                  label="Example Learn"
-                  {...a11yProps(0)}
-                />
-                <Tab
-                  sx={{ fontSize: "10px" }}
-                  label="Example Learn"
-                  {...a11yProps(1)}
-                />
-                <Tab
-                  sx={{ fontSize: "10px" }}
-                  label="Example Learn"
-                  {...a11yProps(2)}
-                />
-                <Tab
-                  sx={{ fontSize: "10px" }}
-                  label="Example Learn"
-                  {...a11yProps(3)}
-                />
-              </Tabs>
-            </AccordionDetails>
-          </Accordion>
-          <Accordion
-            className="top"
-            expanded={expanded === "panel4"}
-            onChange={handleChange1("panel4")}
-          >
-            <AccordionSummary
-              expandIcon={<ExpandMoreIcon />}
-              aria-controls="panel1bh-content"
-              id="panel1bh-header"
-            >
-              <Typography
-                sx={{ width: "100%", flexShrink: 0 }}
-                className="summary"
-              >
-                4.Example module
-              </Typography>
-            </AccordionSummary>
-            <AccordionDetails style={{ padding: 0, margin: 0 }}>
-              <Tabs
-                sx={{
-                  "& button.Mui-selected": {
-                    color: "white",
-                    // fontStyle: "italic",
-                    backgroundColor: "#111",
-                  },
-                  "& button": {
-                    backgroundColor: "#000",
-                    // padding: "0 10px",
-                    color: "#fff",
-                    height: "15px",
-                    textDecoration: "underline",
-                  },
-                  backgroundColor: "#000",
-                  width: "300px",
-                  // borderRadius: "12px",
-                }}
-                orientation="vertical"
-                variant="scrollable"
-                value={value}
-                onChange={handleChange}
-                aria-label="Vertical tabs example"
-                TabIndicatorProps={{ sx: { backgroundColor: "white" } }}
-              >
-                <Tab
-                  sx={{ fontSize: "10px" }}
-                  label="Example Learn"
-                  {...a11yProps(0)}
-                />
-                <Tab
-                  sx={{ fontSize: "10px" }}
-                  label="Example Learn"
-                  {...a11yProps(1)}
-                />
-                <Tab
-                  sx={{ fontSize: "10px" }}
-                  label="Example Learn"
-                  {...a11yProps(2)}
-                />
-                <Tab
-                  sx={{ fontSize: "10px" }}
-                  label="Example Learn"
-                  {...a11yProps(3)}
-                />
-              </Tabs>
-            </AccordionDetails>
-          </Accordion>
-          <Accordion
-            className="top"
-            expanded={expanded === "panel5"}
-            onChange={handleChange1("panel5")}
-          >
-            <AccordionSummary
-              expandIcon={<ExpandMoreIcon />}
-              aria-controls="panel1bh-content"
-              id="panel1bh-header"
-            >
-              <Typography
-                sx={{ width: "100%", flexShrink: 0 }}
-                className="summary"
-              >
-                5.Example module
-              </Typography>
-            </AccordionSummary>
-            <AccordionDetails style={{ padding: 0, margin: 0 }}>
-              <Tabs
-                sx={{
-                  "& button.Mui-selected": {
-                    color: "white",
-                    // fontStyle: "italic",
-                    backgroundColor: "#111",
-                  },
-                  "& button": {
-                    backgroundColor: "#000",
-                    // padding: "0 10px",
-                    color: "#fff",
-                    height: "15px",
-                    textDecoration: "underline",
-                  },
-                  backgroundColor: "#000",
-                  width: "300px",
-                  // borderRadius: "12px",
-                }}
-                orientation="vertical"
-                variant="scrollable"
-                value={value}
-                onChange={handleChange}
-                aria-label="Vertical tabs example"
-                TabIndicatorProps={{ sx: { backgroundColor: "white" } }}
-              >
-                <Tab
-                  sx={{ fontSize: "10px" }}
-                  label="Example Learn"
-                  {...a11yProps(0)}
-                />
-                <Tab
-                  sx={{ fontSize: "10px" }}
-                  label="Example Learn"
-                  {...a11yProps(1)}
-                />
-                <Tab
-                  sx={{ fontSize: "10px" }}
-                  label="Example Learn"
-                  {...a11yProps(2)}
-                />
-                <Tab
-                  sx={{ fontSize: "10px" }}
-                  label="Example Learn"
-                  {...a11yProps(3)}
-                />
-              </Tabs>
-            </AccordionDetails>
-          </Accordion>
-          <Accordion
-            className="top"
-            expanded={expanded === "panel6"}
-            onChange={handleChange1("panel6")}
-          >
-            <AccordionSummary
-              expandIcon={<ExpandMoreIcon />}
-              aria-controls="panel1bh-content"
-              id="panel1bh-header"
-            >
-              <Typography
-                sx={{ width: "100%", flexShrink: 0 }}
-                className="summary"
-              >
-                6.Example module
-              </Typography>
-            </AccordionSummary>
-            <AccordionDetails style={{ padding: 0, margin: 0 }}>
-              <Tabs
-                sx={{
-                  "& button.Mui-selected": {
-                    color: "white",
-                    // fontStyle: "italic",
-                    backgroundColor: "#111",
-                  },
-                  "& button": {
-                    backgroundColor: "#000",
-                    // padding: "0 10px",
-                    color: "#fff",
-                    height: "15px",
-                    textDecoration: "underline",
-                  },
-                  backgroundColor: "#000",
-                  width: "300px",
-                  // borderRadius: "12px",
-                }}
-                orientation="vertical"
-                variant="scrollable"
-                value={value}
-                onChange={handleChange}
-                aria-label="Vertical tabs example"
-                TabIndicatorProps={{ sx: { backgroundColor: "white" } }}
-              >
-                <Tab
-                  sx={{ fontSize: "10px" }}
-                  label="Example Learn"
-                  {...a11yProps(0)}
-                />
-                <Tab
-                  sx={{ fontSize: "10px" }}
-                  label="Example Learn"
-                  {...a11yProps(1)}
-                />
-                <Tab
-                  sx={{ fontSize: "10px" }}
-                  label="Example Learn"
-                  {...a11yProps(2)}
-                />
-                <Tab
-                  sx={{ fontSize: "10px" }}
-                  label="Example Learn"
-                  {...a11yProps(3)}
-                />
-              </Tabs>
-            </AccordionDetails>
-          </Accordion>
-          <Accordion
-            className="top"
-            expanded={expanded === "panel6"}
-            onChange={handleChange1("panel6")}
-          >
-            <AccordionSummary
-              expandIcon={<ExpandMoreIcon />}
-              aria-controls="panel1bh-content"
-              id="panel1bh-header"
-            >
-              <Typography
-                sx={{ width: "100%", flexShrink: 0 }}
-                className="summary"
-              >
-                6.Example module
-              </Typography>
-            </AccordionSummary>
-            <AccordionDetails style={{ padding: 0, margin: 0 }}>
-              <Tabs
-                sx={{
-                  "& button.Mui-selected": {
-                    color: "white",
-                    // fontStyle: "italic",
-                    backgroundColor: "#111",
-                  },
-                  "& button": {
-                    backgroundColor: "#000",
-                    // padding: "0 10px",
-                    color: "#fff",
-                    height: "15px",
-                    textDecoration: "underline",
-                  },
-                  backgroundColor: "#000",
-                  width: "300px",
-                  // borderRadius: "12px",
-                }}
-                orientation="vertical"
-                variant="scrollable"
-                value={value}
-                onChange={handleChange}
-                aria-label="Vertical tabs example"
-                TabIndicatorProps={{ sx: { backgroundColor: "white" } }}
-              >
-                <Tab
-                  sx={{ fontSize: "10px" }}
-                  label="Example Learn"
-                  {...a11yProps(0)}
-                />
-                <Tab
-                  sx={{ fontSize: "10px" }}
-                  label="Example Learn"
-                  {...a11yProps(1)}
-                />
-                <Tab
-                  sx={{ fontSize: "10px" }}
-                  label="Example Learn"
-                  {...a11yProps(2)}
-                />
-                <Tab
-                  sx={{ fontSize: "10px" }}
-                  label="Example Learn"
-                  {...a11yProps(3)}
-                />
-              </Tabs>
-            </AccordionDetails>
-          </Accordion>
-          <Accordion
-            className="top"
-            expanded={expanded === "panel6"}
-            onChange={handleChange1("panel6")}
-          >
-            <AccordionSummary
-              expandIcon={<ExpandMoreIcon />}
-              aria-controls="panel1bh-content"
-              id="panel1bh-header"
-            >
-              <Typography
-                sx={{ width: "100%", flexShrink: 0 }}
-                className="summary"
-              >
-                6.Example module
-              </Typography>
-            </AccordionSummary>
-            <AccordionDetails style={{ padding: 0, margin: 0 }}>
-              <Tabs
-                sx={{
-                  "& button.Mui-selected": {
-                    color: "white",
-                    // fontStyle: "italic",
-                    backgroundColor: "#111",
-                  },
-                  "& button": {
-                    backgroundColor: "#000",
-                    // padding: "0 10px",
-                    color: "#fff",
-                    height: "15px",
-                    textDecoration: "underline",
-                  },
-                  backgroundColor: "#000",
-                  width: "300px",
-                  // borderRadius: "12px",
-                }}
-                orientation="vertical"
-                variant="scrollable"
-                value={value}
-                onChange={handleChange}
-                aria-label="Vertical tabs example"
-                TabIndicatorProps={{ sx: { backgroundColor: "white" } }}
-              >
-                <Tab
-                  sx={{ fontSize: "10px" }}
-                  label="Example Learn"
-                  {...a11yProps(0)}
-                />
-                <Tab
-                  sx={{ fontSize: "10px" }}
-                  label="Example Learn"
-                  {...a11yProps(1)}
-                />
-                <Tab
-                  sx={{ fontSize: "10px" }}
-                  label="Example Learn"
-                  {...a11yProps(2)}
-                />
-                <Tab
-                  sx={{ fontSize: "10px" }}
-                  label="Example Learn"
-                  {...a11yProps(3)}
-                />
-              </Tabs>
-            </AccordionDetails>
-          </Accordion>
-          <Accordion
-            className="top"
-            expanded={expanded === "panel6"}
-            onChange={handleChange1("panel6")}
-          >
-            <AccordionSummary
-              expandIcon={<ExpandMoreIcon />}
-              aria-controls="panel1bh-content"
-              id="panel1bh-header"
-            >
-              <Typography
-                sx={{ width: "100%", flexShrink: 0 }}
-                className="summary"
-              >
-                6.Example module
-              </Typography>
-            </AccordionSummary>
-            <AccordionDetails style={{ padding: 0, margin: 0 }}>
-              <Tabs
-                sx={{
-                  "& button.Mui-selected": {
-                    color: "white",
-                    // fontStyle: "italic",
-                    backgroundColor: "#111",
-                  },
-                  "& button": {
-                    backgroundColor: "#000",
-                    // padding: "0 10px",
-                    color: "#fff",
-                    height: "15px",
-                    textDecoration: "underline",
-                  },
-                  backgroundColor: "#000",
-                  width: "300px",
-                  // borderRadius: "12px",
-                }}
-                orientation="vertical"
-                variant="scrollable"
-                value={value}
-                onChange={handleChange}
-                aria-label="Vertical tabs example"
-                TabIndicatorProps={{ sx: { backgroundColor: "white" } }}
-              >
-                <Tab
-                  sx={{ fontSize: "10px" }}
-                  label="Example Learn"
-                  {...a11yProps(0)}
-                />
-                <Tab
-                  sx={{ fontSize: "10px" }}
-                  label="Example Learn"
-                  {...a11yProps(1)}
-                />
-                <Tab
-                  sx={{ fontSize: "10px" }}
-                  label="Example Learn"
-                  {...a11yProps(2)}
-                />
-                <Tab
-                  sx={{ fontSize: "10px" }}
-                  label="Example Learn"
-                  {...a11yProps(3)}
-                />
-              </Tabs>
-            </AccordionDetails>
-          </Accordion>
-          <Accordion
-            className="top"
-            expanded={expanded === "panel6"}
-            onChange={handleChange1("panel6")}
-          >
-            <AccordionSummary
-              expandIcon={<ExpandMoreIcon />}
-              aria-controls="panel1bh-content"
-              id="panel1bh-header"
-            >
-              <Typography
-                sx={{ width: "100%", flexShrink: 0 }}
-                className="summary"
-              >
-                6.Example module
-              </Typography>
-            </AccordionSummary>
-            <AccordionDetails style={{ padding: 0, margin: 0 }}>
-              <Tabs
-                sx={{
-                  "& button.Mui-selected": {
-                    color: "white",
-                    // fontStyle: "italic",
-                    backgroundColor: "#111",
-                  },
-                  "& button": {
-                    backgroundColor: "#000",
-                    // padding: "0 10px",
-                    color: "#fff",
-                    height: "15px",
-                    textDecoration: "underline",
-                  },
-                  backgroundColor: "#000",
-                  width: "300px",
-                  // borderRadius: "12px",
-                }}
-                orientation="vertical"
-                variant="scrollable"
-                value={value}
-                onChange={handleChange}
-                aria-label="Vertical tabs example"
-                TabIndicatorProps={{ sx: { backgroundColor: "white" } }}
-              >
-                <Tab
-                  sx={{ fontSize: "10px" }}
-                  label="Example Learn"
-                  {...a11yProps(0)}
-                />
-                <Tab
-                  sx={{ fontSize: "10px" }}
-                  label="Example Learn"
-                  {...a11yProps(1)}
-                />
-                <Tab
-                  sx={{ fontSize: "10px" }}
-                  label="Example Learn"
-                  {...a11yProps(2)}
-                />
-                <Tab
-                  sx={{ fontSize: "10px" }}
-                  label="Example Learn"
-                  {...a11yProps(3)}
-                />
-              </Tabs>
-            </AccordionDetails>
-          </Accordion>
-          <Accordion
-            className="top"
-            expanded={expanded === "panel6"}
-            onChange={handleChange1("panel6")}
-          >
-            <AccordionSummary
-              expandIcon={<ExpandMoreIcon />}
-              aria-controls="panel1bh-content"
-              id="panel1bh-header"
-            >
-              <Typography
-                sx={{ width: "100%", flexShrink: 0 }}
-                className="summary"
-              >
-                6.Example module
-              </Typography>
-            </AccordionSummary>
-            <AccordionDetails style={{ padding: 0, margin: 0 }}>
-              <Tabs
-                sx={{
-                  "& button.Mui-selected": {
-                    color: "white",
-                    // fontStyle: "italic",
-                    backgroundColor: "#111",
-                  },
-                  "& button": {
-                    backgroundColor: "#000",
-                    // padding: "0 10px",
-                    color: "#fff",
-                    height: "15px",
-                    textDecoration: "underline",
-                  },
-                  backgroundColor: "#000",
-                  width: "300px",
-                  // borderRadius: "12px",
-                }}
-                orientation="vertical"
-                variant="scrollable"
-                value={value}
-                onChange={handleChange}
-                aria-label="Vertical tabs example"
-                TabIndicatorProps={{ sx: { backgroundColor: "white" } }}
-              >
-                <Tab
-                  sx={{ fontSize: "10px" }}
-                  label="Example Learn"
-                  {...a11yProps(0)}
-                />
-                <Tab
-                  sx={{ fontSize: "10px" }}
-                  label="Example Learn"
-                  {...a11yProps(1)}
-                />
-                <Tab
-                  sx={{ fontSize: "10px" }}
-                  label="Example Learn"
-                  {...a11yProps(2)}
-                />
-                <Tab
-                  sx={{ fontSize: "10px" }}
-                  label="Example Learn"
-                  {...a11yProps(3)}
-                />
-              </Tabs>
-            </AccordionDetails>
-          </Accordion>
-        </div>
-        <div className="box">
-          <Box
-            sx={{
-              flexGrow: 1,
-              // bgcolor: "background.paper",
-              // display: "flex",
-              // height: "85vh",
-              // width: "100%",
-              // position: "fixed",
-            }}
-          >
-            <TabPanel value={value} index={0} className="text">
-              <video
-                className="courceVideo"
-                // src="http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4"
-                controls
-              ></video>
+      {/* <div className="screen">
+        {loading ? (
+          <p>Loading data...</p>
+        ) : data ? (
+          <>
+            {data.map((data) => (
+              <div key={data.id}>
+                <div className="accordion">
+                  <h1 className="courseName">{data.courseName}</h1>
+                  <Accordion
+                    className="top"
+                    expanded={expanded === "panel1"}
+                    onChange={handleChange1("panel1")}
+                  >
+                    <AccordionSummary
+                      expandIcon={<ExpandMoreIcon />}
+                      aria-controls="panel1bh-content"
+                      id="panel1bh-header"
+                    >
+                      <Typography
+                        sx={{ width: "100%", flexShrink: 0 }}
+                        className="summary"
+                      >
+                        1.Example module
+                      </Typography>
+                    </AccordionSummary>
+                    <AccordionDetails style={{ padding: 0 }}>
+                      <Tabs
+                        sx={{
+                          "& button.Mui-selected": {
+                            color: "white",
+                            // fontStyle: "italic",
+                            backgroundColor: "#111",
+                          },
+                          "& button": {
+                            backgroundColor: "#000",
+                            // padding: "0 10px",
+                            color: "#fff",
+                            height: "15px",
+                            textDecoration: "underline",
+                          },
+                          backgroundColor: "#000",
+                          width: "300px",
+                          // borderRadius: "12px",
+                        }}
+                        orientation="vertical"
+                        variant="scrollable"
+                        value={value}
+                        onChange={handleChange}
+                        aria-label="Vertical tabs example"
+                        TabIndicatorProps={{ sx: { backgroundColor: "white" } }}
+                      >
+                        <Tab
+                          sx={{ fontSize: "10px" }}
+                          label="Example Learn"
+                          {...a11yProps(0)}
+                        />
+                        <Tab
+                          sx={{ fontSize: "10px" }}
+                          label="Example Learn"
+                          {...a11yProps(1)}
+                        />
+                        <Tab
+                          sx={{ fontSize: "10px" }}
+                          label="Example Learn"
+                          {...a11yProps(2)}
+                        />
+                        <Tab
+                          sx={{ fontSize: "10px" }}
+                          label="Example Learn"
+                          {...a11yProps(3)}
+                        />
+                      </Tabs>
+                    </AccordionDetails>
+                  </Accordion>
+                </div>
 
-              <p className="description">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque
-                doloribus quod quasi esse beatae quaerat, sunt debitis mollitia
-                molestiae, delectus voluptatibus? Obcaecati voluptatem saepe
-                quidem est modi vitae ab, hic ducimus magni quaerat quia autem
-                debitis, natus iste consequuntur necessitatibus!
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque
-                doloribus quod quasi esse beatae quaerat, sunt debitis mollitia
-                molestiae, delectus voluptatibus? Obcaecati voluptatem saepe
-                quidem est modi vitae ab, hic ducimus magni quaerat quia autem
-                debitis, natus iste consequuntur necessitatibus!
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque
-                doloribus quod quasi esse beatae quaerat, sunt debitis mollitia
-                molestiae, delectus voluptatibus? Obcaecati voluptatem saepe
-                quidem est modi vitae ab, hic ducimus magni quaerat quia autem
-                debitis, natus iste consequuntur necessitatibus!
-              </p>
-            </TabPanel>
-          </Box>
-        </div>
-      </div>
+                <div className="box">
+                  <Box
+                    sx={{
+                      flexGrow: 1,
+                      // bgcolor: "background.paper",
+                      // display: "flex",
+                      // height: "85vh",
+                      // width: "100%",
+                      // position: "fixed",
+                    }}
+                  >
+                    <TabPanel value={value} index={0} className="text">
+                      <video
+                        className="courceVideo"
+                        // src="http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4"
+                        controls
+                      ></video>
+
+                      <p className="description">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                        Itaque doloribus quod quasi esse beatae quaerat, sunt
+                        debitis mollitia molestiae, delectus voluptatibus?
+                        Obcaecati voluptatem saepe quidem est modi vitae ab, hic
+                        ducimus magni quaerat quia autem debitis, natus iste
+                        consequuntur necessitatibus! Lorem ipsum dolor sit amet
+                        consectetur adipisicing elit. Itaque doloribus quod
+                        quasi esse beatae quaerat, sunt debitis mollitia
+                        molestiae, delectus voluptatibus? Obcaecati voluptatem
+                        saepe quidem est modi vitae ab, hic ducimus magni
+                        quaerat quia autem debitis, natus iste consequuntur
+                        necessitatibus! Lorem ipsum dolor sit amet consectetur
+                        adipisicing elit. Itaque doloribus quod quasi esse
+                        beatae quaerat, sunt debitis mollitia molestiae,
+                        delectus voluptatibus? Obcaecati voluptatem saepe quidem
+                        est modi vitae ab, hic ducimus magni quaerat quia autem
+                        debitis, natus iste consequuntur necessitatibus!
+                      </p>
+                    </TabPanel>
+                  </Box>
+                </div>
+              </div>
+            ))}
+          </>
+        ) : (
+          <p>No data available.</p>
+        )}
+      </div> */}
     </Container>
     // </div>
   );

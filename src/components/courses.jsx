@@ -1,18 +1,39 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import styled from "styled-components";
-import bannerimage from "../assets/img/bannerimage.webp";
 import yandex from "../assets/img/Yandex.jpg";
-import smm from "../assets/img/smm.jpg";
-import google from "../assets/img/Google.jpg";
-import yandexx from "../assets/img/Yandexx.jpg";
-import smmm from "../assets/img/smmm.jpg";
-import googlee from "../assets/img/Googlee.jpg";
-
 import { motion } from "framer-motion";
 import Registereform from "./registereform";
 import { Link } from "react-router-dom";
+import Endpoint from "../endpoint";
+import axios from "axios";
 
 export default function Courses() {
+  //   get data
+  const [data, setData] = useState([]);
+  const [loading, setLoading] = useState(true);
+  useEffect(() => {
+    //  const token = JSON.parse(localStorage.getItem("token"));
+    const fetchData = async () => {
+      try {
+        const response = await axios.get(Endpoint + "v1/course/all", {
+          //  headers: { Authorization: `Bearer ${token}` },
+        });
+        setData(response.data.item);
+        console.log(data);
+      } catch (error) {
+        console.error("Error:", error);
+      } finally {
+        setLoading(false);
+      }
+    };
+    fetchData();
+    //  const tokenn = setInterval(fetchData, 1000); // Every 5 seconds?
+    //  fetchData(); // Initial request
+    //  return () => {
+    //    // Don't forget to cleanup the interval when this effect is cleaned up.
+    //    clearInterval(tokenn);
+    //  };
+  }, []);
   return (
     <Container>
       {/* <Wave/> */}
@@ -25,111 +46,33 @@ export default function Courses() {
           Amaliy Ko'nikmalar bilan ta'minlaydi !
         </motion.h2>
       </div>
-      <div className="cards">
-        <motion.div className="card" whileHover={{ scale: 1.05 }}>
-          <img src={yandex} alt="a" className="cardImage" />
-          <div className="summary">
-            <h1>Yandex Direct</h1>
-            <p>
-              O'rta Osiyo davlatlarida 61.04% bozor ulushiga ega Yandexning
-              Monetizatsiya tizimida reklama kompaniyalarini yarating !
-            </p>
-            <motion.button
-              whileHover={{ scale: 1.1 }}
-              whileTap={{ scale: 0.95 }}
-              // onClick={toggleModal}
-            >
-              <Link to={"/videPage"}>subscribe</Link>
-            </motion.button>
-          </div>
-        </motion.div>
-        <motion.div className="card" whileHover={{ scale: 1.05 }}>
-          <img src={smm} alt="a" className="cardImage" />
-          <div className="summary">
-            <h1>Smm</h1>
-            <p>
-              SMM "STEREOTIP"lariga yechim ! Ijtimoiy Media Marketingni
-              boshlang'ich darajadan bosqichma-bosqich o'rganing !
-            </p>
-            <motion.button
-              whileHover={{ scale: 1.1 }}
-              whileTap={{ scale: 0.95 }}
-              // onClick={toggleModal}
-            >
-              subscribe
-            </motion.button>
-          </div>
-        </motion.div>
-        <motion.div className="card" whileHover={{ scale: 1.05 }}>
-          <img src={google} alt="a" className="cardImage" />
-          <div className="summary">
-            <h1>Google Ads</h1>
-            <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat
-              aspernatur ullam expedita tempora quod porro magni odio error,
-              doloribus iure!
-            </p>
-            <motion.button
-              whileHover={{ scale: 1.1 }}
-              whileTap={{ scale: 0.95 }}
-              // onClick={toggleModal}
-            >
-              subscribe
-            </motion.button>
-          </div>
-        </motion.div>
-        <motion.div className="card" whileHover={{ scale: 1.05 }}>
-          <img src={yandexx} alt="a" className="cardImage" />
-          <div className="summary">
-            <h1>Yandex Direct</h1>
-            <p>
-              O'rta Osiyo davlatlarida 61.04% bozor ulushiga ega Yandexning
-              Monetizatsiya tizimida reklama kompaniyalarini yarating !
-            </p>
-            <motion.button
-              whileHover={{ scale: 1.1 }}
-              whileTap={{ scale: 0.95 }}
-              // onClick={toggleModal}
-            >
-              subscribe
-            </motion.button>
-          </div>
-        </motion.div>
-        <motion.div className="card" whileHover={{ scale: 1.05 }}>
-          <img src={smmm} alt="a" className="cardImage" />
-          <div className="summary">
-            <h1>SMM</h1>
-            <p>
-              SMM "STEREOTIP"lariga yechim ! Ijtimoiy Media Marketingni
-              boshlang'ich darajadan bosqichma-bosqich o'rganing !
-            </p>
-            <motion.button
-              whileHover={{ scale: 1.1 }}
-              whileTap={{ scale: 0.95 }}
-              // onClick={toggleModal}
-            >
-              subscribe
-            </motion.button>
-          </div>
-        </motion.div>
-        <motion.div className="card" whileHover={{ scale: 1.05 }}>
-          <img src={googlee} alt="a" className="cardImage" />
-          <div className="summary">
-            <h1>Google Ads</h1>
-            <p>
-              Mahsulot Mijozni emas, balki Mijoz Mahsulotni qidiradigan
-              Googlening Eng Katta Monetizatsiya tizimida reklama
-              kompaniyalarini yarating !
-            </p>
-            <motion.button
-              whileHover={{ scale: 1.1 }}
-              whileTap={{ scale: 0.95 }}
-            >
-              subscribe
-            </motion.button>
-          </div>
-        </motion.div>
-      </div>
+      {loading ? (
+        <p>Loading data...</p>
+      ) : data ? (
+        <>
+          {data.map((item) => (
+            <div className="cards" key={item.id}>
+              <motion.div className="card" whileHover={{ scale: 1.05 }}>
+                <img src={`${Endpoint}photo/show/${item.coverPhotoId}`} alt="a" className="cardImage" />
+                <div className="summary">
+                  <h1>{item.courseName}</h1>
+                  <p>
+                    {item.description}
+                  </p>
+                  <motion.button
+                    whileHover={{ scale: 1.1 }}
+                    whileTap={{ scale: 0.95 }}
+                  >
+                    <Link to={"/videPage"}>subscribe</Link>
+                  </motion.button>
+                </div>
+              </motion.div>
+            </div>
+          ))}
+        </>
+      ) : (
+        <p>No data available.</p>
+      )}
     </Container>
   );
 }

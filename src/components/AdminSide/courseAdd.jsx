@@ -10,7 +10,7 @@ export default function CourseAdd() {
   const [description, setDescription] = useState("");
 
   const submitHandler = (e) => {
-    // e.preventDefault();
+    e.preventDefault();
     const token = JSON.parse(localStorage.getItem("token"));
     const postData = {
       courseName,
@@ -60,6 +60,12 @@ export default function CourseAdd() {
     };
 
     fetchData();
+    const tokenn = setInterval(fetchData, 1000); // Every 5 seconds?
+    fetchData(); // Initial request
+    return () => {
+      // Don't forget to cleanup the interval when this effect is cleaned up.
+      clearInterval(tokenn);
+    };
   }, []);
 
   console.log(data.item);
@@ -79,7 +85,7 @@ export default function CourseAdd() {
       },
       emptyData,
     );
-    window.location.reload(false);
+    // window.location.reload(false);
 
     }
     // ======================================================================
@@ -97,7 +103,7 @@ export default function CourseAdd() {
           headers: { Authorization: `Bearer ${token}` },
         },
       );
-    window.location.reload(false);
+    // window.location.reload(false);
 
     };
     // if (response.data.id) {

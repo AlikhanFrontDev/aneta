@@ -124,6 +124,12 @@ export default function User() {
     };
 
     fetchData();
+    const tokenn = setInterval(fetchData, 1000); // Every 5 seconds?
+    fetchData(); // Initial request
+    return () => {
+      // Don't forget to cleanup the interval when this effect is cleaned up.
+      clearInterval(tokenn);
+    };
   }, []);
   // toggle 1
   const [modal1, setModal1] = useState(false);

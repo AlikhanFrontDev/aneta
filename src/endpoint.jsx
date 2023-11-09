@@ -1,2 +1,2 @@
-const Endpoint = "https://80.89.239.196:9898/api/"
+const Endpoint = "https://prodgtlservice.uz/api/"
 export default Endpoint;
