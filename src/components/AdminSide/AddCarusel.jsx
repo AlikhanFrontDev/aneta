@@ -107,7 +107,7 @@ export default function AddCarusel() {
             {data.map((data) => (
               <div className="image">
                 <img
-                  src={`http://80.89.239.196:9898/api/photo/show/${data.photoId}`}
+                  src={`https://prodgtlservice.uz/api/photo/show/${data.photoId}`}
                   alt=""
                 />
                 <div

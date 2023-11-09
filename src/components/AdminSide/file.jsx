@@ -227,7 +227,7 @@ export default function File() {
                       <div className="detailes">
                         <a
                           className="id"
-                          href={`http://80.89.239.196:9898/api/file/download/${topic.fileId}`}
+                          href={`https://prodgtlservice.uz/api/file/download/${topic.fileId}`}
                         >
                           file
                         </a>

@@ -136,7 +136,7 @@ export default function CourseAdd() {
                   <td>{data.id}</td>
                   <td>{data.courseName}</td>
                   <img
-                    src={`http://80.89.239.196:9898/api/photo/show/${data.coverPhotoId}`}
+                    src={`https://prodgtlservice.uz/api/photo/show/${data.coverPhotoId}`}
                   />
                   {!data.published ? (
                     <td>not published</td>

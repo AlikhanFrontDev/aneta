@@ -100,7 +100,7 @@ export default function CoverAdd() {
               {data.map((data) => (
                 <tr key={data.id} value={data.id}>
                   <td>{data.id}</td>
-                  <img src={`http://80.89.239.196:9898/api/photo/show/${data.coverPhotoId}`}/>
+                  <img src={`https://prodgtlservice.uz/api/photo/show/${data.coverPhotoId}`}/>
                   <td>{data.courseName}</td>
                 </tr>
               ))}
