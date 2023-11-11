@@ -206,7 +206,7 @@ export default function AddLesson() {
                         </video> */}
                           <div className="flex">
                             <video
-                              src={`https://prodgtlservice.uz/api/v1/video/stream/${topic.videoId}`}
+                              src={`https://prodgtlservice.uz/api/v2/video/stream/${topic.videoId}`}
                               controls
                             />
                             <td className="addVideo" onClick={toggleModal2}>

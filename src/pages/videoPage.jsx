@@ -16,65 +16,19 @@ import GuestNan from "../components/guestnav";
 import Endpoint from "../endpoint";
 import axios from "axios";
 
-
-function TabPanel(props) {
-  const { children, value, index, ...other } = props;
-  return (
-    <div
-      role="tabpanel"
-      hidden={value !== index}
-      id={`vertical-tabpanel-${index}`}
-      aria-labelledby={`vertical-tab-${index}`}
-      {...other}
-    >
-      {value === index && (
-        <Box sx={{ p: 3 }}>
-          <Typography>{children}</Typography>
-        </Box>
-      )}
-    </div>
-  );
-}
-
-TabPanel.propTypes = {
-  children: PropTypes.node,
-  index: PropTypes.number.isRequired,
-  value: PropTypes.number.isRequired,
-};
-
-function a11yProps(index) {
-  return {
-    id: `vertical-tab-${index}`,
-    "aria-controls": `vertical-tabpanel-${index}`,
-  };
-}
-
 export default function VideoPage() {
-  const [value, setValue] = React.useState(0);
-
-  const [expanded, setExpanded] = React.useState(false);
-
-  const handleChange1 = (panel) => (event, isExpanded) => {
-    setExpanded(isExpanded ? panel : false);
-  };
-
-  const handleChange = (event, newValue) => {
-    setValue(newValue);
-  };
-
   // get data
-  const [data, setData] = useState([]);
+  const [data, setData] = useState(null);
   const [loading, setLoading] = useState(true); // Add a loading state
   useEffect(() => {
     const token = JSON.parse(localStorage.getItem("token"));
     const fetchData = async () => {
       try {
-        const response = await axios.get(Endpoint + "v1/course/one/14", {
+        const response = await axios.get(Endpoint + "v1/course/one/36", {
           headers: { Authorization: `Bearer ${token}` },
         });
 
-        setData(response);
-        console.log(data)
+        setData(response.data);
       } catch (error) {
         console.error("Error:", error);
       } finally {
@@ -84,13 +38,37 @@ export default function VideoPage() {
     };
 
     fetchData();
-    const tokenn = setInterval(fetchData, 1000); // Every 5 seconds?
-    fetchData(); // Initial request
-    return () => {
-      // Don't forget to cleanup the interval when this effect is cleaned up.
-      clearInterval(tokenn);
-    };
+    // const tokenn = setInterval(fetchData, 1000); // Every 5 seconds?
+    // fetchData(); // Initial request
+    // return () => {
+    //   // Don't forget to cleanup the interval when this effect is cleaned up.
+    //   clearInterval(tokenn);
+    // };
   }, []);
+
+  const [lesson, setLessonData] = useState([]);
+  const [loading1, setLoading1] = useState(true);
+
+  const lessonGetHandler = (id) => {
+    const token = JSON.parse(localStorage.getItem("token"));
+    axios
+      .get(Endpoint + `v1/lesson/one/${id}`, {
+        headers: { Authorization: `Bearer ${token}` },
+      })
+      .then((response) => {
+        setLoading1(false);
+        setLessonData(response.data);
+        console.log(lesson.item.name);
+      })
+      .catch((error) => {
+        console.error("Error fetching tab data:", error);
+      });
+  };
+  const [expanded, setExpanded] = React.useState(false);
+
+  const handleChange1 = (panel) => (event, isExpanded) => {
+    setExpanded(isExpanded ? panel : false);
+  };
 
   return (
     // <div className="container">
@@ -99,136 +77,86 @@ export default function VideoPage() {
         <GuestNan />
       </div>
       <img src={layer} alt="" className="layer" />
-      {/* <div className="screen">
+      <div className="screen">
         {loading ? (
           <p>Loading data...</p>
         ) : data ? (
           <>
-            {data.map((data) => (
+            {data ? (
               <div key={data.id}>
                 <div className="accordion">
                   <h1 className="courseName">{data.courseName}</h1>
-                  <Accordion
-                    className="top"
-                    expanded={expanded === "panel1"}
-                    onChange={handleChange1("panel1")}
-                  >
-                    <AccordionSummary
-                      expandIcon={<ExpandMoreIcon />}
-                      aria-controls="panel1bh-content"
-                      id="panel1bh-header"
+                  {data.item.topicDtoList.map((topic) => (
+                    <Accordion
+                      className="top"
+                      expanded={expanded === `panel1${topic.id}`}
+                      onChange={handleChange1(`panel1${topic.id}`)}
                     >
-                      <Typography
-                        sx={{ width: "100%", flexShrink: 0 }}
-                        className="summary"
+                      <AccordionSummary
+                        expandIcon={<ExpandMoreIcon />}
+                        aria-controls={`panel1bh-content${topic.id}`}
+                        id={`panel${topic.id}bh-header`}
                       >
-                        1.Example module
-                      </Typography>
-                    </AccordionSummary>
-                    <AccordionDetails style={{ padding: 0 }}>
-                      <Tabs
-                        sx={{
-                          "& button.Mui-selected": {
-                            color: "white",
-                            // fontStyle: "italic",
-                            backgroundColor: "#111",
-                          },
-                          "& button": {
-                            backgroundColor: "#000",
-                            // padding: "0 10px",
-                            color: "#fff",
-                            height: "15px",
-                            textDecoration: "underline",
-                          },
-                          backgroundColor: "#000",
-                          width: "300px",
-                          // borderRadius: "12px",
-                        }}
-                        orientation="vertical"
-                        variant="scrollable"
-                        value={value}
-                        onChange={handleChange}
-                        aria-label="Vertical tabs example"
-                        TabIndicatorProps={{ sx: { backgroundColor: "white" } }}
-                      >
-                        <Tab
-                          sx={{ fontSize: "10px" }}
-                          label="Example Learn"
-                          {...a11yProps(0)}
-                        />
-                        <Tab
-                          sx={{ fontSize: "10px" }}
-                          label="Example Learn"
-                          {...a11yProps(1)}
-                        />
-                        <Tab
-                          sx={{ fontSize: "10px" }}
-                          label="Example Learn"
-                          {...a11yProps(2)}
-                        />
-                        <Tab
-                          sx={{ fontSize: "10px" }}
-                          label="Example Learn"
-                          {...a11yProps(3)}
-                        />
-                      </Tabs>
-                    </AccordionDetails>
-                  </Accordion>
+                        <Typography
+                          sx={{ width: "100%", flexShrink: 0 }}
+                          className="summary"
+                        >
+                          {topic.name}
+                        </Typography>
+                      </AccordionSummary>
+                      <AccordionDetails style={{ padding: 0 }}>
+                        {topic.lessonsList.map((item) => (
+                          <ul key={item.id}>
+                            <li
+                              value={item.id}
+                              onClick={() => lessonGetHandler(item.id)}
+                            >
+                              {item.name}
+                            </li>
+                          </ul>
+                        ))}
+                      </AccordionDetails>
+                    </Accordion>
+                  ))}
                 </div>
-
-                <div className="box">
-                  <Box
-                    sx={{
-                      flexGrow: 1,
-                      // bgcolor: "background.paper",
-                      // display: "flex",
-                      // height: "85vh",
-                      // width: "100%",
-                      // position: "fixed",
-                    }}
-                  >
-                    <TabPanel value={value} index={0} className="text">
-                      <video
-                        className="courceVideo"
-                        // src="http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4"
-                        controls
-                      ></video>
-
-                      <p className="description">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                        Itaque doloribus quod quasi esse beatae quaerat, sunt
-                        debitis mollitia molestiae, delectus voluptatibus?
-                        Obcaecati voluptatem saepe quidem est modi vitae ab, hic
-                        ducimus magni quaerat quia autem debitis, natus iste
-                        consequuntur necessitatibus! Lorem ipsum dolor sit amet
-                        consectetur adipisicing elit. Itaque doloribus quod
-                        quasi esse beatae quaerat, sunt debitis mollitia
-                        molestiae, delectus voluptatibus? Obcaecati voluptatem
-                        saepe quidem est modi vitae ab, hic ducimus magni
-                        quaerat quia autem debitis, natus iste consequuntur
-                        necessitatibus! Lorem ipsum dolor sit amet consectetur
-                        adipisicing elit. Itaque doloribus quod quasi esse
-                        beatae quaerat, sunt debitis mollitia molestiae,
-                        delectus voluptatibus? Obcaecati voluptatem saepe quidem
-                        est modi vitae ab, hic ducimus magni quaerat quia autem
-                        debitis, natus iste consequuntur necessitatibus!
-                      </p>
-                    </TabPanel>
-                  </Box>
-                </div>
+                {loading1 ? (
+                  <p>Loading data...</p>
+                ) : lesson ? (
+                  <div className="box">
+                    {!lesson.item.guessUser ? (
+                      <p>ro'yxatdan o'ting</p>
+                    ): !lesson.item.premium ? (
+                      <p>kursni sotib oling</p>
+                    ) : (
+                      <video className="video" src={`https://prodgtlservice.uz/api/v2/video/stream/${lesson.item.videoId}`}controls></video>
+                    ) }
+                    <p>{lesson.item.name}</p>
+                  </div>
+                ) : (
+                  <div className="box">
+                    <p>no data</p>
+                  </div>
+                )}
               </div>
-            ))}
+            ) : (
+              <p>No data available.</p>
+            )}
           </>
         ) : (
           <p>No data available.</p>
         )}
-      </div> */}
+      </div>
     </Container>
     // </div>
   );
 }
 
 const Container = styled.div`
+  .video {
+    height: 80vh;
+    width: 100%;
+    background-color: black;
+  }
   .layer {
     position: fixed;
     z-index: -1;
@@ -245,13 +173,12 @@ const Container = styled.div`
   height: 120vh;
   /* background-color: red; */
   .box {
-    /* background-color: green; */
+    background-color: green;
+    height: 200px;
     width: 70%;
-    margin-top: 10%;
-    margin-left: 27%;
-    /* position: absolute;
-    left: 28%;
-    top: 15%; */
+    position: absolute;
+    left: 25%;
+    top: 15%;
     z-index: 2;
     /* border-radius: 12px; */
   }

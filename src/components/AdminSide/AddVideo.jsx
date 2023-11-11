@@ -55,7 +55,7 @@ export default function AddVideo() {
     const token = JSON.parse(localStorage.getItem("token"));
     const fetchData = async () => {
       try {
-        const response = await axios.get(Endpoint + "v1/course/all", {
+        const response = await axios.get(Endpoint + "v1/course/all-with-lessons", {
           headers: { Authorization: `Bearer ${token}` },
         });
 
@@ -100,7 +100,7 @@ export default function AddVideo() {
               {data.item.map((data) => (
                 <tr key={data.id} value={data.id}>
                   <td>{data.id}</td>
-                  <img src={`https://prodgtlservice.uz/api/photo/show/${data.coverPhotoId}`}/>
+                  <img src={`https://prodgtlservice.uz/api/v2/video/stream/${data.videoId}`}/>
                   <td>{data.courseName}</td>
                 </tr>
               ))}
