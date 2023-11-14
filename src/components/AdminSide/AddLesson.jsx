@@ -52,6 +52,7 @@ export default function AddLesson() {
   const [data, setData] = useState([]);
   // const [topicDtoList, setTopicDtoList] = useState([]);
   const [loading, setLoading] = useState(true); // Add a loading state
+  const [loading1, setLoading1] = useState(false); // Add a loading state
   useEffect(() => {
     const token = JSON.parse(localStorage.getItem("token"));
     const fetchData = async () => {
@@ -112,6 +113,7 @@ export default function AddLesson() {
   };
 
   const onUpload = (e) => {
+    setLoading1(true)
     e.preventDefault();
     const token = JSON.parse(localStorage.getItem("token"));
     if (video) {
@@ -127,6 +129,7 @@ export default function AddLesson() {
           },
         })
         .then((response) => {
+          setLoading1(false)
           console.log("File uploaded successfully:", response.data);
         })
         .catch((error) => {
@@ -244,6 +247,8 @@ export default function AddLesson() {
             <div className="modal-content2">
               <div className="form">
                 <form>
+                  <div className="x" onClick={toggleModal2}>X</div>
+                  {loading1 ? (<p className="loading">Video yuklanmoqda ... <br /> Saxifadan chiqib ketmang ! </p>) : (<></>)}
                   <div className="topiccname">
                     <p>
                       {names}
@@ -302,6 +307,13 @@ export default function AddLesson() {
 }
 
 const Container = styled.div`
+  .x {
+    text-align: end;
+    cursor: pointer;
+  }
+.loading{
+  color: green;
+}
 .flex{
   display: flex;
   align-items: center;

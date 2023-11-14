@@ -116,9 +116,8 @@ export default function AddTopic() {
           }
         );
 
-
         setData(response.data.item);
-        
+
         const { item } = response.data;
         // const topicList = item[0].topicDtoList;
         // setTopicDtoList(topicList);
@@ -128,7 +127,6 @@ export default function AddTopic() {
         // Set loading to false whether the request succeeds or fails
         setLoading(false);
       }
-      
     };
     fetchData();
     const tokenn = setInterval(fetchData, 1000); // Every 5 seconds?
@@ -195,31 +193,6 @@ export default function AddTopic() {
                         <td className="addVideo" onClick={toggleModal2}>
                           <p onClick={() => topicID(topic.id)}>Add Lesson</p>
                         </td>
-
-                        {modal2 && (
-                          <div>
-                            <div className="modal2">
-                              <div
-                                onClick={toggleModal2}
-                                className="overlay2"
-                              ></div>
-                              <div className="modal-content1">
-                                <div className="form">
-                                  <form onSubmit={submitHandler2}>
-                                    {topicId} - id dagi Modul uchun mavzu
-                                    qo'shish
-                                    <input
-                                      type="text"
-                                      onChange={(e) => setName(e.target.value)}
-                                      placeholder="mavzu"
-                                    />
-                                    <button>Save</button>
-                                  </form>
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-                        )}
                         <td className="delete">
                           <p onClick={() => deleteRequestHandler(topic.id)}>
                             delete
@@ -250,6 +223,9 @@ export default function AddTopic() {
             <div className="modal-content1">
               <h1>{messages}</h1>
               <div className="form">
+                <div className="x" onClick={toggleModal1}>
+                  X
+                </div>
                 <form onSubmit={submitHandler}>
                   {loading ? (
                     <p>Loading data...</p>
@@ -277,11 +253,37 @@ export default function AddTopic() {
           </div>
         </div>
       )}
+      {modal2 && (
+        <div>
+          <div className="modal1">
+            <div onClick={toggleModal2} className="overlay1"></div>
+            <div className="modal-content1">
+              <div className="form">
+                <div className="x" onClick={toggleModal2}>X</div>
+                <form onSubmit={submitHandler2}>
+                  {topicId} - id dagi Modul uchun mavzu qo'shish
+                  <input
+                    type="text"
+                    onChange={(e) => setName(e.target.value)}
+                    placeholder="mavzu"
+                  />
+                  <button>Save</button>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
     </Container>
   );
 }
 
 const Container = styled.div`
+
+  .x {
+    text-align: end;
+    cursor: pointer;
+  }
   select {
     padding: 10px 20px;
     border: none;
@@ -304,8 +306,10 @@ const Container = styled.div`
   }
   .top1 {
     background-color: black;
+    /* z-index: -2; */
   }
   .detailes {
+    /* z-index: -1; */
     width: 60vw;
     display: flex;
     align-items: center;

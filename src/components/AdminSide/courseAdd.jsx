@@ -8,6 +8,7 @@ import axios from "axios";
 export default function CourseAdd() {
   const [courseName, setCourseName] = useState("");
   const [description, setDescription] = useState("");
+  const [mes, setMes] = useState(null);
 
   const submitHandler = (e) => {
     e.preventDefault();
@@ -24,10 +25,16 @@ export default function CourseAdd() {
 
       .then((res) => {
         console.log(res);
+        setMes(res.data.success)
       })
       .catch((err) => {
         console.log(err);
       });
+      if (mes) {
+        document.body.classList.remove("active-modal");
+      } else {
+        document.body.classList.add("active-modal");
+      }
   };
   const [modal1, setModal1] = useState(false);
   if (modal1) {
@@ -173,6 +180,7 @@ export default function CourseAdd() {
             <div onClick={toggleModal1} className="overlay1"></div>
             <div className="modal-content1">
               <div className="form">
+              <div className="x" onClick={toggleModal1}>X</div>
                 <form onSubmit={submitHandler}>
                   <input
                     type="text"
@@ -196,6 +204,10 @@ export default function CourseAdd() {
 }
 
 const Container = styled.div`
+.x{
+  text-align: end;
+  cursor: pointer;
+}
   .edit {
     background-color: #000;
   }

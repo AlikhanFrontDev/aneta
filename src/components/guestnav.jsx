@@ -11,18 +11,21 @@ export default function GuestNan() {
   const [data, setData] = useState(null);
 
   const users = JSON.parse(localStorage.getItem("token"));
-  if (users) {
-    const atts = jwt_decode(users);
-    console.log(atts);
-    const atributs = atts;
-    const roleName = atributs;
-    console.log(roleName.role);
-    const userrole = setData(roleName.isAdmin);
-  }else{
-    console.log("no token")
-  }
-
-
+  useEffect(() => {
+    const getUserInfo = (() => {
+      if (users) {
+        const atts = jwt_decode(users);
+        // console.log(atts);
+        const atributs = atts;
+        const roleName = atributs;
+        // console.log(roleName.role);
+        const userrole = setData(roleName.isAdmin);
+      }else{
+        console.log("no token")
+      }
+    })
+    getUserInfo();
+}, []);
   return (
     <Nav>
       <div>

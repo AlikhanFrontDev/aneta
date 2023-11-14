@@ -129,6 +129,7 @@ export default function AddCarusel() {
             <div onClick={toggleModal1} className="overlay1"></div>
             <div className="modal-content1">
               <div className="form">
+                <div className="x" onClick={toggleModal1}>X</div>
                 <form>
                   <input type="file" onChange={onFileChange} />
                   <button onClick={onUpload}>Save</button>
@@ -143,6 +144,10 @@ export default function AddCarusel() {
 }
 
 const Container = styled.div`
+.x{
+  text-align: end;
+  cursor: pointer;
+}
   .form {
     width: 40%;
     margin: 10% 30%;

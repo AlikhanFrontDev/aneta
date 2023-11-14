@@ -285,6 +285,7 @@ export default function File() {
             <div className="modal-content1">
               <div className="form">
                 <form onSubmit={submitHandler}>
+                <div className="x" onClick={toggleModal1}>X</div>
                   <input
                     type="text"
                     onChange={(e) => setName(e.target.value)}
@@ -303,6 +304,10 @@ export default function File() {
 }
 
 const Container = styled.div`
+.x{
+  text-align: end;
+  cursor: pointer;
+}
   .buttons {
     display: flex;
     justify-content: space-between;

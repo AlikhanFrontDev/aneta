@@ -116,6 +116,7 @@ export default function CoverAdd() {
             <div onClick={toggleModal1} className="overlay1"></div>
             <div className="modal-content1">
               <div className="form">
+                <div className="x" onClick={toggleModal1}>X</div>
                 <form 
                 // onSubmit={submitHandler}
                 >
@@ -149,6 +150,10 @@ export default function CoverAdd() {
 }
 
 const Container = styled.div`
+.x{
+  text-align: end;
+  cursor: pointer;
+}
   img{
     height: 100px;
     background-color: red;

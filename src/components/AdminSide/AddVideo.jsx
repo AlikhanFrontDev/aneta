@@ -9,19 +9,20 @@ export default function AddVideo() {
   const [courseName, setCourseName] = useState("");
 
   const [file, setSelectedFile] = useState(null);
-
+  const [loading1, setLoading1] = useState(false);
   const onFileChange = (event) => {
     setSelectedFile(event.target.files[0]);
   };
 
   const onUpload = (e) => {
+    setLoading(true)
+
     e.preventDefault();
     const token = JSON.parse(localStorage.getItem("token"));
     if (file) {
       const formData = new FormData();
       formData.append('file', file);
 
-      // Replace 'your-upload-api-endpoint' with the actual API endpoint to upload the file.
       axios.post(Endpoint + `v1/course/add-cover/${courseName}`, formData, {
         headers: {
             Authorization: `Bearer ${token}`,
@@ -30,8 +31,10 @@ export default function AddVideo() {
       })
       .then(response => {
         console.log('File uploaded successfully:', response.data);
+        setLoading(false)
       })
       .catch(error => {
+        setLoading(false)
         console.error('Error uploading file:', error);
       });
     }
@@ -116,6 +119,7 @@ export default function AddVideo() {
             <div onClick={toggleModal1} className="overlay1"></div>
             <div className="modal-content1">
               <div className="form">
+                <div><h1>Video yuklanmoqda ... </h1></div>
                 <form 
                 // onSubmit={submitHandler}
                 >
