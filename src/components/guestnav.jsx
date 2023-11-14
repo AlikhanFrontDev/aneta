@@ -8,16 +8,20 @@ import background from "../assets/img/background.jpg";
 import jwt_decode from "jwt-decode";
 
 export default function GuestNan() {
+  const [data, setData] = useState(null);
+
   const users = JSON.parse(localStorage.getItem("token"));
-  const atts = jwt_decode(users);
+  if (users) {
+    const atts = jwt_decode(users);
+    console.log(atts);
+    const atributs = atts;
+    const roleName = atributs;
+    console.log(roleName.role);
+    const userrole = setData(roleName.isAdmin);
+  }else{
+    console.log("no token")
+  }
 
-  console.log(atts);
-  const atributs = atts;
-  const roleName = atributs;
-  console.log(roleName.role);
-  const userrole = roleName.isAdmin;
-
-  console.log(userrole);
 
   return (
     <Nav>
@@ -26,14 +30,14 @@ export default function GuestNan() {
           <img src={logo} alt="Logo" className="logo" />
         </motion.div>
       </div>
-        {userrole ? (
-          <ul className="links">
-            <li>Foydali linklar</li>
-            <li>Foydali fayllar</li>
-          </ul>
-        ) : (
-          ""
-        )}
+      {data ? (
+        <ul className="links">
+          <li>Foydali linklar</li>
+          <li>Foydali fayllar</li>
+        </ul>
+      ) : (
+        ""
+      )}
     </Nav>
   );
 }
@@ -55,7 +59,7 @@ const Nav = styled.nav`
     width: 400px;
     justify-content: space-around;
   }
-  .links li{
+  .links li {
     color: #fff;
     cursor: pointer;
   }
