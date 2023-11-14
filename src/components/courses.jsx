@@ -50,25 +50,29 @@ export default function Courses() {
         <p>Loading data...</p>
       ) : data ? (
         <>
-          {data.map((item) => (
-            <div className="cards" key={item.id}>
+          <div className="cards">
+            {data.map((item) => (
               <motion.div className="card" whileHover={{ scale: 1.05 }}>
-                <img src={`${Endpoint}photo/show/${item.coverPhotoId}`} alt="a" className="cardImage" />
+                <img
+                  src={`${Endpoint}photo/show/${item.coverPhotoId}`}
+                  alt="a"
+                  className="cardImage"
+                />
                 <div className="summary">
                   <h1>{item.courseName}</h1>
-                  <p>
-                    {item.description}
-                  </p>
+                  <p>{item.description}</p>
                   <motion.button
                     whileHover={{ scale: 1.1 }}
                     whileTap={{ scale: 0.95 }}
                   >
-                    <Link className="link" to={`/videPage/${item.id}`}>Boshlash</Link>
+                    <Link className="link" to={`/videPage/${item.id}`}>
+                      Boshlash
+                    </Link>
                   </motion.button>
                 </div>
               </motion.div>
-            </div>
-          ))}
+            ))}
+          </div>
         </>
       ) : (
         <p>No data available.</p>
@@ -78,7 +82,7 @@ export default function Courses() {
 }
 
 const Container = styled.div`
-  .link{
+  .link {
     color: #fff;
     text-decoration: none;
   }
@@ -98,7 +102,7 @@ const Container = styled.div`
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-    gap: 20px;
+    row-gap: 20px;
   }
   .cardImage {
     width: 100%;
