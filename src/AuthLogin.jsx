@@ -14,7 +14,7 @@ const login = ( username, password) => {
         .then((response) => {
             if (response) {
                 localStorage.setItem("token", JSON.stringify(response.data.item.token));
-                // localStorage.setItem("userCurrentRole", JSON.stringify(response.data.role));
+                // localStorage.setItem("premium", JSON.stringify(response.data.userInformation.premuim));
                 // console.log(response)
             }
             return response;

@@ -5,8 +5,20 @@ import { motion } from "framer-motion";
 import "../toggle.css";
 
 import background from "../assets/img/background.jpg";
+import jwt_decode from "jwt-decode";
 
 export default function GuestNan() {
+  const users = JSON.parse(localStorage.getItem("token"));
+  const atts = jwt_decode(users);
+
+  console.log(atts);
+  const atributs = atts;
+  const roleName = atributs;
+  console.log(roleName.role);
+  const userrole = roleName.isAdmin;
+
+  console.log(userrole);
+
   return (
     <Nav>
       <div>
@@ -14,13 +26,14 @@ export default function GuestNan() {
           <img src={logo} alt="Logo" className="logo" />
         </motion.div>
       </div>
-        <motion.h1
-          className="user"
-          whileHover={{ scale: 1.1 }}
-          whileTap={{ scale: 0.95 }}
-        >
-          Platformaga kirish
-        </motion.h1>
+        {userrole ? (
+          <ul className="links">
+            <li>Foydali linklar</li>
+            <li>Foydali fayllar</li>
+          </ul>
+        ) : (
+          ""
+        )}
     </Nav>
   );
 }
@@ -36,26 +49,18 @@ const Nav = styled.nav`
   align-items: center;
   width: 100%;
   z-index: 1;
-  .user{
-    color: #fff;
-    background-color: red;
-    /* height: 50px; */
-    width: 300px;
-    padding: 10px;
-    text-align: center;
-    font-size: 25px;
-    border-radius: 12px;
-}
-  .logo {
-    height: 270px;
+  .links {
+    display: flex;
+    list-style: none;
+    width: 400px;
+    justify-content: space-around;
   }
-  .logoContainer {
-    /* background-image: linear-gradient(
-      144.39deg,
-      #8D99AE -278.56%,
-      #EDF2F4 -78.47%,
-      #000000 91.61%
-    ); */
+  .links li{
+    color: #fff;
+    cursor: pointer;
+  }
+  .logo {
+    height: 150px;
   }
 
   @media only screen and (max-width: 768px) {

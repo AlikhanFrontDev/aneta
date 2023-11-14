@@ -63,7 +63,7 @@ export default function Courses() {
                     whileHover={{ scale: 1.1 }}
                     whileTap={{ scale: 0.95 }}
                   >
-                    <Link to={"/videPage"}>subscribe</Link>
+                    <Link className="link" to={`/videPage/${item.id}`}>Boshlash</Link>
                   </motion.button>
                 </div>
               </motion.div>
@@ -78,6 +78,10 @@ export default function Courses() {
 }
 
 const Container = styled.div`
+  .link{
+    color: #fff;
+    text-decoration: none;
+  }
   background-color: #181b21;
   width: 100%;
   padding-bottom: 50px;

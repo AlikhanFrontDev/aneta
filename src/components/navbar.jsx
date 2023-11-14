@@ -5,7 +5,6 @@ import { motion } from "framer-motion";
 // import "../toggle.css";
 import { Link } from "react-router-dom";
 
-
 import background from "../assets/img/background.jpg";
 import Registereform from "./registereform";
 
@@ -30,33 +29,19 @@ export default function Navbar() {
       </div>
       <ul className="ul">
         <motion.li
-          className="li"
-          whileHover={{ scale: 1.1 }}
-          whileTap={{ scale: 0.95 }}
-        >
-          All courses
-        </motion.li>
-        <motion.li
-          className="li"
-          whileHover={{ scale: 1.1 }}
-          whileTap={{ scale: 0.95 }}
-        >
-          About
-        </motion.li>
-        <motion.li
-          className="li"
+          
           whileHover={{ scale: 1.1 }}
           whileTap={{ scale: 0.95 }}
           // onClick={toggleModal}
         >
-          Sign in
+          <Link className="li" to={"/register"}>Sing Up</Link>
         </motion.li>
         <motion.li
-          className="li"
+          
           whileHover={{ scale: 1.1 }}
           whileTap={{ scale: 0.95 }}
         >
-            <Link to={"/loginPage"}>Sing In</Link>
+          <Link className="li" to={"/loginPage"}>Sing In</Link>
         </motion.li>
       </ul>
     </Nav>
@@ -64,7 +49,6 @@ export default function Navbar() {
 }
 
 const Nav = styled.nav`
-
   height: 100px;
   position: static;
   top: 0;
@@ -77,17 +61,18 @@ const Nav = styled.nav`
   z-index: 1;
   .ul {
     display: flex;
-    width: 350px;
+    width: 200px;
     height: 70px;
     /* background-color: red; */
     justify-content: space-between;
     align-items: center;
     list-style: circle;
   }
-  .ul li {
+  .li {
     cursor: pointer;
     /* background-color: red; */
     color: #fff;
+    text-decoration: none;
   }
   .logo {
     height: 270px;
@@ -132,5 +117,4 @@ const Nav = styled.nav`
       /* width: 150px; */
     }
   }
-
 `;

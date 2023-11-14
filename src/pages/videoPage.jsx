@@ -1,11 +1,5 @@
 import React, { useEffect, useState } from "react";
-import PropTypes from "prop-types";
-import Tabs from "@mui/material/Tabs";
-import Tab from "@mui/material/Tab";
-import CustomTabPanel from "@mui/material/Tab";
-import Box from "@mui/material/Box";
 import styled from "styled-components";
-import Navbar from "../components/navbar";
 import Accordion from "@mui/material/Accordion";
 import AccordionDetails from "@mui/material/AccordionDetails";
 import AccordionSummary from "@mui/material/AccordionSummary";
@@ -15,20 +9,26 @@ import layer from "../assets/img/layer.png";
 import GuestNan from "../components/guestnav";
 import Endpoint from "../endpoint";
 import axios from "axios";
+import { Link, useParams } from "react-router-dom";
 
 export default function VideoPage() {
+  
+  const { idd } = useParams();
   // get data
+  const [lesson, setLessonData] = useState([]);
+
   const [data, setData] = useState(null);
   const [loading, setLoading] = useState(true); // Add a loading state
   useEffect(() => {
     const token = JSON.parse(localStorage.getItem("token"));
     const fetchData = async () => {
       try {
-        const response = await axios.get(Endpoint + "v1/course/one/36", {
+        const response = await axios.get(Endpoint + `v1/course/one/${idd}`, {
           headers: { Authorization: `Bearer ${token}` },
         });
 
         setData(response.data);
+        console.log(data.item.freeLessonId);
       } catch (error) {
         console.error("Error:", error);
       } finally {
@@ -46,7 +46,6 @@ export default function VideoPage() {
     // };
   }, []);
 
-  const [lesson, setLessonData] = useState([]);
   const [loading1, setLoading1] = useState(true);
 
   const lessonGetHandler = (id) => {
@@ -83,9 +82,9 @@ export default function VideoPage() {
         ) : data ? (
           <>
             {data ? (
-              <div key={data.id}>
+              <div key={data.item.id}>
                 <div className="accordion">
-                  <h1 className="courseName">{data.courseName}</h1>
+                  <h1 className="courseName">{data.item.courseName}</h1>
                   {data.item.topicDtoList.map((topic) => (
                     <Accordion
                       className="top"
@@ -106,8 +105,8 @@ export default function VideoPage() {
                       </AccordionSummary>
                       <AccordionDetails style={{ padding: 0 }}>
                         {topic.lessonsList.map((item) => (
-                          <ul key={item.id}>
-                            <li
+                          <ul className="lessonName" key={item.id}>
+                            <li 
                               value={item.id}
                               onClick={() => lessonGetHandler(item.id)}
                             >
@@ -119,17 +118,71 @@ export default function VideoPage() {
                     </Accordion>
                   ))}
                 </div>
+                {/*  */}
+                {!data.item.isAuthorized ? (
+                      <>
+                        <div className="lock color">
+                          <h1 className="title">
+                            Kurs uchun ro'yxatdan o'ting
+                          </h1>
+                          <Link className="button" to={"/register"}>
+                            Hoziroq boshlash
+                          </Link>
+                        </div>
+                      </>
+                    ) : !data.item.premium ? (
+                      <>
+                        <div className="lock color">
+                          <h1 className="title">Kursni boshlash uchun obuna bo'ling</h1>
+                          <Link className="button" to={"/loginPage"}>
+                            Hoziroq obuna bo'lish
+                          </Link>
+                        </div>
+                      </>
+                    ) : (
+                      <div className="lock color">
+                      <video
+                        className="video"
+                        src={`https://prodgtlservice.uz/api/v2/video/stream/${data.item.freeLessonId}`}
+                        controls
+                      ></video>
+                      </div>
+                    )}
+                {/*  */}
                 {loading1 ? (
                   <p>Loading data...</p>
                 ) : lesson ? (
-                  <div className="box">
-                    {!lesson.item.guessUser ? (
-                      <p>ro'yxatdan o'ting</p>
-                    ): !lesson.item.premium ? (
-                      <p>kursni sotib oling</p>
+                  <div>
+                    {!lesson.item.isAuthorized ? (
+                      <>
+                        <div className="lock color">
+                          <h1 className="title">
+                            Kurs uchun ro'yxatdan o'ting
+                          </h1>
+                          <Link className="button" to={"/register"}>
+                            Hoziroq boshlash
+                          </Link>
+                        </div>
+                      </>
+                    ) : !lesson.item.premium ? (
+                      <>
+                        <div className="lock color">
+                          <h1 className="title">Kursni boshlash uchun obuna bo'ling</h1>
+                          <Link className="button" to={"/loginPage"}>
+                            Hoziroq obuna bo'lish
+                          </Link>
+                        </div>
+                      </>
                     ) : (
-                      <video className="video" src={`https://prodgtlservice.uz/api/v2/video/stream/${lesson.item.videoId}`}controls></video>
-                    ) }
+                      <div className="lock color">
+                      <video
+                        className="video"
+                        src={`https://prodgtlservice.uz/api/v2/video/stream/${lesson.item.videoId}`}
+                        controls
+                        controlsList="nodownload"
+                      ></video>
+                      </div>
+                    )}
                     <p>{lesson.item.name}</p>
                   </div>
                 ) : (
@@ -152,6 +205,47 @@ export default function VideoPage() {
 }
 
 const Container = styled.div`
+.lessonName{
+  list-style: none;
+  width: 90%;
+  margin: 0 5%;
+  border-radius: 10px;
+}
+.lessonName li{
+  text-align: center;
+  padding: 5px 0;
+  color: #fff;
+  cursor: pointer;
+}
+  .color {
+    background-color: #fff !important;
+  }
+  .button {
+    padding: 10px 25px;
+    background-color: #000;
+    color: #fff;
+    border-radius: 12px;
+    margin-top: 20px;
+    cursor: pointer;
+  }
+  .icon {
+    color: #fff;
+    height: 200px;
+  }
+  .lock {
+    background-color: #ffffff5a;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 80vh;
+    color: #000;
+    width: 70%;
+    position: absolute;
+    border-radius: 12px;
+    left: 25%;
+    top: 15%;
+  }
   .video {
     height: 80vh;
     width: 100%;
@@ -233,15 +327,7 @@ const Container = styled.div`
     font-weight: 700;
     margin: 10px 0;
   }
-  .description {
-    background-color: #ffffff86;
-    border-radius: 20px;
-    color: #181b21;
-    font-weight: 600;
-    padding: 50px 0;
-    width: 95%;
-    padding: 20px;
-  }
+
   .text {
     width: 100%;
     min-height: 100%;
@@ -249,18 +335,7 @@ const Container = styled.div`
     overflow-x: hidden;
     /* background-color: #181b21; */
   }
-  .courceVideo {
-    /* width: 95%; */
-    height: 70vh;
-    border-radius: 20px;
-  }
-  /* background-color: green; */
-  /* height: 100px; */
-  /* width: 100%; */
-  /* .teb{
-    color: red;
-    background-color: #000;
-  } */
+
   .active {
     color: red;
   }

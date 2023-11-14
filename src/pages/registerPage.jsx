@@ -5,65 +5,78 @@ import { motion } from "framer-motion";
 import AuthService from "../AuthLogin";
 import jwt_decode from "jwt-decode";
 
+
 import { useNavigate } from "react-router-dom";
+import Endpoint from "../endpoint";
+import axios from "axios";
 
 
-export default function LoginPage() {
+export default function RegisterPage() {
   // const [fullName, setName] = useState();
   const [username, setSurname] = useState("");
   const [password, setPassword] = useState("");
-  // const [phoneNumber, setNumber] = useState();
-  const supernavigate = useNavigate();
-  const noUserNavigate = useNavigate();
-  const handleLogin = async (e) => {
+  const [fullName, setFullName] = useState("");
+  const [phoneNumber, setNumber] = useState("");
+  const [responce, setRes] = useState("");
+  const submitHandler = (e) => {
     e.preventDefault();
-
-
-
-    try {
-      await AuthService.login( username, password).then(() => {
-        const users = JSON.parse(localStorage.getItem("token"));
-        const atts = jwt_decode(users);
-
-        console.log(atts)
-        const atributs = atts;
-        const roleName = atributs;
-        console.log(roleName.role)
-        const userrole = roleName.isAdmin
-       
-        console.log(userrole)
-        
-        if (userrole) {
-          supernavigate("/AdminkaProDigitaladmin0202");
-        } else {
-          noUserNavigate("/");
-        }
+    const token = JSON.parse(localStorage.getItem("token"));
+    const postData = {
+        username,
+        password,
+        fullName,
+        phoneNumber,
+    };
+    console.log(postData);
+    axios
+      .post(Endpoint + `v1/auth/register`, postData, {
+        headers: { Authorization: `Bearer ${token}` },
+      })
+      .then((res) => {
+        setRes(res.data)
+        console.log(res);
+      })
+      .catch((err) => {
+        console.log(err);
       });
-    } catch (err) {
-      console.log(err);
-    }
   };
 
   return (
     <Container>
       <img src={background} alt="" className="banimage" />
+
+     { responce ?  (<div className="message"><h1>{responce.message}</h1></div>) : ("") }
       <div className="box">
-        <h1>Log in</h1>
-        <form onSubmit={handleLogin}>
+        <h1>Ro'yxatdan o'tish</h1>
+        <form onSubmit={submitHandler}>
           {/* // <input
             type="text"
             placeholder="Ism"
             onChange={(e) => setName(e.target.value)}
           /> */}
+            <input
+            required
+              type="text"
+              placeholder="Ism va Familiya"
+              onChange={(e) => setFullName(e.target.value)}
+            />
           <input
-            type="text"
-            placeholder="Username"
+          required
+            type="email"
+            placeholder="Email kiriting"
             onChange={(e) => setSurname(e.target.value)}
           />
           <input
-            type="text"
-            placeholder="Password"
+          required
+            type="password"
+            placeholder="Parol kiriting"
             onChange={(e) => setPassword(e.target.value)}
+          />
+          <input
+          required
+            type="number"
+            placeholder="Telefon raqam kiriting"
+            onChange={(e) => setNumber(e.target.value)}
           />
           {/* <input
             type="text"
@@ -80,6 +93,17 @@ export default function LoginPage() {
 }
 
 const Container = styled.div`
+    .message{
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        background-color: #ffffffa6;
+        border-radius: 20px;
+    }
+    .message h1 {
+        color: #00000084;
+        padding: 10px 30px;
+    } 
   h1 {
     color: red;
   }

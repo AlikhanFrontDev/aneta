@@ -9,6 +9,7 @@ import { Route, Routes } from "react-router";
 import AdminkaProDigitaladmin0202 from "./pages/adminkaProDigitaladmin";
 import LoginPage from "./pages/loginPage";
 import UsefulLinks from "./pages/usefulLinks";
+import RegisterPage from "./pages/registerPage";
 
 function App() {
   return (
@@ -18,9 +19,10 @@ function App() {
           <Route path="/" element={<Mainpage />} />
           <Route path="/courses" element={<CoursesPage />} />
           <Route path="/singleCourse" element={<SingleCourse />} />
-          <Route path="/videPage" element={<VideoPage />} />
+          <Route path='/videPage/:idd' element={<VideoPage />} />
           <Route path="/AdminkaProDigitaladmin0202" element={<AdminkaProDigitaladmin0202 />} />
           <Route path="/loginPage" element={<LoginPage />} />
+          <Route path="/register" element={<RegisterPage />} />
           <Route path="/links" element={<UsefulLinks />} />
         </Routes>
       </Container>
