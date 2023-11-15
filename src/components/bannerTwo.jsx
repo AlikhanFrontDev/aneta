@@ -96,7 +96,7 @@ const Container = styled.div`
     object-fit: cover;
     border-radius: 12px;
   }
-  @media only screen and (max-width: 600px) {
+  @media only screen and (max-width: 768px) {
     height: 150vh;
     .boxes {
     width: 100%;
