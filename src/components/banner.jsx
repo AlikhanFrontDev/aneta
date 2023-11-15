@@ -91,7 +91,7 @@ const Baanner = styled.div`
     margin: 0 5%;
     justify-content: space-evenly;
     align-items: center;
-    height: 47vh;
+    /* height: 47vh; */
     /* background-color: red; */
   }
   .summary {
