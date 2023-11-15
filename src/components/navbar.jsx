@@ -29,19 +29,18 @@ export default function Navbar() {
       </div>
       <ul className="ul">
         <motion.li
-          
           whileHover={{ scale: 1.1 }}
           whileTap={{ scale: 0.95 }}
           // onClick={toggleModal}
         >
-          <Link className="li" to={"/register"}>Sing Up</Link>
+          <Link className="li" to={"/register"}>
+            Sing Up
+          </Link>
         </motion.li>
-        <motion.li
-          
-          whileHover={{ scale: 1.1 }}
-          whileTap={{ scale: 0.95 }}
-        >
-          <Link className="li" to={"/loginPage"}>Sing In</Link>
+        <motion.li whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.95 }}>
+          <Link className="li" to={"/loginPage"}>
+            Sing In
+          </Link>
         </motion.li>
       </ul>
     </Nav>
@@ -86,24 +85,25 @@ const Nav = styled.nav`
     ); */
   }
 
-  @media only screen and (max-width: 768px) {
-    /* .ul{
-      display: none;
-    } */
+  @media only screen and (max-width: 600px) {
     flex-direction: column;
     justify-content: center;
     height: 20vh;
     justify-content: space-around;
-    /* background-color: red; */
     width: 100%;
     padding: 0;
+    /* background-color: red; */
     li {
       font-size: 11px;
+      list-style: none;
+      padding: 0;
+      /* margin-right: 35px; */
     }
     ul {
-      width: 100px;
-      margin: 0 5px;
+      margin: 0 5px 0 5px;
       list-style: none;
+      /* background-color: red; */
+      padding: 0;
     }
     .logoContainer {
       height: 100px;

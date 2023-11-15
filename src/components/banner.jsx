@@ -39,7 +39,9 @@ export default function Banner() {
           exit={{ y: -10, opacity: 0 }}
           transition={{ duration: 1.5 }}
         >
-          <h1 className="theme">PRO DIGITAL COURSE</h1>
+          <h1 className="theme">
+            <span>PRO DIGITAL</span> COURSE
+          </h1>
           {/* <h1 className="moto">Social Media Marketing</h1> */}
           {/* <h1 className="moto2">Matvatsa ;</h1> */}
           <h3 className="summary">
@@ -76,7 +78,7 @@ const Baanner = styled.div`
   /* opacity: 0.5; */
   width: 100%;
   height: 90vh;
-  .banimage{
+  .banimage {
     position: absolute;
     top: 0;
     left: 0;
@@ -98,7 +100,7 @@ const Baanner = styled.div`
     color: #fff;
     font-weight: 100;
   }
-  
+
   .img {
     width: 600px;
     /* height: 600px; */
@@ -127,10 +129,22 @@ const Baanner = styled.div`
     padding: 20px;
   }
   .theme {
-    font-size: 3rem;
+    font-size: 4rem;
     color: #fff;
     font-weight: 700;
-    letter-spacing: 0.5px;
+    /* letter-spacing: px; */
+  }
+  .theme span {
+    color: #fff;
+    background: rgb(255, 0, 0);
+    background: linear-gradient(
+      0deg,
+      rgba(255, 0, 0, 1) 0%,
+      rgba(255, 0, 0, 0.40388655462184875) 59%,
+      rgba(255, 0, 0, 0) 90%,
+      rgba(255, 255, 255, 0) 100%
+    );
+    font-size: 4rem;
   }
 
   .button {
@@ -144,40 +158,51 @@ const Baanner = styled.div`
     color: #ffffff;
     cursor: pointer;
   }
-  @media only screen and (max-width: 768px) {
+  @media only screen and (max-width: 600px) {
+
     height: 60vh;
-    .image{
-      height: 300px;
+    .image {
+      /* height: 500px; */
       width: 100vw;
     }
-    .container{
+    .container {
       width: 90%;
     }
-    .summary{
-    font-size: 15px;
-    text-align: center;
-  }
-    .banner{
+    .summary {
+      margin-top: 20px;
+      font-size: 15px;
+      text-align: center;
+    }
+    .banner {
       flex-direction: column;
       /* margin: 0; */
       /* padding: 0; */
       height: 50vh;
       justify-content: space-between;
     }
-    .theme{
+    .theme {
       font-size: 25px;
       text-align: center;
+      margin-top: 20px;
+      font-size: 2rem;
     }
-    .banimage{
-      height: 70vh;
+    .theme span{
+      font-size: 2rem;
+    }
+    .banimage {
+      height: 100vh;
+      object-fit: cover;
       /* width: 100%; */
     }
-    /* .img {
-      width: 300px;
-      height: 300px;
+    .img {
+      /* width: 100%; */
+      /* height: 00px; */
     }
     .image {
-      width: 300px;
-    } */
+      /* width: 100%; */
+      height: 300px;
+      width: 90%;
+      margin: 0 5%;
+    }
   }
 `;

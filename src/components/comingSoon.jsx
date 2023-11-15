@@ -20,67 +20,70 @@ import styled from "styled-components";
 export default function ComingSoon() {
   return (
     <Container>
-        <h1 className="title">Tez kunda qo'shiladigan kurslar...</h1>
-      <Carousel cols={4} rows={1} gap={1} loop={true}>
+      <h1 className="title">Tez kunda qo'shiladigan kurslar...</h1>
+      <Carousel cols={4} rows={1} gap={4} loop={true}>
         <Carousel.Item>
-          <img src={image1} />
+          <div className="box">
+            <img className="image" src={image1} />
+          </div>
         </Carousel.Item>
         <Carousel.Item>
-          <img src={image2} />
+          <div className="box">
+            <img className="image" src={image1} />
+          </div>
         </Carousel.Item>
         <Carousel.Item>
-          <img src={image3} />
+          <div className="box">
+            <img className="image" src={image1} />
+          </div>
         </Carousel.Item>
         <Carousel.Item>
-          <img src={image4} />
+          <div className="box">
+            <img className="image" src={image1} />
+          </div>
         </Carousel.Item>
         <Carousel.Item>
-          <img src={image5} />
+          <div className="box">
+            <img className="image" src={image1} />
+          </div>
         </Carousel.Item>
         <Carousel.Item>
-          <img src={image6} />
+          <div className="box">
+            <img className="image" src={image1} />
+          </div>
         </Carousel.Item>
         <Carousel.Item>
-          <img src={image7} />
+          <div className="box">
+            <img className="image" src={image1} />
+          </div>
         </Carousel.Item>
         <Carousel.Item>
-          <img src={image8} />
+          <div className="box">
+            <img className="image" src={image1} />
+          </div>
         </Carousel.Item>
-        <Carousel.Item>
-          <img src={image9} />
-        </Carousel.Item>
-        <Carousel.Item>
-          <img src={image10} />
-        </Carousel.Item>
-        <Carousel.Item>
-          <img src={image11} />
-        </Carousel.Item>
-        <Carousel.Item>
-          <img src={image12} />
-        </Carousel.Item>
-        <Carousel.Item>
-          <img src={image13} />
-        </Carousel.Item>
-        <Carousel.Item>
-          <img src={image14} />
-        </Carousel.Item>
-        <Carousel.Item>
-          <img src={image15} />
-        </Carousel.Item>
+        
       </Carousel>
     </Container>
   );
 }
 
 const Container = styled.div`
-.title{ 
+  .box {
+    padding: 50px 0;
+  }
+  .image{
+    /* box-shadow: 0px 19px 41px -22px rgba(255, 0, 4, 1); */
+  
+  }
+  .title {
     color: #fff;
     text-align: center;
     font-size: 46px;
     letter-spacing: 1px;
     font-weight: 600;
-}
-  height: 100vh;
+  }
+  height: 110vh;
   background-color: #0b0e13;
   display: flex;
   flex-direction: column;
@@ -89,5 +92,24 @@ const Container = styled.div`
     /* object-fit: cover; */
     width: 350px;
     border-radius: 10px;
+  }
+  @media only screen and (max-width: 768px) {
+    height: 130vh;
+    /* background-color: red; */
+    .title{
+      font-size: 1.5rem;
+    }
+    .image{
+      height: 90vh;
+      /* width: 60vw; */
+      /* box-shadow: 0px 19px 41px -22px rgba(255, 0, 4, 1); */
+      object-fit: contain;
+      /* width: 500px; */
+    }
+    .box{
+      /* height: 100vh; */
+      /* width: 90vw; */
+      padding: 0;
+    }
   }
 `;

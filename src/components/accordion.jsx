@@ -29,23 +29,17 @@ export default function ControlledAccordions() {
             // className="top"
           >
             <Typography
-              sx={{ width: "33%", flexShrink: 0 }}
+              sx={{ width: "100%", flexShrink: 0 }}
               className="summary"
             >
-              General settings settings
-            </Typography>
-            <Typography sx={{ color: "text.secondary" }}>
-              I am an accordion
+              1. Pro Digital qanday platforma?
             </Typography>
           </AccordionSummary>
           <AccordionDetails>
             <Typography className="text">
-              <h1>re</h1>
-              <h1>re</h1>
-              <h1>re</h1>
-              <h1>re</h1>
-              Nulla facilisi. Phasellus sollicitudin nulla et quam mattis
-              feugiat. Aliquam eget maximus est, id dignissim quam.
+              Pro Digital - Digital marketinga ixtisoslashgan, barcha
+              yo'nalishdagi kurslar jamlangan platforma! Bu nafaqat ta'lim
+              platforma, balki jamiyat hamdir.
             </Typography>
           </AccordionDetails>
         </Accordion>
@@ -61,25 +55,16 @@ export default function ControlledAccordions() {
             // className="top"
           >
             <Typography
-              sx={{ width: "33%", flexShrink: 0 }}
+              sx={{ width: "100%", flexShrink: 0 }}
               className="summary"
             >
-              General settings
-            </Typography>
-            <Typography sx={{ color: "text.secondary" }}>
-              I am an accordion
+              2. Qanday a'zo bo'laman?
             </Typography>
           </AccordionSummary>
           <AccordionDetails>
             <Typography className="text">
-              Nulla facilisi. Phasellus sollicitudin nulla et quam mattis
-              feugiat. Aliquam eget maximus est, id dignissim quam. Nulla
-              facilisi. Phasellus sollicitudin nulla et quam mattis feugiat.
-              Aliquam eget maximus est, id dignissim quam. Nulla facilisi.
-              Phasellus sollicitudin nulla et quam mattis feugiat. Aliquam eget
-              maximus est, id dignissim quam. Nulla facilisi. Phasellus
-              sollicitudin nulla et quam mattis feugiat. Aliquam eget maximus
-              est, id dignissim quam.
+              Platformaga o'z ma'lumotlaringizni kiritib shaxsiy kabinetingizni
+              yaratasiz va o'zingizga kerakli obunani xarid qilasiz.
             </Typography>
           </AccordionDetails>
         </Accordion>
@@ -95,19 +80,15 @@ export default function ControlledAccordions() {
             // className="top"
           >
             <Typography
-              sx={{ width: "33%", flexShrink: 0 }}
+              sx={{ width: "100%", flexShrink: 0 }}
               className="summary"
             >
-              General settings settings
-            </Typography>
-            <Typography sx={{ color: "text.secondary" }}>
-              I am an accordion
+              3. Har bir kurs uchun alohida to'lov qilish kerakmi?
             </Typography>
           </AccordionSummary>
           <AccordionDetails>
             <Typography className="text">
-              Nulla facilisi. Phasellus sollicitudin nulla et quam mattis
-              feugiat. Aliquam eget maximus est, id dignissim quam.
+              Albatta YO'Q. Yagona to'lov evaziga barcha kurslarga ega bo'lasiz!
             </Typography>
           </AccordionDetails>
         </Accordion>
@@ -123,19 +104,20 @@ export default function ControlledAccordions() {
             // className="top"
           >
             <Typography
-              sx={{ width: "33%", flexShrink: 0 }}
+              sx={{ width: "100%", flexShrink: 0 }}
               className="summary"
             >
-              General settings
-            </Typography>
-            <Typography sx={{ color: "text.secondary" }}>
-              I am an accordion
+              4. Nega arzon? Darslar sifatsizmi?
             </Typography>
           </AccordionSummary>
           <AccordionDetails>
             <Typography className="text">
-              Nulla facilisi. Phasellus sollicitudin nulla et quam mattis
-              feugiat. Aliquam eget maximus est, id dignissim quam.
+              Insonlar hayotlarida bir-necha marotabagina omad va imkoniyat
+              qarshisidan chiqadilar. Ayni paytda bu imkoniyat sizda mavjud,
+              do'st sifatida bu imkoniyatdan foydalanishingizni maslahat
+              beraman. Yoki 1000$ lik sarlavhalar, jozibador qadoqlangan ammo
+              darslar jarayoni suvga to'la kurslarda o'qib hech narsasiz
+              qolasiz.
             </Typography>
           </AccordionDetails>
         </Accordion>
@@ -151,25 +133,18 @@ export default function ControlledAccordions() {
             // className="top"
           >
             <Typography
-              sx={{ width: "33%", flexShrink: 0 }}
+              sx={{ width: "100%", flexShrink: 0 }}
               className="summary"
             >
-              General settings
-            </Typography>
-            <Typography sx={{ color: "text.secondary" }}>
-              I am an accordion settings
+              5. Darslarni o'zlashtirishga qiynalsamchi?
             </Typography>
           </AccordionSummary>
           <AccordionDetails>
             <Typography className="text">
-              Nulla facilisi. Phasellus sollicitudin nulla et quam mattis
-              feugiat. Aliquam eget maximus est, id dignissim quam. Nulla
-              facilisi. Phasellus sollicitudin nulla et quam mattis feugiat.
-              Aliquam eget maximus est, id dignissim quam. Nulla facilisi.
-              Phasellus sollicitudin nulla et quam mattis feugiat. Aliquam eget
-              maximus est, id dignissim quam. Nulla facilisi. Phasellus
-              sollicitudin nulla et quam mattis feugiat. Aliquam eget maximus
-              est, id dignissim quam.
+              Avvalo darslar sodda va misollar tariqasi tuzulingan. Agar sizda
+              dars mavzulariga bog'liq savollar tug'ilsa Community Chatimizga
+              murojaat qilishingiz mumkin! U yerda barcha savollarga javob
+              beriladi!F
             </Typography>
           </AccordionDetails>
         </Accordion>
@@ -185,19 +160,17 @@ export default function ControlledAccordions() {
             // className="top"
           >
             <Typography
-              sx={{ width: "33%", flexShrink: 0 }}
+              sx={{ width: "100%", flexShrink: 0 }}
               className="summary"
             >
-              General settings settings ?
-            </Typography>
-            <Typography sx={{ color: "text.secondary" }}>
-              I am an accordion
+              6. Nega Platformada o'qishim kerak?
             </Typography>
           </AccordionSummary>
           <AccordionDetails>
             <Typography className="text">
-              Nulla facilisi. Phasellus sollicitudin nulla et quam mattis
-              feugiat. Aliquam eget maximus est, id dignissim quam.
+            Platformada o'qishga majbur emassiz! Shunchaki oldingizda: <br />
+            - arzimagan narxga OLTINga teng bilimlarni olish <br />
+            - yoki bu yerda jamlangan ma'lumotlarning 5%zini boshqa "MENTORSHIP" kurslarda 1000$ga olish
             </Typography>
           </AccordionDetails>
         </Accordion>
@@ -210,7 +183,7 @@ export default function ControlledAccordions() {
 const Container = styled.div`
   background-color: #0b0e13;
   min-height: 120vh;
-  .button{
+  .button {
     height: 80px;
     width: 400px;
     margin: 80px auto;
@@ -223,7 +196,7 @@ const Container = styled.div`
     font-size: 2rem;
     cursor: pointer;
   }
-  .title{
+  .title {
     color: #fff;
     text-align: center;
     padding: 70px;
@@ -239,7 +212,7 @@ const Container = styled.div`
       color: #fff;
       font-size: 26px;
     }
-    .text{
+    .text {
       color: #fff;
     }
   }

@@ -42,8 +42,8 @@ export default function Courses() {
           "Men NIMALARNI o'rgana olaman"
         </motion.h3>
         <motion.h2 className="pretitle" whileHover={{ scale: 1.05 }}>
-          Ushbu kurslar sizni Raqamli Marketingda USTUNLIK qila olishingiz uchun
-          Amaliy Ko'nikmalar bilan ta'minlaydi !
+          Ushbu kurslar sizni Raqamli Marketingda <span className="red pretitle">USTUNLIK</span> qila olishingiz uchun
+          <span className="red pretitle"> Amaliy Ko'nikmalar</span> bilan ta'minlaydi !
         </motion.h2>
       </div>
       {loading ? (
@@ -82,6 +82,7 @@ export default function Courses() {
 }
 
 const Container = styled.div`
+
   .link {
     color: #fff;
     text-decoration: none;
@@ -181,29 +182,45 @@ const Container = styled.div`
     color: #11101d;
     cursor: pointer;
   }
+  .red{
+  color: red ;
+  font-weight: 900;
+  font-size: 2.5rem ;
+}
   @media only screen and (max-width: 768px) {
+    .title{
+      width: 90%;
+      margin: 0 5%;
+    }
+    .pretitle{
+      font-size: 1.5rem;
+    }
+    .courses{
+      margin: 0;
+      width: 80%;
+      font-size: 2rem;
+    }
     margin: 0;
     /* background-color: red; */
     width: 100%;
-    .circle1 {
-      top: 1300px;
-      left: 200px;
-    }
-    .circle {
-      top: 800px;
-      left: 0px;
-    }
     .card {
-      width: 200px;
-      height: 250px;
+      width: 90%;
+      margin: 0 5%;
+      /* height: 250px; */
     }
     img {
       width: 200px;
       height: 100px;
       padding: 0;
     }
+    .summary h1{
+      font-size: 2.3rem;
+    }
     .summary p {
-      font-size: 12px;
+      font-size: 0.8rem;
+    }
+    .pretitle span{
+      font-size: 1.5rem;
     }
   }
   .startButton {
@@ -226,4 +243,5 @@ const Container = styled.div`
     background-color: #11101d;
     color: #fff;
   }
+
 `;

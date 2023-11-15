@@ -62,4 +62,9 @@ const Container = styled.div`
     width: 350px;
     border-radius: 10px;
   }
+  @media only screen and (max-width: 600px) {
+    img{
+      width: 450px;
+    }
+  }
 `;

@@ -96,12 +96,22 @@ const Container = styled.div`
     object-fit: cover;
     border-radius: 12px;
   }
-  @media only screen and (max-width: 770px) {
+  @media only screen and (max-width: 600px) {
+    height: 150vh;
     .boxes {
     width: 100%;
+    flex-direction: column;
     }
     img{
-      width: 50%;
+      width: 90%;
+      margin: 0 5%;
+    }
+    .title{
+      font-size: 2rem;
+      width: 80%;
+    }
+    .title2{
+      margin: 30px 0;
     }
   }
 `

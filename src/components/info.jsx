@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
-import image from "../assets/img/bannerimage.webp";
+import eye from "../assets/img/eye.png";
+import run from "../assets/img/run.png";
 
 export default function Info() {
   return (
@@ -15,7 +16,7 @@ export default function Info() {
         </h3>
         <div className="boxes">
           <div className="box">
-            <img src={image} alt="" />
+            <img src={eye} alt="" />
             <h1 className="head">KUZATUVCHILAR</h1>
             <p>
               Shunday Insonlar borki, ular doimo Yangi va Qaynoq Imkoniyatlarni
@@ -31,7 +32,7 @@ export default function Info() {
             </p>
           </div>
           <div className="box">
-            <img src={image} alt="" />
+            <img src={run} alt="" />
             <h1 className="head">HARAKAT QILUVCHILAR</h1>
             <p>
               Bu toifadagi insonlar Imkoniyatlar bilan yuzma - yuz kelishganda,
@@ -73,10 +74,12 @@ const Container = styled.div`
   }
   .head {
     color: #fff;
-    font-size: 30px;
+    font-size: 2rem;
+    padding: 10px;
+    font-weight: 700;
   }
   .box p {
-    color: #fff;
+    color: #999;
   }
   .title {
     color: #fff;
