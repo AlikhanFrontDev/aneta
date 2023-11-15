@@ -158,7 +158,7 @@ const Baanner = styled.div`
     color: #ffffff;
     cursor: pointer;
   }
-  @media only screen and (max-width: 768px) {
+  @media only screen and (max-width: 992px) {
 
     height: 60vh;
     .image {
