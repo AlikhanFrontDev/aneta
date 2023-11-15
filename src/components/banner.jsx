@@ -91,7 +91,7 @@ const Baanner = styled.div`
     margin: 0 5%;
     justify-content: space-evenly;
     align-items: center;
-    /* height: 47vh; */
+    height: 87vh;
     /* background-color: red; */
   }
   .summary {
@@ -159,7 +159,7 @@ const Baanner = styled.div`
     cursor: pointer;
   }
   @media only screen and (max-width: 992px) {
-    height: 50vh;
+    height: 60vh;
     .image {
       /* height: 500px; */
       width: 100vw;
@@ -176,7 +176,7 @@ const Baanner = styled.div`
       flex-direction: column;
       /* margin: 0; */
       /* padding: 0; */
-      height: 50vh;
+      height: 20vh;
       justify-content: space-between;
     }
     .theme {
