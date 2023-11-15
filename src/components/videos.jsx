@@ -26,11 +26,11 @@ export default function Videos() {
             </p>
           </div>
           <div className="video">
-            {/* <iframe
+            <iframe
               width="420"
               height="315"
               src="https://www.youtube.com/embed/eKFTKizrLGM?=1&mute=1"
-            ></iframe> */}
+            ></iframe>
           </div>
         </div>
       </div>
