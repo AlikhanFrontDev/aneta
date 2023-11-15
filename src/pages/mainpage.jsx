@@ -17,18 +17,18 @@ export default function Mainpage() {
   return (
     <div>
         <Navbar/>
-        <Banner/>
-        <Courses/>
-        <ComingSoon/>
+        {/* <Banner/> */}
+        {/* <Courses/> */}
+        {/* <ComingSoon/> */}
         {/* <CaruselTwo/> */}
         {/* <NewCourse/> */}
-        <BannerTwo/>
-        <CaruselTwo/>
-        <Videos/>
-        <Info/>
+        {/* <BannerTwo/> */}
+        {/* <CaruselTwo/> */}
+        {/* <Videos/> */}
+        {/* <Info/> */}
         {/* <Pricelist/> */}
-        <ControlledAccordions/>
-        <Footer/>
+        {/* <ControlledAccordions/> */}
+        {/* <Footer/> */}
     </div>
   )
 }
