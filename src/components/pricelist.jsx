@@ -133,9 +133,15 @@ const Container = styled.div`
     color: #ff3131;
   }
   @media screen and (max-width: 992px) {
+    .title{
+      padding: 0;
+    }
     height: 50vh;
   }
   @media screen and (max-width: 600px) {
+    .title{
+      padding: 0;
+    }
     height: 50vh;
   }
 `;
