@@ -164,7 +164,7 @@ const Baanner = styled.div`
     }
     .summary {
       margin-top: 20px;
-      font-size: 15px;
+      font-size: 30px;
       text-align: center;
     }
     .banner {
@@ -175,13 +175,13 @@ const Baanner = styled.div`
       justify-content: space-between;
     }
     .theme {
-      font-size: 25px;
+      font-size: 40px;
       text-align: center;
       margin-top: 20px;
       font-size: 2rem;
     }
     .theme span{
-      font-size: 2rem;
+      font-size: 45px;
     }
     .banimage {
       height: 100vh;
