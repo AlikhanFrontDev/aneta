@@ -95,7 +95,7 @@ const Container = styled.div`
     border-radius: 12px;
   }
 
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 992px) {
     .title {
       font-size: 20px;
 
