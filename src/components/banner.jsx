@@ -199,4 +199,13 @@ const Baanner = styled.div`
       margin: 0 5%;
     }
   }
+  @media screen and (max-width: 768px) {
+    .content {
+      padding: 10px;
+    }
+
+    .textContainer {
+      padding: 10px;
+    }
+  }
 `;
