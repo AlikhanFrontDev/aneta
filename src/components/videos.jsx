@@ -94,30 +94,25 @@ const Container = styled.div`
     margin: 0;
     border-radius: 12px;
   }
-  @media screen and (max-width: 575px) {
-    /* Styles for mobile */
-    .box{
-      flex-direction: column;
-      flex-wrap: wrap;
-    }
+
+  @media screen and (max-width: 768px) {
     .title {
       font-size: 20px;
     }
-
+    .box{
+      flex-direction: column;
+    }
     .summary {
       font-size: 14px;
     }
   }
 
-  @media screen and (min-width: 576px) and (max-width: 767px) {
-    /* Styles for tablets */
-    .box{
-      flex-direction: column;
-      flex-wrap: wrap;
-    }
-
+  @media screen and (max-width: 600px) {
     .title {
       font-size: 22px;
+    }
+    .box{
+      flex-direction: column;
     }
 
     .summary {
