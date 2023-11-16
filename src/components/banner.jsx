@@ -153,7 +153,7 @@ const Baanner = styled.div`
     cursor: pointer;
   }
   @media only screen and (max-width: 992px) {
-    height: 45vh;
+    height: 40vh;
     .image {
       /* height: 500px; */
       width: 100%;
