@@ -19,7 +19,7 @@ export default function Mainpage() {
         <Navbar/>
         <Banner/>
         <Courses/>
-        {/* <ComingSoon/> */}
+        <ComingSoon/>
         {/* <CaruselTwo/> */}
         {/* <NewCourse/> */}
         {/* <BannerTwo/> */}

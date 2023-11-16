@@ -112,4 +112,26 @@ const Container = styled.div`
       padding: 0;
     }
   }
+  @media screen and (max-width: 768px) {
+    .title {
+      font-size: 2rem;
+    }
+
+    .image {
+      max-width: 80%;
+      height: auto;
+      border-radius: 8px;
+    }
+  }
+
+  @media screen and (max-width: 480px) {
+    .title {
+      font-size: 1.5rem;
+    }
+
+    .image {
+      max-width: 100%;
+      border-radius: 5px;
+    }
+  }
 `;
