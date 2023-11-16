@@ -1,155 +1,103 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Carousel from "better-react-carousel";
-import image1 from "../assets/img/carusel/carusel1.jpg";
-import image2 from "../assets/img/carusel/carusel2.jpg";
-import image3 from "../assets/img/carusel/carusel3.jpg";
-import image4 from "../assets/img/carusel/carusel4.jpg";
-import image5 from "../assets/img/carusel/carusel5.jpg";
-import image6 from "../assets/img/carusel/carusel6.jpg";
-import image7 from "../assets/img/carusel/carusel7.jpg";
-import image8 from "../assets/img/carusel/carusel8.jpg";
-import image9 from "../assets/img/carusel/carusel9.jpg";
-import image10 from "../assets/img/carusel/carusel10.jpg";
-import image11 from "../assets/img/carusel/carusel11.jpg";
-import image12 from "../assets/img/carusel/carusel12.jpg";
-import image13 from "../assets/img/carusel/carusel13.jpg";
-import image14 from "../assets/img/carusel/carusel14.jpg";
-import image15 from "../assets/img/carusel/carusel15.jpg";
+import image from "../assets/img/chat.jpg";
 import styled from "styled-components";
+import Slider from "react-slick";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+import Endpoint from "../endpoint";
+import axios from "axios";
 
 export default function ComingSoon() {
+  //   get data
+  const [data, setData] = useState([]);
+  const [loading, setLoading] = useState(true); // Add a loading state
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await axios.get(Endpoint + "corusel/all");
+
+        setData(response.data.item);
+        console.log(data);
+      } catch (error) {
+        console.error("Error:", error);
+      } finally {
+        // Set loading to false whether the request succeeds or fails
+        setLoading(false);
+      }
+    };
+    fetchData();
+  }, []);
+  const settings = {
+    dots: true,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 3, // Number of slides to show at a time
+    slidesToScroll: 1, // Number of slides to scroll
+    responsive: [
+      {
+        breakpoint: 1024, // Tablet breakpoint
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 1,
+          infinite: true,
+          dots: true,
+        },
+      },
+      {
+        breakpoint: 600, // Mobile breakpoint
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+          initialSlide: 1,
+        },
+      },
+    ],
+  };
   return (
     <Container>
-      {/* <h1 className="title">Tez kunda qo'shiladigan kurslar...</h1> */}
-      <Carousel cols={4} rows={1} gap={4} loop={true}>
-        <Carousel.Item>
-          <div className="box">
-            <img className="image" src={image1} />
-          </div>
-        </Carousel.Item>
-        <Carousel.Item>
-          <div className="box">
-            <img className="image" src={image1} />
-          </div>
-        </Carousel.Item>
-        <Carousel.Item>
-          <div className="box">
-            <img className="image" src={image1} />
-          </div>
-        </Carousel.Item>
-        <Carousel.Item>
-          <div className="box">
-            <img className="image" src={image1} />
-          </div>
-        </Carousel.Item>
-        <Carousel.Item>
-          <div className="box">
-            <img className="image" src={image1} />
-          </div>
-        </Carousel.Item>
-        <Carousel.Item>
-          <div className="box">
-            <img className="image" src={image1} />
-          </div>
-        </Carousel.Item>
-        <Carousel.Item>
-          <div className="box">
-            <img className="image" src={image1} />
-          </div>
-        </Carousel.Item>
-        <Carousel.Item>
-          <div className="box">
-            <img className="image" src={image1} />
-          </div>
-        </Carousel.Item>
-        
-      </Carousel>
+      <div className="carusel">
+        <h2 className="title">Tez kunda ...</h2>
+        <Slider {...settings}>
+          {data.map((item, index) => (
+            <div className="box">
+              <img
+                key={index}
+                src={`https://prodgtlservice.uz/api/photo/show/${item.photoId}`}
+                alt=""
+              />
+            </div>
+          ))}
+        </Slider>
+      </div>
     </Container>
   );
 }
 
 const Container = styled.div`
   .box {
-    padding: 50px 0;
-  }
-  .image{
-    /* box-shadow: 0px 19px 41px -22px rgba(255, 0, 4, 1); */
-  
+    display: flex;
   }
   .title {
     color: #fff;
     text-align: center;
-    font-size: 46px;
-    letter-spacing: 1px;
-    font-weight: 600;
+    margin: 50px 0;
+    font-size: xx-large;
   }
-  height: 110vh;
+  .carusel {
+    width: 90%;
+    margin: 0 5%;
+  }
+
+  background-color: red;
+  height: 120vh;
   background-color: #0b0e13;
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
   img {
     /* object-fit: cover; */
-    width: 350px;
+    width: 400px;
     border-radius: 10px;
-  }
-  @media only screen and (max-width: 992px) {
-    justify-content: center;
-    height: 70vh;
-
-    /* background-color: red; */
-    .title{
-      font-size: 1.5rem;
-    }
-    .image{
-      height: 90vh;
-      /* width: 60vw; */
-      /* box-shadow: 0px 19px 41px -22px rgba(255, 0, 4, 1); */
-      object-fit: contain;
-      /* width: 500px; */
-    }
-    .box{
-      /* height: 100vh; */
-      /* width: 90vw; */
-      padding: 0;
-    }
-  }
-  @media screen and (max-width: 768px) {
-    height: 70vh;
-    justify-content: center;
-
-    .title {
-      font-size: 2rem;
-      margin-bottom: 10px; /* Reduce the margin */
-    }
-
-    .box {
-      padding: 5px 0; /* Reduce the padding */
-    }
-
-    .image {
-      max-width: 80%;
-      height: auto;
-      border-radius: 8px;
-    }
-  }
-
-  @media screen and (max-width: 480px) {
-    justify-content: center;
-    height: 70vh;
-
-    .title {
-      font-size: 1.5rem;
-      margin-bottom: 5px; /* Further reduce the margin */
-    }
-
-    .box {
-      padding: 3px 0; /* Further reduce the padding */
-    }
-
-    .image {
-      max-width: 100%;
-      border-radius: 5px;
-    }
   }
 `;

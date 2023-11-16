@@ -2,79 +2,88 @@ import React from "react";
 import Carousel from "better-react-carousel";
 import image from "../assets/img/chat.jpg";
 import styled from "styled-components";
-
+import Slider from "react-slick";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 export default function CaruselTwo() {
+  const settings = {
+    dots: true,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 3, // Number of slides to show at a time
+    slidesToScroll: 1, // Number of slides to scroll
+    responsive: [
+      {
+        breakpoint: 1024, // Tablet breakpoint
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 1,
+          infinite: true,
+          dots: true,
+        },
+      },
+      {
+        breakpoint: 600, // Mobile breakpoint
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+          initialSlide: 1,
+        },
+      },
+    ],
+  };
   return (
     <Container>
-      <Carousel cols={4} rows={1} gap={5} loop={true} containerClassName="carusel">
-        <Carousel.Item>
-          <img src={image} />
-        </Carousel.Item>
-        <Carousel.Item>
-          <img src={image} />
-        </Carousel.Item>
-        <Carousel.Item>
-          <img src={image} />
-        </Carousel.Item>
-        <Carousel.Item>
-          <img src={image} />
-        </Carousel.Item>
-        <Carousel.Item>
-          <img src={image} />
-        </Carousel.Item>
-        <Carousel.Item>
-          <img src={image} />
-        </Carousel.Item>
-        <Carousel.Item>
-          <img src={image} />
-        </Carousel.Item>
-        <Carousel.Item>
-          <img src={image} />
-        </Carousel.Item>
-        <Carousel.Item>
-          <img src={image} />
-        </Carousel.Item>
-        <Carousel.Item>
-          <img src={image} />
-        </Carousel.Item>
-        <Carousel.Item>
-          <img src={image} />
-        </Carousel.Item>
-        <Carousel.Item>
-          <img src={image} />
-        </Carousel.Item>
-        <Carousel.Item>
-          <img src={image} />
-        </Carousel.Item>
-      </Carousel>
+      <div className="carusel">
+        <h2 className="title">Muvoffaqiyatli o'quvchilar</h2>
+        <Slider {...settings}>
+          <div>
+            <img src={image} alt="" />
+          </div>
+          <div>
+            <img src={image} alt="" />
+          </div>
+          <div>
+            <img src={image} alt="" />
+          </div>
+          <div>
+            <img src={image} alt="" />
+          </div>
+          <div>
+            <img src={image} alt="" />
+          </div>
+          <div>
+            <img src={image} alt="" />
+          </div>
+          
+          {/* Add more slides as needed */}
+        </Slider>
+      </div>
     </Container>
   );
 }
 
 const Container = styled.div`
-  height: 100vh;
+height: 120vh;
+.title{
+  color: #fff;
+  text-align: center;
+  margin: 50px 0;
+  font-size: xx-large;
+}
+.carusel{
+  width: 90%;
+margin: 0 5%;
+}
+
+background-color: red;
   background-color: #0b0e13;
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
   img {
     /* object-fit: cover; */
-    width: 350px;
+    width: 400px;
     border-radius: 10px;
-  }
-  @media screen and (max-width: 768px) {
-
-    img {
-      width: 90vw; /* Adjust image width for mobile */
-      max-width: 300px; /* Set a maximum width */
-      margin: 0 auto; /* Center the image */
-    }
-
-    /* Adjust the number of columns for mobile */
-    /* Setting 'cols' to 1 will display only one column on mobile devices */
-    .carusel {
-      display: grid !important;
-      grid-template-columns: 1fr !important;
-    }
   }
 `;
