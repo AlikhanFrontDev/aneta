@@ -190,6 +190,7 @@ const Container = styled.div`
   @media only screen and (max-width: 768px) {
     .cards{
       flex-direction: column;
+    flex-wrap: nowrap;
     }
     .title{
       width: 90%;
