@@ -95,7 +95,7 @@ const Container = styled.div`
   }
   @media only screen and (max-width: 992px) {
     justify-content: center;
-    height: 50vh;
+    height: 70vh;
 
     /* background-color: red; */
     .title{
@@ -115,7 +115,7 @@ const Container = styled.div`
     }
   }
   @media screen and (max-width: 768px) {
-    height: 50vh;
+    height: 70vh;
     justify-content: center;
 
     .title {
@@ -136,7 +136,7 @@ const Container = styled.div`
 
   @media screen and (max-width: 480px) {
     justify-content: center;
-    height: 50vh;
+    height: 70vh;
 
     .title {
       font-size: 1.5rem;
