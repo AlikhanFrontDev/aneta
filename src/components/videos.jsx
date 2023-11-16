@@ -71,6 +71,7 @@ const Container = styled.div`
     color: #fff;
     display: flex;
     align-items: center;
+    flex-wrap: wrap;
     /* row-gap: 20px; */
     width: 90%;
     margin: 20px 5%;
