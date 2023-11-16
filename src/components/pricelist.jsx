@@ -136,7 +136,7 @@ const Container = styled.div`
     .title {
       padding: 30px 0;
     }
-    height: 120vh;
+    height: 135vh;
     .boxes {
       display: flex;
       flex-direction: column;
@@ -152,7 +152,7 @@ const Container = styled.div`
     .title {
       padding: 30px 0;
     }
-    height: 120vh;
+    height: 135vh;
     .boxes {
       display: flex;
       flex-direction: column;
