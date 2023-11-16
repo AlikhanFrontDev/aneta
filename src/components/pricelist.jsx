@@ -98,7 +98,7 @@ const Container = styled.div`
   }
   .box {
     background-color: #0b0e13;
-    height: 45vh;
+    height: 85vh;
     width: 400px;
     border-radius: 12px;
     padding: 20px;
@@ -133,6 +133,9 @@ const Container = styled.div`
     color: #ff3131;
   }
   @media screen and (max-width: 992px) {
+    height: 50vh;
+  }
+  @media screen and (max-width: 600px) {
     height: 50vh;
   }
 `;
