@@ -134,24 +134,25 @@ const Container = styled.div`
   }
   @media screen and (max-width: 992px) {
     .title {
-      padding: 0;
+      padding: 10px 0;
     }
-    height: 20vh;
+    height: 120vh;
     .boxes {
       display: flex;
       flex-direction: column;
-      .box {
-        height: 40vh;
-        width: 80%;
-        margin: 0 10%;
-      }
+      column-gap: 30px;
+    }
+    .box {
+      height: 40vh;
+      width: 60%;
+      margin: 0 15%;
     }
   }
   @media screen and (max-width: 600px) {
     .title {
       padding: 10px 0;
     }
-    height: 20vh;
+    height: 120vh;
     .boxes {
       display: flex;
       flex-direction: column;
