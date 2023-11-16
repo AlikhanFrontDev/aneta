@@ -93,36 +93,28 @@ const Container = styled.div`
     margin: 0;
     border-radius: 12px;
   }
-  @media screen and (min-width: 576px) {
-    /* Styles for tablets */
+  @media screen and (max-width: 575px) {
+    /* Styles for mobile */
+    flex-direction: column;
     .title {
-      font-size: 28px;
-    }
-
-    .summary {
-      font-size: 18px;
-    }
-  }
-
-  @media screen and (min-width: 768px) {
-    /* Styles for small desktops */
-    .title {
-      font-size: 32px;
-    }
-
-    .summary {
       font-size: 20px;
     }
+
+    .summary {
+      font-size: 14px;
+    }
   }
 
-  @media screen and (min-width: 992px) {
-    /* Styles for larger screens */
+  @media screen and (min-width: 576px) and (max-width: 767px) {
+    /* Styles for tablets */
+    flex-direction: column;
+
     .title {
-      font-size: 36px;
+      font-size: 22px;
     }
 
     .summary {
-      font-size: 22px;
+      font-size: 15px;
     }
   }
 `;
