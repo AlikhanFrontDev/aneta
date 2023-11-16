@@ -12,20 +12,14 @@ export default function Banner() {
     {
       src: `${imageOne}`,
       alt: "Image 1",
-      caption: "First Slide",
-      text: "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Oditprovident",
     },
     {
       src: `${imageTwo}`,
       alt: "Image 2",
-      caption: "Second Slide",
-      text: "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Oditprovident",
     },
     {
       src: `${imageThree}`,
       alt: "Image 3",
-      caption: "Third Slide",
-      text: "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Oditprovident",
     },
   ];
   return (
@@ -162,7 +156,8 @@ const Baanner = styled.div`
     height: 60vh;
     .image {
       /* height: 500px; */
-      width: 100vw;
+      width: 100%;
+      object-fit: contain;
     }
     .container {
       width: 90%;
@@ -191,10 +186,10 @@ const Baanner = styled.div`
     .banimage {
       height: 100vh;
       object-fit: cover;
-      /* width: 100%; */
+      width: 100%;
     }
     .img {
-      /* width: 100%; */
+      width: 100%;
       /* height: 00px; */
     }
     .image {
