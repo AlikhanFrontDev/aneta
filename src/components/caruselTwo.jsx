@@ -6,7 +6,7 @@ import styled from "styled-components";
 export default function CaruselTwo() {
   return (
     <Container>
-      <Carousel cols={4} rows={1} gap={5} loop={true}>
+      <Carousel cols={4} rows={1} gap={5} loop={true} containerClassName="carusel">
         <Carousel.Item>
           <img src={image} />
         </Carousel.Item>
@@ -63,6 +63,7 @@ const Container = styled.div`
     border-radius: 10px;
   }
   @media screen and (max-width: 768px) {
+
     img {
       width: 90vw; /* Adjust image width for mobile */
       max-width: 300px; /* Set a maximum width */
@@ -71,7 +72,7 @@ const Container = styled.div`
 
     /* Adjust the number of columns for mobile */
     /* Setting 'cols' to 1 will display only one column on mobile devices */
-    .carousel-root {
+    .carusel {
       display: grid !important;
       grid-template-columns: 1fr !important;
     }
