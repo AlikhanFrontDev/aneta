@@ -79,6 +79,7 @@ const Container = styled.div`
     padding: 20px;
   }
   .text {
+    width: 50%;
     /* background-color: red; */
     display: flex;
     flex-direction: column;
