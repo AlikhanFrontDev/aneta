@@ -96,6 +96,7 @@ const Container = styled.div`
   }
 
   @media screen and (max-width: 992px) {
+    height: 50vh;
     .title {
       font-size: 50px;
 
