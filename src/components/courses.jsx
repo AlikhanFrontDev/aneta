@@ -247,5 +247,41 @@ const Container = styled.div`
     background-color: #11101d;
     color: #fff;
   }
+  /*  */
+  @media screen and (max-width: 1200px) {
+    .card {
+      width: 48%; /* Adjust card width for smaller screens */
+      height: auto; /* Allow height to adjust based on content */
+    }
+  }
+
+  @media screen and (max-width: 768px) {
+    .card {
+      width: 100%; /* Show cards in a single column on smaller screens */
+    }
+  }
+
+  @media screen and (max-width: 600px) {
+    .cards {
+      width: 100%;
+      margin: 0;
+      justify-content: center; /* Center-align cards */
+    }
+
+    .title {
+      width: 90%;
+      margin: 0 auto;
+      padding: 20px 0;
+    }
+
+    .courses {
+      font-size: 2.5rem; /* Decrease font size for smaller screens */
+    }
+
+    .pretitle {
+      font-size: 1.5rem; /* Decrease font size for smaller screens */
+      margin: 20px 0; /* Adjust margin for smaller screens */
+    }
+  }
 
 `;
