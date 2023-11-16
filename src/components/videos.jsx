@@ -100,6 +100,9 @@ const Container = styled.div`
       font-size: 50px;
 
     }
+    .summary{
+      font-size: 50px;
+    }
     span {
     color: red;
     font-size: 50px;
