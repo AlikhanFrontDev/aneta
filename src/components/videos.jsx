@@ -117,6 +117,8 @@ const Container = styled.div`
   }
 
   @media screen and (max-width: 600px) {
+    height: 50vh;
+
     .title {
       display: none;
     }
