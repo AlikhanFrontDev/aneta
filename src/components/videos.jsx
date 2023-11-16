@@ -98,18 +98,22 @@ const Container = styled.div`
   @media screen and (max-width: 768px) {
     .title {
       font-size: 20px;
+      display: none;
+
     }
     .box{
       flex-direction: column;
     }
     .summary {
       font-size: 14px;
+      display: none;
+
     }
   }
 
   @media screen and (max-width: 600px) {
     .title {
-      font-size: 22px;
+      display: none;
     }
     .box{
       flex-direction: column;
@@ -117,6 +121,8 @@ const Container = styled.div`
 
     .summary {
       font-size: 15px;
+      display: none;
+
     }
   }
 `;
