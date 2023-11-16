@@ -1,6 +1,11 @@
 import React from "react";
 import Carousel from "better-react-carousel";
-import image from "../assets/img/chat.jpg";
+import image1 from "../assets/img/screen1.jpg";
+import image2 from "../assets/img/screen1.jpg";
+import image3 from "../assets/img/screen1.jpg";
+import image4 from "../assets/img/screen1.jpg";
+import image5 from "../assets/img/screen1.jpg";
+import image6 from "../assets/img/screen1.jpg";
 import styled from "styled-components";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
@@ -38,22 +43,22 @@ export default function CaruselTwo() {
         <h2 className="title">Muvoffaqiyatli o'quvchilar</h2>
         <Slider {...settings}>
           <div>
-            <img src={image} alt="" />
+            <img src={image1} alt="" />
           </div>
           <div>
-            <img src={image} alt="" />
+            <img src={image2} alt="" />
           </div>
           <div>
-            <img src={image} alt="" />
+            <img src={image3} alt="" />
           </div>
           <div>
-            <img src={image} alt="" />
+            <img src={image4} alt="" />
           </div>
           <div>
-            <img src={image} alt="" />
+            <img src={image5} alt="" />
           </div>
           <div>
-            <img src={image} alt="" />
+            <img src={image6} alt="" />
           </div>
           
           {/* Add more slides as needed */}
