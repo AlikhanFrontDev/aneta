@@ -71,7 +71,6 @@ const Container = styled.div`
     color: #fff;
     display: flex;
     align-items: center;
-    flex-wrap: wrap;
     /* row-gap: 20px; */
     width: 90%;
     margin: 20px 5%;
@@ -98,6 +97,7 @@ const Container = styled.div`
     /* Styles for mobile */
     .box{
       flex-direction: column;
+      flex-wrap: wrap;
     }
     .title {
       font-size: 20px;
@@ -112,6 +112,7 @@ const Container = styled.div`
     /* Styles for tablets */
     .box{
       flex-direction: column;
+      flex-wrap: wrap;
     }
 
     .title {
