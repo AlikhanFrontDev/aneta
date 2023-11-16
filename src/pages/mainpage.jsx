@@ -26,7 +26,7 @@ export default function Mainpage() {
         {/* <CaruselTwo/> */}
         <Videos/>
         {/* <Info/> */}
-        {/* <Pricelist/> */}
+        <Pricelist/>
         {/* <ControlledAccordions/> */}
         {/* <Footer/> */}
     </div>

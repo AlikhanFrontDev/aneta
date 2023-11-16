@@ -15,7 +15,7 @@ export default function Videos() {
       </p>
       <div className="boxes">
         <div className="box">
-          <div className="text">
+          <div className="text texttt">
             <h1>4 OYDA 20+ LOYIHALAR</h1>
             <h2>Javohir Agzamov</h2>
             <p>
@@ -107,7 +107,7 @@ const Container = styled.div`
       font-size: 14px;
 
     }
-    .text{
+    .texttt{
       display: none;
     }
   }
@@ -125,7 +125,7 @@ const Container = styled.div`
       display: none;
 
     }
-    .text{
+    .texttt{
       display: none;
     }
   }
