@@ -188,6 +188,9 @@ const Container = styled.div`
   font-size: 2.5rem ;
 }
   @media only screen and (max-width: 768px) {
+    .cards{
+      flex-direction: column;
+    }
     .title{
       width: 90%;
       margin: 0 5%;
@@ -198,7 +201,7 @@ const Container = styled.div`
     .courses{
       margin: 0;
       width: 80%;
-      font-size: 2rem;
+      font-size: 45px;
     }
     margin: 0;
     /* background-color: red; */
