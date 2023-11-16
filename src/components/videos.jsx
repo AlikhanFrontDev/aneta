@@ -16,9 +16,9 @@ export default function Videos() {
       <div className="boxes">
         <div className="box">
           <div className="text texttt">
-            <h1>4 OYDA 20+ LOYIHALAR</h1>
-            <h2>Javohir Agzamov</h2>
-            <p>
+            <h1 className="texttt">4 OYDA 20+ LOYIHALAR</h1>
+            <h2 className="texttt">Javohir Agzamov</h2>
+            <p className="texttt">
               Ushbu videoda shogirdim Javohirning targetdagi muvaffaqiyat
               yo'lini ko'rishingiz mumkin. Sohaga kirishi, ilk loyihalarga
               qanday natijalar ko'rsatilinganligi va 40.000$lik loyiha haqida
