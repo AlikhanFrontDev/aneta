@@ -115,6 +115,11 @@ const Container = styled.div`
   @media screen and (max-width: 768px) {
     .title {
       font-size: 2rem;
+      margin-bottom: 10px; /* Reduce the margin */
+    }
+
+    .box {
+      padding: 5px 0; /* Reduce the padding */
     }
 
     .image {
@@ -127,6 +132,11 @@ const Container = styled.div`
   @media screen and (max-width: 480px) {
     .title {
       font-size: 1.5rem;
+      margin-bottom: 5px; /* Further reduce the margin */
+    }
+
+    .box {
+      padding: 3px 0; /* Further reduce the padding */
     }
 
     .image {
