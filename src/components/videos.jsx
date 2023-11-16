@@ -95,7 +95,9 @@ const Container = styled.div`
   }
   @media screen and (max-width: 575px) {
     /* Styles for mobile */
-    flex-direction: column;
+    .box{
+      flex-direction: column;
+    }
     .title {
       font-size: 20px;
     }
@@ -107,7 +109,9 @@ const Container = styled.div`
 
   @media screen and (min-width: 576px) and (max-width: 767px) {
     /* Styles for tablets */
-    flex-direction: column;
+    .box{
+      flex-direction: column;
+    }
 
     .title {
       font-size: 22px;
