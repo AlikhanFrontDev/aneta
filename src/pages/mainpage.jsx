@@ -18,7 +18,7 @@ export default function Mainpage() {
     <div>
         <Navbar/>
         <Banner/>
-        {/* <Courses/> */}
+        <Courses/>
         {/* <ComingSoon/> */}
         {/* <CaruselTwo/> */}
         {/* <NewCourse/> */}
