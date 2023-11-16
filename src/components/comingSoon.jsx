@@ -20,7 +20,7 @@ import styled from "styled-components";
 export default function ComingSoon() {
   return (
     <Container>
-      <h1 className="title">Tez kunda qo'shiladigan kurslar...</h1>
+      {/* <h1 className="title">Tez kunda qo'shiladigan kurslar...</h1> */}
       <Carousel cols={4} rows={1} gap={4} loop={true}>
         <Carousel.Item>
           <div className="box">
