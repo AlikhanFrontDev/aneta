@@ -134,7 +134,7 @@ const Container = styled.div`
   }
   @media screen and (max-width: 992px) {
     .title {
-      padding: 10px 0;
+      padding: 30px 0;
     }
     height: 120vh;
     .boxes {
@@ -145,12 +145,12 @@ const Container = styled.div`
     .box {
       height: 40vh;
       width: 60%;
-      margin: 0 15%;
+      margin: 15px 20%;
     }
   }
   @media screen and (max-width: 600px) {
     .title {
-      padding: 10px 0;
+      padding: 30px 0;
     }
     height: 120vh;
     .boxes {
@@ -161,7 +161,7 @@ const Container = styled.div`
     .box {
       height: 40vh;
       width: 60%;
-      margin: 0 15%;
+      margin: 15px 20%;
     }
   }
 `;
