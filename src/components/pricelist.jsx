@@ -132,4 +132,7 @@ const Container = styled.div`
     text-decoration: line-through;
     color: #ff3131;
   }
+  @media screen and (max-width: 992px) {
+    height: 50vh;
+  }
 `;
