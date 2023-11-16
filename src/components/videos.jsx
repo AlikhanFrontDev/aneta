@@ -98,7 +98,6 @@ const Container = styled.div`
   @media screen and (max-width: 768px) {
     .title {
       font-size: 20px;
-      display: none;
 
     }
     .box{
@@ -106,8 +105,10 @@ const Container = styled.div`
     }
     .summary {
       font-size: 14px;
-      display: none;
 
+    }
+    .text{
+      display: none;
     }
   }
 
@@ -123,6 +124,9 @@ const Container = styled.div`
       font-size: 15px;
       display: none;
 
+    }
+    .text{
+      display: none;
     }
   }
 `;
