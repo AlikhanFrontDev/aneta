@@ -96,7 +96,7 @@ const Container = styled.div`
   }
 
   @media screen and (max-width: 992px) {
-    height: 25vh;
+    min-height: 25vh;
     .title {
       font-size: 50px;
 
@@ -117,7 +117,7 @@ const Container = styled.div`
   }
 
   @media screen and (max-width: 600px) {
-    height: 25vh;
+    min-height: 25vh;
 
     .title {
       display: none;
