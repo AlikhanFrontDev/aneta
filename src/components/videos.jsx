@@ -97,9 +97,13 @@ const Container = styled.div`
 
   @media screen and (max-width: 992px) {
     .title {
-      font-size: 20px;
+      font-size: 50px;
 
     }
+    span {
+    color: red;
+    font-size: 50px;
+  }
     .box{
       flex-direction: column;
     }
@@ -121,10 +125,14 @@ const Container = styled.div`
     }
 
     .summary {
-      font-size: 15px;
+      font-size: 45px;
       display: none;
 
     }
+    span {
+    color: red;
+    font-size: 50px;
+  }
     .texttt{
       display: none;
     }
