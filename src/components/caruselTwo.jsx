@@ -62,9 +62,18 @@ const Container = styled.div`
     width: 350px;
     border-radius: 10px;
   }
-  @media only screen and (max-width: 992px) {
-    img{
-      width: 450px;
+  @media screen and (max-width: 768px) {
+    img {
+      width: 90vw; /* Adjust image width for mobile */
+      max-width: 300px; /* Set a maximum width */
+      margin: 0 auto; /* Center the image */
+    }
+
+    /* Adjust the number of columns for mobile */
+    /* Setting 'cols' to 1 will display only one column on mobile devices */
+    .carousel-root {
+      display: grid !important;
+      grid-template-columns: 1fr !important;
     }
   }
 `;
