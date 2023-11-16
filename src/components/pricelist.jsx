@@ -136,12 +136,12 @@ const Container = styled.div`
     .title{
       padding: 0;
     }
-    height: 50vh;
+    height: 20vh;
   }
   @media screen and (max-width: 600px) {
     .title{
       padding: 0;
     }
-    height: 50vh;
+    height: 20vh;
   }
 `;
