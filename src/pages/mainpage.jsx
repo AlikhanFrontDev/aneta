@@ -27,7 +27,7 @@ export default function Mainpage() {
         <Videos/>
         {/* <Info/> */}
         <Pricelist/>
-        {/* <ControlledAccordions/> */}
+        <ControlledAccordions/>
         {/* <Footer/> */}
     </div>
   )

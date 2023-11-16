@@ -110,10 +110,6 @@ const Container = styled.div`
     .box{
       flex-direction: column;
     }
-    .summary {
-      font-size: 14px;
-
-    }
     .texttt{
       display: none;
     }
