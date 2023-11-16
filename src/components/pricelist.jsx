@@ -133,15 +133,33 @@ const Container = styled.div`
     color: #ff3131;
   }
   @media screen and (max-width: 992px) {
-    .title{
+    .title {
       padding: 0;
     }
     height: 20vh;
+    .boxes {
+      display: flex;
+      flex-direction: column;
+      .box {
+        height: 40vh;
+        width: 80%;
+        margin: 0 10%;
+      }
+    }
   }
   @media screen and (max-width: 600px) {
-    .title{
+    .title {
       padding: 0;
     }
     height: 20vh;
+    .boxes {
+      display: flex;
+      flex-direction: column;
+    }
+    .box {
+      height: 40vh;
+      width: 80%;
+      margin: 0 10%;
+    }
   }
 `;
