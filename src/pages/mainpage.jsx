@@ -24,7 +24,7 @@ export default function Mainpage() {
         {/* <NewCourse/> */}
         {/* <BannerTwo/> */}
         {/* <CaruselTwo/> */}
-        {/* <Videos/> */}
+        <Videos/>
         {/* <Info/> */}
         {/* <Pricelist/> */}
         {/* <ControlledAccordions/> */}
