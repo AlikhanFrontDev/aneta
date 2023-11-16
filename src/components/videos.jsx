@@ -93,10 +93,36 @@ const Container = styled.div`
     margin: 0;
     border-radius: 12px;
   }
+  @media screen and (min-width: 576px) {
+    /* Styles for tablets */
+    .title {
+      font-size: 28px;
+    }
 
-  @media only screen and (max-width: 992px) {
-    video {
-      width: 100%;
+    .summary {
+      font-size: 18px;
+    }
+  }
+
+  @media screen and (min-width: 768px) {
+    /* Styles for small desktops */
+    .title {
+      font-size: 32px;
+    }
+
+    .summary {
+      font-size: 20px;
+    }
+  }
+
+  @media screen and (min-width: 992px) {
+    /* Styles for larger screens */
+    .title {
+      font-size: 36px;
+    }
+
+    .summary {
+      font-size: 22px;
     }
   }
 `;
