@@ -98,7 +98,7 @@ const Container = styled.div`
   }
   .box {
     background-color: #0b0e13;
-    height: 85vh;
+    height: 45vh;
     width: 400px;
     border-radius: 12px;
     padding: 20px;
