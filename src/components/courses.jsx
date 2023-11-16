@@ -207,7 +207,7 @@ const Container = styled.div`
     /* background-color: red; */
     width: 100%;
     .card {
-      width: 90%;
+      width: 90vw;
       margin: 0 5%;
       /* height: 250px; */
     }
