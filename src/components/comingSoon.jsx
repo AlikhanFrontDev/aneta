@@ -100,4 +100,18 @@ const Container = styled.div`
     width: 400px;
     border-radius: 10px;
   }
+  @media screen and (max-width: 1200px) {
+    height: 50vh;
+  }
+
+  @media screen and (max-width: 768px) {
+    height: 50vh;
+
+  }
+
+  @media screen and (max-width: 600px) {
+    height: 50vh;
+
+  }
+
 `;
