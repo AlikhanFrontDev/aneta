@@ -94,6 +94,7 @@ const Container = styled.div`
     border-radius: 10px;
   }
   @media only screen and (max-width: 992px) {
+    justify-content: center;
     height: 130vh;
     /* background-color: red; */
     .title{
@@ -113,6 +114,8 @@ const Container = styled.div`
     }
   }
   @media screen and (max-width: 768px) {
+    justify-content: center;
+
     .title {
       font-size: 2rem;
       margin-bottom: 10px; /* Reduce the margin */
@@ -130,6 +133,8 @@ const Container = styled.div`
   }
 
   @media screen and (max-width: 480px) {
+    justify-content: center;
+
     .title {
       font-size: 1.5rem;
       margin-bottom: 5px; /* Further reduce the margin */
