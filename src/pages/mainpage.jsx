@@ -19,14 +19,14 @@ export default function Mainpage() {
         <Navbar/>
         <Banner/>
         <Courses/>
-        <ComingSoon/>
-        <CaruselTwo/>
+        {/* <ComingSoon/> */}
+        {/* <CaruselTwo/> */}
         {/* <NewCourse/> */}
         {/* <BannerTwo/> */}
         {/* <CaruselTwo/> */}
-        <Videos/>
+        {/* <Videos/> */}
         {/* <Info/> */}
-        <Pricelist/>
+        {/* <Pricelist/> */}
         {/* <ControlledAccordions/> */}
         {/* <Footer/> */}
     </div>

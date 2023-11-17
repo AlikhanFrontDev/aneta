@@ -257,7 +257,9 @@ const Container = styled.div`
 
   @media screen and (max-width: 768px) {
     .card {
-      width: 100%; /* Show cards in a single column on smaller screens */
+      width: 100%; 
+      margin: 0 auto;
+      height: 400px;/* Show cards in a single column on smaller screens */
     }
   }
 
@@ -267,19 +269,25 @@ const Container = styled.div`
       margin: 0;
       justify-content: center; /* Center-align cards */
     }
-
+    .card{
+      width: 85vw;
+      margin: 0 auto;
+      height: 400px;
+    }
     .title {
       width: 90%;
       margin: 0 auto;
       padding: 20px 0;
+
     }
 
     .courses {
-      font-size: 2.5rem; /* Decrease font size for smaller screens */
+      font-size: 2rem;
+      width: 95%; /* Decrease font size for smaller screens */
     }
 
     .pretitle {
-      font-size: 1.5rem; /* Decrease font size for smaller screens */
+      font-size: 1rem; /* Decrease font size for smaller screens */
       margin: 20px 0; /* Adjust margin for smaller screens */
     }
   }

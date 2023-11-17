@@ -175,13 +175,13 @@ const Baanner = styled.div`
       justify-content: space-between;
     }
     .theme {
-      font-size: 40px;
+      font-size: 25px;
       text-align: center;
-      margin-top: 20px;
+      /* margin-top: 20px; */
       font-size: 2rem;
     }
     .theme span{
-      font-size: 45px;
+      font-size: 25px;
     }
     .banimage {
       height: 100vh;
@@ -199,13 +199,51 @@ const Baanner = styled.div`
       margin: 0 5%;
     }
   }
-  @media screen and (max-width: 768px) {
-    .content {
-      padding: 10px;
+  @media screen and (max-width: 600px) {
+    height: 60vh;
+    .image {
+      /* height: 500px; */
+      width: 100%;
+      object-fit: contain;
     }
-
-    .textContainer {
-      padding: 10px;
+    .container {
+      width: 90%;
+    }
+    .summary {
+      /* margin-top: 20px; */
+      font-size: 15px;
+      text-align: center;
+    }
+    .banner {
+      flex-direction: column;
+      /* margin: 0; */
+      /* padding: 0; */
+      /* height: 10vh; */
+      justify-content: space-between;
+    }
+    .theme {
+      font-size: 25px;
+      text-align: center;
+      /* margin-top: 20px; */
+      font-size: 2rem;
+    }
+    .theme span{
+      font-size: 25px;
+    }
+    .banimage {
+      height: 100vh;
+      object-fit: cover;
+      width: 100%;
+    }
+    .img {
+      width: 100%;
+      /* height: 00px; */
+    }
+    .image {
+      /* width: 100%; */
+      height: 300px;
+      width: 90%;
+      margin: 0 5%;
     }
   }
 `;
