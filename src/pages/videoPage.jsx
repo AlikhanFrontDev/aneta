@@ -250,6 +250,7 @@ const Container = styled.div`
     height: 80vh;
     width: 100%;
     background-color: black;
+    pointer-events: none;
   }
   .layer {
     position: fixed;
