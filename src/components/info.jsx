@@ -108,7 +108,7 @@ const Container = styled.div`
     text-align: center;
     padding: 20px;
   }
-  @media (max-width: 768px) {
+  @media (max-width: 780px) {
     height: 210vh;
     .container {
       max-width: 768px;
