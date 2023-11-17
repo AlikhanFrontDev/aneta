@@ -108,6 +108,33 @@ const Container = styled.div`
     text-align: center;
     padding: 20px;
   }
+  @media (max-width: 768px) {
+    height: 210vh;
+    .container {
+      max-width: 768px;
+      margin: 0 auto;
+    }
+
+    .boxes {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-evenly;
+    }
+
+    .box {
+      width: 95%;
+      margin: 10px 0;
+    }
+
+    .conclusion {
+      max-width: 70%;
+      font-size: 20px;
+    }
+    img{
+      width: 130px;
+    }
+  }
   @media (max-width: 600px) {
     height: 210vh;
     .container {
