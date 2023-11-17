@@ -1,11 +1,11 @@
 import React from "react";
 import Carousel from "better-react-carousel";
 import image1 from "../assets/img/screen1.jpg";
-import image2 from "../assets/img/screen1.jpg";
-import image3 from "../assets/img/screen1.jpg";
-import image4 from "../assets/img/screen1.jpg";
-import image5 from "../assets/img/screen1.jpg";
-import image6 from "../assets/img/screen1.jpg";
+import image2 from "../assets/img/screen2.jpg";
+import image3 from "../assets/img/screen3.jpg";
+import image4 from "../assets/img/screen4.jpg";
+import image5 from "../assets/img/screen5.jpg";
+import image6 from "../assets/img/screen6.jpg";
 import styled from "styled-components";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
@@ -97,11 +97,22 @@ background-color: red;
 
   @media screen and (max-width: 768px) {
     height: 50vh;
+    height: 120vh;
+      img {
+        /* object-fit: contain; */
+        /* height: 400px; */
+        border-radius: 10px;
+      }
 
   }
 
   @media screen and (max-width: 600px) {
-    height: 50vh;
+    height: 120vh;
+      img {
+        /* object-fit: contain; */
+        /* height: 400px; */
+        border-radius: 10px;
+      }
 
   }
 `;

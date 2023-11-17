@@ -139,4 +139,22 @@ const Container = styled.div`
       display: none;
     }
   }
+  @media screen and (max-width: 768px) {
+    iframe{
+      width: 95vw;
+      margin: 0;
+      padding: 0;
+    }
+
+
+  }
+
+  @media screen and (max-width: 600px) {
+    iframe{
+      width: 95vw;
+      margin: 0;
+      padding: 0;
+    }
+
+  }
 `;

@@ -105,13 +105,22 @@ const Container = styled.div`
   }
 
   @media screen and (max-width: 768px) {
-    height: 50vh;
+    height: 100vh;
+    width: 100vw;
+    img {
+      /* object-fit: contain; */
+      /* height: 400px; */
+      border-radius: 10px;
+    }
 
+    @media screen and (max-width: 600px) {
+      height: 100vh;
+      width: 100vw;
+      img {
+        /* object-fit: contain; */
+        /* height: 400px; */
+        border-radius: 10px;
+      }
+    }
   }
-
-  @media screen and (max-width: 600px) {
-    height: 50vh;
-
-  }
-
 `;
