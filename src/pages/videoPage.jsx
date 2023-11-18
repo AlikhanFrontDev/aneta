@@ -357,7 +357,7 @@ const Container = styled.div`
     overflow-x: hidden;
     /* background-color: #181b21; */
   }
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 800px) {
     .top{
       width: 100%;
     }
