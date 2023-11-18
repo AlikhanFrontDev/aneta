@@ -359,8 +359,88 @@ const Container = styled.div`
     /* background-color: #181b21; */
   }
   @media screen and (max-width: 768px) {
+    .top{
+      width: 100%;
+    }
+    .courseName{
+      display: none;
+    }
+    .video {
+      position: fixed;
+      left: 0;
+      right: 0;
+      width: 100vw;
+      height: 40vh;
+    }
+    .lock {
+      width: 100%;
+      height: 40vh;
+    }
+    .accordion {
+      position: fixed;
+      left: 0;
+      right: 0;
+      width: 100vw;
+      margin: 0;
+      border-radius: 0;
+    }
+    .hidden {
+      display: none;
+    }
+    .accordion {
+      position: initial;
+      z-index: 0;
+      display: block;
+    }
+    .contayner {
+      display: flex;
+      flex-direction: column-reverse;
+    }
+    .lock {
+      position: inherit;
+    }
   }
   @media screen and (max-width: 600px) {
+    .top{
+      width: 100%;
+    }
+    .courseName{
+      display: none;
+    }
+    .video {
+      position: fixed;
+      left: 0;
+      right: 0;
+      width: 100vw;
+      height: 40vh;
+    }
+    .lock {
+      width: 100%;
+      height: 40vh;
+    }
+    .accordion {
+      position: fixed;
+      left: 0;
+      right: 0;
+      width: 100vw;
+      margin: 0;
+      border-radius: 0;
+    }
+    .hidden {
+      display: none;
+    }
+    .accordion {
+      position: initial;
+      z-index: 0;
+      display: block;
+    }
+    .contayner {
+      display: flex;
+      flex-direction: column-reverse;
+    }
+    .lock {
+      position: inherit;
+    }
   }
   @media screen and (max-width: 376px) {
     .top{
