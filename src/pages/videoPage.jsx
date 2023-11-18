@@ -133,7 +133,7 @@ export default function VideoPage() {
                 {/*  */}
                 {!data.item.isAuthorized ? (
                   <>
-                    <div className="lock color">
+                    <div className="lock color hidden">
                       <h1 className="title">Kurs uchun ro'yxatdan o'ting</h1>
                       <Link className="button" to={"/register"}>
                         Hoziroq boshlash
@@ -290,7 +290,6 @@ const Container = styled.div`
   height: 120vh;
   /* background-color: red; */
   .box {
-    background-color: green;
     height: 200px;
     width: 70%;
     position: absolute;
@@ -483,5 +482,6 @@ const Container = styled.div`
     .lock {
       position: inherit;
     }
+
   }
 `;
