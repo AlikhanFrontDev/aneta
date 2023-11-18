@@ -17,14 +17,14 @@ function disableRightClick(event) {
 export default function VideoPage() {
   useEffect(() => {
     // Attach event listener to disable right-click on the entire document
-    document.addEventListener('contextmenu', disableRightClick);
+    document.addEventListener("contextmenu", disableRightClick);
 
     return () => {
       // Clean up the event listener when the component unmounts
-      document.removeEventListener('contextmenu', disableRightClick);
+      document.removeEventListener("contextmenu", disableRightClick);
     };
   }, []); // Empty dependency array ensures this effect runs only once
-  
+
   const { idd } = useParams();
   // get data
   const [lesson, setLessonData] = useState([]);
@@ -94,7 +94,7 @@ export default function VideoPage() {
         ) : data ? (
           <>
             {data ? (
-              <div key={data.item.id}>
+              <div className="contayner" key={data.item.id}>
                 <div className="accordion">
                   <h1 className="courseName">{data.item.courseName}</h1>
                   {data.item.topicDtoList.map((topic) => (
@@ -118,11 +118,11 @@ export default function VideoPage() {
                       <AccordionDetails style={{ padding: 0 }}>
                         {topic.lessonsList.map((item) => (
                           <ul className="lessonName" key={item.id}>
-                            <li 
+                            <li
                               value={item.id}
                               onClick={() => lessonGetHandler(item.id)}
                             >
-                              {item.name}
+                              - {item.name}
                             </li>
                           </ul>
                         ))}
@@ -132,34 +132,34 @@ export default function VideoPage() {
                 </div>
                 {/*  */}
                 {!data.item.isAuthorized ? (
-                      <>
-                        <div className="lock color">
-                          <h1 className="title">
-                            Kurs uchun ro'yxatdan o'ting
-                          </h1>
-                          <Link className="button" to={"/register"}>
-                            Hoziroq boshlash
-                          </Link>
-                        </div>
-                      </>
-                    ) : !data.item.premium ? (
-                      <>
-                        <div className="lock color">
-                          <h1 className="title">Kursni boshlash uchun obuna bo'ling</h1>
-                          <Link className="button" to={"/loginPage"}>
-                            Hoziroq obuna bo'lish
-                          </Link>
-                        </div>
-                      </>
-                    ) : (
-                      <div className="lock color">
-                      <video
-                        className="video"
-                        src={`https://prodgtlservice.uz/api/v2/video/stream/${data.item.freeLessonId}`}
-                        controls
-                      ></video>
-                      </div>
-                    )}
+                  <>
+                    <div className="lock color">
+                      <h1 className="title">Kurs uchun ro'yxatdan o'ting</h1>
+                      <Link className="button" to={"/register"}>
+                        Hoziroq boshlash
+                      </Link>
+                    </div>
+                  </>
+                ) : !data.item.premium ? (
+                  <>
+                    <div className="lock color">
+                      <h1 className="title">
+                        Kursni boshlash uchun obuna bo'ling
+                      </h1>
+                      <Link className="button" to={"/loginPage"}>
+                        Hoziroq obuna bo'lish
+                      </Link>
+                    </div>
+                  </>
+                ) : (
+                  <div className="lock color hidden">
+                    <video
+                      className="video"
+                      src={`https://prodgtlservice.uz/api/v2/video/stream/${data.item.freeLessonId}`}
+                      controls
+                    ></video>
+                  </div>
+                )}
                 {/*  */}
                 {loading1 ? (
                   <p>Loading data...</p>
@@ -179,7 +179,9 @@ export default function VideoPage() {
                     ) : !lesson.item.premium ? (
                       <>
                         <div className="lock color">
-                          <h1 className="title">Kursni boshlash uchun obuna bo'ling</h1>
+                          <h1 className="title">
+                            Kursni boshlash uchun obuna bo'ling
+                          </h1>
                           <Link className="button" to={"/loginPage"}>
                             Hoziroq obuna bo'lish
                           </Link>
@@ -187,15 +189,14 @@ export default function VideoPage() {
                       </>
                     ) : (
                       <div className="lock color">
-                      <video
-                        className="video"
-                        src={`https://prodgtlservice.uz/api/v2/video/stream/${lesson.item.videoId}`}
-                        controls
-                        controlsList="nodownload"
-                      ></video>
+                        <video
+                          className="video"
+                          src={`https://prodgtlservice.uz/api/v2/video/stream/${lesson.item.videoId}`}
+                          controls
+                          controlsList="nodownload"
+                        ></video>
                       </div>
                     )}
-                    <p>{lesson.item.name}</p>
                   </div>
                 ) : (
                   <div className="box">
@@ -217,18 +218,27 @@ export default function VideoPage() {
 }
 
 const Container = styled.div`
-.lessonName{
-  list-style: none;
-  width: 90%;
-  margin: 0 5%;
-  border-radius: 10px;
-}
-.lessonName li{
-  text-align: center;
-  padding: 5px 0;
-  color: #fff;
-  cursor: pointer;
-}
+  .summary {
+    text-align: start;
+    width: 100%;
+    color: #fff;
+    font-size: 14px;
+  }
+  .lessonName {
+    list-style: none;
+    width: 90%;
+    margin: 0 5%;
+    border-radius: 10px;
+  }
+  .lessonName li {
+    text-align: center;
+    padding: 5px 0;
+    color: #fff;
+    cursor: pointer;
+    color: #999;
+    font-size: 14px;
+    text-align: start;
+  }
   .color {
     background-color: #fff !important;
   }
@@ -333,7 +343,7 @@ const Container = styled.div`
   .top {
     width: 300px;
     background-color: #000;
-    border-bottom: 1px solid red;
+    border-bottom: 1px solid #888;
   }
   .courseName {
     color: #fff;
@@ -348,8 +358,50 @@ const Container = styled.div`
     overflow-x: hidden;
     /* background-color: #181b21; */
   }
-
-  .active {
-    color: red;
+  @media screen and (max-width: 768px) {
+  }
+  @media screen and (max-width: 600px) {
+  }
+  @media screen and (max-width: 376px) {
+    .top{
+      width: 100%;
+    }
+    .courseName{
+      display: none;
+    }
+    .video {
+      position: fixed;
+      left: 0;
+      right: 0;
+      width: 100vw;
+      height: 40vh;
+    }
+    .lock {
+      width: 100%;
+      height: 40vh;
+    }
+    .accordion {
+      position: fixed;
+      left: 0;
+      right: 0;
+      width: 100vw;
+      margin: 0;
+      border-radius: 0;
+    }
+    .hidden {
+      display: none;
+    }
+    .accordion {
+      position: initial;
+      z-index: 0;
+      display: block;
+    }
+    .contayner {
+      display: flex;
+      flex-direction: column-reverse;
+    }
+    .lock {
+      position: inherit;
+    }
   }
 `;
