@@ -10,8 +10,20 @@ import GuestNan from "../components/guestnav";
 import Endpoint from "../endpoint";
 import axios from "axios";
 import { Link, useParams } from "react-router-dom";
+function disableRightClick(event) {
+  event.preventDefault();
+}
 
 export default function VideoPage() {
+  useEffect(() => {
+    // Attach event listener to disable right-click on the entire document
+    document.addEventListener('contextmenu', disableRightClick);
+
+    return () => {
+      // Clean up the event listener when the component unmounts
+      document.removeEventListener('contextmenu', disableRightClick);
+    };
+  }, []); // Empty dependency array ensures this effect runs only once
   
   const { idd } = useParams();
   // get data
@@ -250,7 +262,7 @@ const Container = styled.div`
     height: 80vh;
     width: 100%;
     background-color: black;
-    pointer-events: none;
+    /* pointer-events: none; */
   }
   .layer {
     position: fixed;
