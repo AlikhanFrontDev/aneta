@@ -115,4 +115,17 @@ background-color: red;
       }
 
   }
+  @media screen and (max-width: 376px) {
+      height: 120vh;
+      width: 100vw;
+      .carusel{
+        width: 80%;
+        margin: 0 auto;
+      }
+      img {
+        object-fit: contain;
+        height: 500px;
+        border-radius: 10px;
+      }
+    }
 `;

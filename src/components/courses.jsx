@@ -290,6 +290,10 @@ const Container = styled.div`
       font-size: 1rem; /* Decrease font size for smaller screens */
       margin: 20px 0; /* Adjust margin for smaller screens */
     }
+    .summary h1{
+      font-size: 1.7rem;
+    }
   }
+
 
 `;

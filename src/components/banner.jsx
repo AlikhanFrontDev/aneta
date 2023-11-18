@@ -200,7 +200,7 @@ const Baanner = styled.div`
     }
   }
   @media screen and (max-width: 600px) {
-    height: 60vh;
+    height: 70vh;
     .image {
       /* height: 500px; */
       width: 100%;
@@ -211,7 +211,7 @@ const Baanner = styled.div`
     }
     .summary {
       /* margin-top: 20px; */
-      font-size: 15px;
+      font-size: 19px;
       text-align: center;
     }
     .banner {
@@ -232,6 +232,55 @@ const Baanner = styled.div`
     }
     .banimage {
       height: 100vh;
+      object-fit: cover;
+      width: 100%;
+    }
+    .img {
+      width: 100%;
+      /* height: 00px; */
+    }
+    .image {
+      /* width: 100%; */
+      height: 300px;
+      width: 90%;
+      margin: 0 5%;
+    }
+  }
+  @media screen and (max-width: 376px) {
+    height: 90vh;
+    .image {
+      /* height: 500px; */
+      width: 100%;
+      object-fit: contain;
+    }
+    .container {
+      width: 90%;
+    }
+    .summary {
+      /* margin-top: 20px; */
+      font-size: 20px;
+      width: 100%;
+      letter-spacing: 0;
+      text-align: center;
+    }
+    .banner {
+      flex-direction: column;
+      /* margin: 0; */
+      /* padding: 0; */
+      /* height: 10vh; */
+      justify-content: space-between;
+    }
+    .theme {
+      font-size: 25px;
+      text-align: center;
+      /* margin-top: 20px; */
+      font-size: 2rem;
+    }
+    .theme span{
+      font-size: 25px;
+    }
+    .banimage {
+      height: 120vh;
       object-fit: cover;
       width: 100%;
     }
