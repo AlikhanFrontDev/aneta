@@ -160,7 +160,7 @@ export default function ControlledAccordions() {
             // className="top"
           >
             <Typography
-              sx={{ width: "100%", flexShrink: 0 }}
+              sx={{ width: "100%", flexShrink: 0, }}
               className="summary"
             >
               6. Nega Platformada o'qishim kerak?
@@ -216,4 +216,21 @@ const Container = styled.div`
       color: #fff;
     }
   }
+  @media screen and (max-width: 800px) {
+    .summary{
+      font-size: 10px;
+    }
+  }
+
+  @media screen and (max-width: 600px) {
+    .summary{
+      font-size: 10px;
+    }
+  }
+  @media screen and (max-width: 376px) {
+    .summary{
+      font-size: 10px;
+    }
+  }
+
 `;

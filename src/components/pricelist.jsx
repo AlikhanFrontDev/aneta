@@ -133,35 +133,84 @@ const Container = styled.div`
     color: #ff3131;
   }
   @media screen and (max-width: 992px) {
-    .title {
+    height: 500vh;
+    .title .red{
+      font-size: 30px;
       padding: 30px 0;
     }
     height: 135vh;
     .boxes {
+      /* margin-top: 300px; */
       display: flex;
       flex-direction: column;
       column-gap: 30px;
+      background-color: #000;
+      /* height: 200vh; */
     }
     .box {
-      height: 40vh;
-      width: 60%;
-      margin: 15px 20%;
+      height: 70vh;
+      width: 80%;
+      margin: 20px auto;
+    }
+    .mode{
+      font-size: 26px;
+    }
+    li{
+      font-size: 18px;
     }
   }
   @media screen and (max-width: 600px) {
-    .title {
+    height: 270vh;
+    .title .red{
+      font-size: 30px;
       padding: 30px 0;
     }
-    height: 135vh;
+    /* height: 135vh; */
     .boxes {
+      /* margin-top: 300px; */
       display: flex;
       flex-direction: column;
       column-gap: 30px;
+      background-color: #000;
+      /* height: 200vh; */
     }
     .box {
-      height: 40vh;
-      width: 60%;
-      margin: 15px 20%;
+      height: 70vh;
+      width: 80%;
+      margin: 20px auto;
+    }
+    .mode{
+      font-size: 26px;
+    }
+    li{
+      font-size: 18px;
+    }
+  }
+  @media screen and (max-width: 376px) {
+    height: 300vh;
+    .title .red{
+      font-size: 30px;
+      padding: 30px 0;
+    }
+    /* height: 135vh; */
+    .boxes {
+      /* margin-top: 300px; */
+      display: flex;
+      flex-direction: column;
+      column-gap: 30px;
+      background-color: #000;
+      /* height: 200vh; */
+    }
+    .box {
+      height: 70vh;
+      width: 80%;
+      margin: 20px auto;
+    }
+    .mode{
+      font-size: 26px;
+    }
+    li{
+      font-size: 18px;
     }
   }
 `;
