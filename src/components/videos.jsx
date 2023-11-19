@@ -142,16 +142,21 @@ const Container = styled.div`
   @media screen and (max-width: 768px) {
     iframe{
       width: 95vw;
+      height: 200px;
+
       margin: 0;
       padding: 0;
     }
-
+    .texttt{
+      display: none;
+    }
 
   }
 
   @media screen and (max-width: 600px) {
     iframe{
       width: 95vw;
+      height: 200px;
       margin: 0;
       padding: 0;
     }
