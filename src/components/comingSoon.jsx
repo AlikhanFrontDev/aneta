@@ -120,10 +120,11 @@ const Container = styled.div`
         /* object-fit: contain; */
         /* height: 400px; */
         border-radius: 10px;
+        width: 100%;
       }
     }
     @media screen and (max-width: 376px) {
-      height: 90vh;
+      height: 100vh;
       width: 100vw;
       .carusel{
         width: 80%;
@@ -131,7 +132,8 @@ const Container = styled.div`
       }
       img {
         object-fit: contain;
-        height: 500px;
+        height: 600px;
+        width: 100%;
         border-radius: 10px;
       }
     }

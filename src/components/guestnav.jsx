@@ -4,8 +4,6 @@ import logo from "../assets/img/logo.png";
 import { motion } from "framer-motion";
 import "../toggle.css";
 import { Link } from "react-router-dom";
-
-import background from "../assets/img/background.jpg";
 import jwt_decode from "jwt-decode";
 
 
@@ -21,7 +19,7 @@ export default function GuestNan() {
         const atributs = atts;
         const roleName = atributs;
         // console.log(roleName.role);
-        const userrole = setData(roleName.isAdmin);
+        const userrole = setData(roleName.isPremium);
       }else{
         console.log("no token")
       }

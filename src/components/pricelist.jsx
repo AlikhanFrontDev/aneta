@@ -55,7 +55,7 @@ export default function Pricelist() {
             <span className="discount">25% chegirma</span>662.000
           </p>
           <ul>
-            <li>1 OYLIK OBUNA</li>
+            <li>6 OYLIK OBUNA</li>
             <li>O'ZLASHTIRISH KO'RSATKICHI 75% </li>
             <li>BARCHA KURSLARGA YO'LLANMA</li>
             <li>ERKIN GRAFIKDA O'QISH</li>
@@ -117,7 +117,7 @@ const Container = styled.div`
     font-size: 36px;
   }
   .discount {
-    text-decoration: line-through;
+    /* text-decoration: line-through; */
     color: #ff3131;
   }
   ul {
@@ -133,7 +133,7 @@ const Container = styled.div`
     color: #ff3131;
   }
   @media screen and (max-width: 992px) {
-    height: 500vh;
+    height: fit-content;
     .title .red{
       font-size: 30px;
       padding: 30px 0;
@@ -148,7 +148,8 @@ const Container = styled.div`
       /* height: 200vh; */
     }
     .box {
-      height: 70vh;
+      height: fit-content;
+
       width: 80%;
       margin: 20px auto;
     }
@@ -160,7 +161,7 @@ const Container = styled.div`
     }
   }
   @media screen and (max-width: 600px) {
-    height: 270vh;
+    height: fit-content;
     .title .red{
       font-size: 30px;
       padding: 30px 0;
@@ -175,7 +176,8 @@ const Container = styled.div`
       /* height: 200vh; */
     }
     .box {
-      height: 70vh;
+      height: fit-content;
+
       width: 80%;
       margin: 20px auto;
     }
@@ -187,7 +189,7 @@ const Container = styled.div`
     }
   }
   @media screen and (max-width: 376px) {
-    height: 300vh;
+    height: fit-content;
     .title .red{
       font-size: 30px;
       padding: 30px 0;
@@ -202,7 +204,7 @@ const Container = styled.div`
       /* height: 200vh; */
     }
     .box {
-      height: 70vh;
+      height: fit-content;
       width: 80%;
       margin: 20px auto;
     }

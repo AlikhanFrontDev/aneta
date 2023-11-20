@@ -125,6 +125,7 @@ background-color: red;
       img {
         object-fit: contain;
         height: 500px;
+        width: 100%;
         border-radius: 10px;
       }
     }

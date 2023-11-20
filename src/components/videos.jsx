@@ -25,6 +25,10 @@ export default function Videos() {
               suhbatlashdik.
             </p>
           </div>
+          <h3 className="title2">
+          Muvaffaqiyatli Yo'lingizni Pro Digital o'quvchilari kabi yarating !
+          O'Z MATRITSANGIZNI BUZIB CHIQING !
+        </h3>
           <div className="video">
             <iframe
               width="420"
@@ -42,6 +46,9 @@ const Container = styled.div`
   background-color: #0b0e13;
   min-height: 100vh;
   padding: 20px 0;
+  .title2{
+    display: none;
+  }
   span {
     color: red;
     font-size: 50px;
@@ -101,6 +108,11 @@ const Container = styled.div`
       font-size: 50px;
 
     }
+    .title2{
+      display: inline;
+      text-align: center;
+      font-size: 20px;
+    }
     .summary{
       font-size: 50px;
     }
@@ -118,7 +130,11 @@ const Container = styled.div`
 
   @media screen and (max-width: 600px) {
     min-height: 25vh;
-
+    .title2{
+      display: inline;
+      text-align: center;
+      font-size: 20px;
+    }
     .title {
       display: none;
     }
@@ -140,6 +156,11 @@ const Container = styled.div`
     }
   }
   @media screen and (max-width: 768px) {
+    .title2{
+      display: inline;
+      text-align: center;
+      font-size: 20px;
+    }
     iframe{
       width: 95vw;
       height: 200px;
@@ -147,13 +168,24 @@ const Container = styled.div`
       margin: 0;
       padding: 0;
     }
-    .texttt{
+    /* .texttt{
       display: none;
-    }
+    } */
 
   }
-
+  @media screen and (max-width: 376px) {
+    .title2{
+      display: inline;
+      text-align: center;
+      font-size: 20px;
+    }
+  }
   @media screen and (max-width: 600px) {
+    .title2{
+      display: inline;
+      text-align: center;
+      font-size: 20px;
+    }
     iframe{
       width: 95vw;
       height: 200px;

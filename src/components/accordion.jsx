@@ -15,7 +15,7 @@ export default function ControlledAccordions() {
 
   return (
     <Container>
-      <h1 className="title">Frequently Asked Questions</h1>
+      <h1 className="title">Tez so'raladigan savollar</h1>
       <div className="container">
         <Accordion
           className="top"
@@ -32,7 +32,7 @@ export default function ControlledAccordions() {
               sx={{ width: "100%", flexShrink: 0 }}
               className="summary"
             >
-              1. Pro Digital qanday platforma?
+              1. Pro Digital qanday platforma ?
             </Typography>
           </AccordionSummary>
           <AccordionDetails>
@@ -58,7 +58,7 @@ export default function ControlledAccordions() {
               sx={{ width: "100%", flexShrink: 0 }}
               className="summary"
             >
-              2. Qanday a'zo bo'laman?
+              2. Qanday a'zo bo'laman ?
             </Typography>
           </AccordionSummary>
           <AccordionDetails>
@@ -83,7 +83,7 @@ export default function ControlledAccordions() {
               sx={{ width: "100%", flexShrink: 0 }}
               className="summary"
             >
-              3. Har bir kurs uchun alohida to'lov qilish kerakmi?
+              3. Har bir kurs uchun alohida to'lov qilish kerakmi ?
             </Typography>
           </AccordionSummary>
           <AccordionDetails>
@@ -107,7 +107,7 @@ export default function ControlledAccordions() {
               sx={{ width: "100%", flexShrink: 0 }}
               className="summary"
             >
-              4. Nega arzon? Darslar sifatsizmi?
+              4. Nega arzon? Darslar sifatsizmi ?
             </Typography>
           </AccordionSummary>
           <AccordionDetails>
@@ -136,7 +136,7 @@ export default function ControlledAccordions() {
               sx={{ width: "100%", flexShrink: 0 }}
               className="summary"
             >
-              5. Darslarni o'zlashtirishga qiynalsamchi?
+              5. Darslarni o'zlashtirishga qiynalsamchi ?
             </Typography>
           </AccordionSummary>
           <AccordionDetails>
@@ -144,7 +144,7 @@ export default function ControlledAccordions() {
               Avvalo darslar sodda va misollar tariqasi tuzulingan. Agar sizda
               dars mavzulariga bog'liq savollar tug'ilsa Community Chatimizga
               murojaat qilishingiz mumkin! U yerda barcha savollarga javob
-              beriladi!F
+              beriladi !
             </Typography>
           </AccordionDetails>
         </Accordion>

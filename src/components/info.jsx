@@ -10,10 +10,7 @@ export default function Info() {
         <h1 className="title">
           Aslida <span>2</span> turdagi odamlar mavjud...
         </h1>
-        <h3 className="title2">
-          Muvaffaqiyatli Yo'lingizni Pro Digital o'quvchilari kabi yarating !
-          O'Z MATRITSANGIZNI BUZIB CHIQING !
-        </h3>
+
         <div className="boxes">
           <div className="box">
             <img src={eye} alt="" />
@@ -47,8 +44,7 @@ export default function Info() {
         <h1 className="conclusion">
           Hozir qaror qilishning ayni vaqti: siz qaysi yo'lni tanlaysiz?
           "KUZATUVCHI" pozitsiyasida qolib, afsus qilishnimi yoki "HARAKAT
-          QILUVCHI"lar ichida ENG ZO'RI bo'lishni? Tanlov faqat va faqat
-          o'zingizga bog'liq !
+          QILUVCHI"lar ichida ENG ZO'RI bo'lishni? 
         </h1>
       </div>
     </Container>
@@ -101,6 +97,8 @@ const Container = styled.div`
     justify-content: space-evenly;
   }
   .box {
+    height: fit-content;
+
     background-color: #000;
     height: 70vh;
     width: 40%;
@@ -109,7 +107,7 @@ const Container = styled.div`
     padding: 20px;
   }
   @media (max-width: 780px) {
-    height: 210vh;
+    height: fit-content;
     .container {
       max-width: 768px;
       margin: 0 auto;
@@ -123,20 +121,24 @@ const Container = styled.div`
     }
 
     .box {
+      height: fit-content;
+
       width: 95%;
       margin: 10px 0;
     }
 
     .conclusion {
-      max-width: 70%;
+      max-width: 90%;
       font-size: 20px;
+      margin: 0 auto;
+      padding: 5px 0;
     }
     img{
       width: 130px;
     }
   }
   @media (max-width: 600px) {
-    height: 210vh;
+    height: fit-content;
     .container {
       max-width: 768px;
       margin: 0 auto;
@@ -150,13 +152,48 @@ const Container = styled.div`
     }
 
     .box {
+      height: fit-content;
+
       width: 95%;
       margin: 10px 0;
     }
 
     .conclusion {
-      max-width: 70%;
+      max-width: 90%;
       font-size: 20px;
+      margin: 0 auto;
+      padding: 5px 0;
+    }
+    img{
+      width: 130px;
+    }
+  }
+  @media (max-width: 376px) {
+    height: fit-content;
+    
+    .container {
+      max-width: 768px;
+      margin: 0 auto;
+    }
+
+    .boxes {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-evenly;
+    }
+
+    .box {
+      height: fit-content;
+      width: 95%;
+      margin: 10px 0;
+    }
+
+    .conclusion {
+      max-width: 90%;
+      font-size: 20px;
+      margin: 0 auto;
+      padding: 5px 0;
     }
     img{
       width: 130px;
