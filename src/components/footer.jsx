@@ -18,7 +18,7 @@ export default function Footer() {
 const Container = styled.div`
   background-color: #0b0e13;
   width: 100%;
-  height: 40vh;
+  height: fit-content;
   .infos {
     /* background-color: red; */
     text-align: center;
@@ -26,6 +26,13 @@ const Container = styled.div`
   }
   .infos ul {
     list-style: none;
+    height: 30vh;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-evenly;
   }
   .infos li {
     color: #fff;
@@ -36,36 +43,64 @@ const Container = styled.div`
 
 
   @media screen and (max-width: 800px) {
+    .infos{
+      width: 100vw;
+      margin: 0 auto;
+    }
     .infos ul{
-      padding-top: 50px;
+      height: 30vh;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-evenly;
     }
     .infos li{
-      font-size: 20px;
+      font-size: 16px !important;
       width: 90%;
-      margin: 0 auto 30px auto;
+      /* margin: 0 auto 30px auto; */
     }
   }
 
   @media screen and (max-width: 600px) {
+    .infos{
+      width: 100vw;
+      margin: 0 auto;
+    }
     .infos ul{
-      padding-top: 50px;
+      height: 30vh;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-evenly;
     }
     .infos li{
-      font-size: 20px;
+      font-size: 16px !important;
       width: 90%;
-      margin: 0 auto 30px auto;
-
+      /* margin: 0 auto 30px auto; */
     }
   }
   @media screen and (max-width: 376px) {
+    .infos{
+      width: 100vw;
+      margin: 0 auto;
+    }
     .infos ul{
-      padding-top: 50px;
+      height: 30vh;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-evenly;
     }
     .infos li{
-      font-size: 20px;
+      font-size: 16px !important;
       width: 90%;
-      margin: 0 auto 30px auto;
-
+      /* margin: 0 auto 30px auto; */
     }
   }
 `;

@@ -100,6 +100,7 @@ const Nav = styled.nav`
       /* margin-right: 35px; */
     }
     ul {
+      width: 90%;
       margin: 0 5px 0 5px;
       list-style: none;
       /* background-color: red; */

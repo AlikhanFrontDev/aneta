@@ -46,6 +46,9 @@ export default function GuestNan() {
 }
 
 const Nav = styled.nav`
+display: flex;
+align-items: center;
+justify-content: center;
 a{
   color: #fff;
   text-decoration: none;
@@ -61,6 +64,7 @@ a{
   width: 100%;
   z-index: 1;
   .links {
+    margin: 0;
     display: flex;
     list-style: none;
     width: 400px;
@@ -79,11 +83,16 @@ a{
     /* background-color: red; */
     width: 100%;
     padding: 0;
-    li {
-      font-size: 11px;
+    .logo{
+      object-fit: cover;
     }
-    ul {
-      width: 100px;
+    .link {
+      font-size: 0.8rem;
+    }
+    .links {
+      padding: 0;
+      width: 50%;
+      justify-content: space-evenly;
     }
   }
 `;

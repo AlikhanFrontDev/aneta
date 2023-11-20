@@ -1,9 +1,9 @@
 import axios from "axios";
 import Endpoint from '../src/endpoint'
+import { useState } from "react";
 
 
 const login = ( username, password) => {
-
     return axios
         .post(Endpoint + "v1/auth/login", {
             // fullName,
@@ -18,7 +18,7 @@ const login = ( username, password) => {
                 // console.log(response)
             }
             return response;
-        });
+        })
 };
 const AuthService = {
     login,

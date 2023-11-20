@@ -160,7 +160,7 @@ export default function ControlledAccordions() {
             // className="top"
           >
             <Typography
-              sx={{ width: "100%", flexShrink: 0, }}
+              sx={{ width: "100%", flexShrink: 0,}}
               className="summary"
             >
               6. Nega Platformada o'qishim kerak?
@@ -181,7 +181,7 @@ export default function ControlledAccordions() {
 
 const Container = styled.div`
   background-color: #0b0e13;
-  min-height: 100vh;
+  height: fit-content;
   .button {
     height: 80px;
     width: 400px;
@@ -203,7 +203,8 @@ const Container = styled.div`
   .container {
     background-color: #0b0e13;
     width: 90%;
-    margin: 0 5%;
+    margin: 0 auto;
+    padding: 20px 0;
     .top {
       background-color: #181b21;
     }
@@ -217,18 +218,19 @@ const Container = styled.div`
   }
   @media screen and (max-width: 800px) {
     .summary{
-      font-size: 10px;
+      font-size: 18px !important;
     }
   }
 
   @media screen and (max-width: 600px) {
     .summary{
-      font-size: 10px;
+      font-size: 18px !important;
+
     }
   }
   @media screen and (max-width: 376px) {
     .summary{
-      font-size: 10px;
+      font-size: 18px !important;
     }
   }
 

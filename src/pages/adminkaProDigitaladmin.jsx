@@ -148,7 +148,7 @@ export default function VideoPage() {
               // bgcolor: "background.paper",
               // display: "flex",
               // height: "85vh",
-              // width: "100%",
+              width: "fitContent",
               // position: "fixed",
             }}
           >

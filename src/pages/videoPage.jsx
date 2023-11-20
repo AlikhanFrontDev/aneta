@@ -75,10 +75,10 @@ export default function VideoPage() {
         console.error("Error fetching tab data:", error);
       });
   };
-  const [expanded, setExpanded] = React.useState(false);
+  const [expanded, setExpanded] = React.useState(true);
 
   const handleChange1 = (panel) => (event, isExpanded) => {
-    setExpanded(isExpanded ? panel : false);
+    setExpanded(isExpanded ? panel : true);
   };
 
   return (
@@ -109,7 +109,7 @@ export default function VideoPage() {
                         id={`panel${topic.id}bh-header`}
                       >
                         <Typography
-                          sx={{ width: "100%", flexShrink: 0 }}
+                          sx={{ width: "100%"}}
                           className="summary"
                         >
                           {topic.name}
@@ -221,21 +221,22 @@ const Container = styled.div`
   .summary {
     text-align: start;
     width: 100%;
-    color: #fff;
+    color: #000000;
     font-size: 14px;
+    width: 100%;
   }
   .lessonName {
     list-style: none;
     width: 90%;
     margin: 0 5%;
     border-radius: 10px;
+    padding-left: 10px;
   }
   .lessonName li {
     text-align: center;
     padding: 5px 0;
-    color: #fff;
     cursor: pointer;
-    color: #999;
+    color: #000000;
     font-size: 14px;
     text-align: start;
   }
@@ -262,13 +263,14 @@ const Container = styled.div`
     justify-content: center;
     height: 80vh;
     color: #000;
-    width: 70%;
+    width: 72%;
     position: absolute;
     border-radius: 12px;
     left: 25%;
     top: 15%;
   }
   .video {
+    border-radius: 10px;
     height: 80vh;
     width: 100%;
     background-color: black;
@@ -287,7 +289,7 @@ const Container = styled.div`
   /* background-color: #777;
   background-image: url(${layer});
   background-size: contain; */
-  height: 120vh;
+  height: 100vh;
   /* background-color: red; */
   .box {
     height: 200px;
@@ -307,13 +309,14 @@ const Container = styled.div`
   }
   .accordion {
     z-index: 1;
-    background-color: #000;
+    background-color: #00000094;
     color: #fff;
     height: 80vh;
     margin: 20px;
-    width: 300px;
+    width: 350px;
     text-align: center;
-    border-radius: 10px;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
     overflow-y: scroll;
     /* overflow-y: hidden; */
     overflow-x: hidden;
@@ -340,14 +343,15 @@ const Container = styled.div`
     display: flex;
   }
   .top {
-    width: 300px;
-    background-color: #000;
-    border-bottom: 1px solid #888;
+    width: 350px;
+    background-color: #ffffff50;
+    border-bottom: 1px solid #88888826;
   }
   .courseName {
-    color: #fff;
+    color: #ffffff;
     font-weight: 700;
-    margin: 10px 0;
+    font-size: 1.5rem;
+    margin: 15px 0;
   }
 
   .text {
@@ -370,6 +374,7 @@ const Container = styled.div`
       right: 0;
       width: 100vw;
       height: 40vh;
+      border-radius: 0;
     }
     .lock {
       width: 100%;
@@ -382,6 +387,8 @@ const Container = styled.div`
       width: 100vw;
       margin: 0;
       border-radius: 0;
+      background-color: #000;
+      height: 98vh;
     }
     .hidden {
       display: none;
@@ -407,6 +414,8 @@ const Container = styled.div`
       display: none;
     }
     .video {
+      border-radius: 0;
+
       position: fixed;
       left: 0;
       right: 0;
@@ -449,6 +458,8 @@ const Container = styled.div`
       display: none;
     }
     .video {
+      border-radius: 0;
+
       position: fixed;
       left: 0;
       right: 0;

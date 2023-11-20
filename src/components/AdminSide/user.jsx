@@ -60,7 +60,7 @@ export default function User() {
         console.log(err);
       });
   };
-//   update duration
+  //   update duration
   const submitHandler3 = (e) => {
     e.preventDefault();
     const token = JSON.parse(localStorage.getItem("token"));
@@ -88,7 +88,7 @@ export default function User() {
     const postData = {
       title,
       userId,
-      body
+      body,
     };
     console.log(postData);
     axios
@@ -115,6 +115,7 @@ export default function User() {
         });
 
         setData(response.data.item);
+        
       } catch (error) {
         console.error("Error:", error);
       } finally {
@@ -124,12 +125,12 @@ export default function User() {
     };
 
     fetchData();
-    const tokenn = setInterval(fetchData, 1000); // Every 5 seconds?
-    fetchData(); // Initial request
-    return () => {
-      // Don't forget to cleanup the interval when this effect is cleaned up.
-      clearInterval(tokenn);
-    };
+    // const tokenn = setInterval(fetchData, 1000); // Every 5 seconds?
+    // fetchData(); // Initial request
+    // return () => {
+    //   // Don't forget to cleanup the interval when this effect is cleaned up.
+    //   clearInterval(tokenn);
+    // };
   }, []);
   // toggle 1
   const [modal1, setModal1] = useState(false);
@@ -225,25 +226,29 @@ export default function User() {
                     </td>
                   ) : (
                     <td>
-                    <p
-                      className="button disabled"
-                      onClick={() => UserId(data.id)}
-                    >
-                      Pro
-                    </p>
-                  </td>
+                      <p
+                        className="button disabled"
+                        onClick={() => UserId(data.id)}
+                      >
+                        Pro
+                      </p>
+                    </td>
                   )}
                   <td onClick={toggleModal3}>
-                    <p 
-                    className="button orenge" 
-                    onClick={() => UserId(data.id)}
-                    >Update</p>
+                    <p
+                      className="button orenge"
+                      onClick={() => UserId(data.id)}
+                    >
+                      Update
+                    </p>
                   </td>
                   <td onClick={toggleModal4}>
-                    <p 
-                    className="button yellow"
-                    onClick={() => UserId(data.id)}
-                    >Massage</p>
+                    <p
+                      className="button yellow"
+                      onClick={() => UserId(data.id)}
+                    >
+                      Massage
+                    </p>
                   </td>
                 </tr>
               ))}
@@ -356,10 +361,10 @@ export default function User() {
 }
 
 const Container = styled.div`
-.disabled{
+  .disabled {
     background-color: #999;
     cursor: default !important;
-}
+  }
   .form {
     width: 40%;
     margin: 10% 30%;
@@ -415,10 +420,10 @@ const Container = styled.div`
   }
   th {
     background-color: black;
-    padding: 20px;
+    padding: 10px;
   }
   td {
-    padding: 20px;
+    padding: 10px;
     /* border-bottom: 1px solid red; */
     color: #fff;
     background-color: #333;
