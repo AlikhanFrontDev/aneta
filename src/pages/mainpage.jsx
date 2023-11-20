@@ -28,7 +28,7 @@ export default function Mainpage() {
         <Info/>
         <Pricelist/>
         <ControlledAccordions/>
-        {/* <Footer/> */}
+        <Footer/>
     </div>
   )
 }

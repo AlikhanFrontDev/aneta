@@ -6,66 +6,10 @@ export default function Footer() {
     <Container>
       <div className="infos">
         <ul>
-          <li>Affiliate link</li>
-          <li>Terms & Conditions</li>
-          <li>Privacy Policy</li>
-          <li>Support: support@jointherealworld.com</li>
+          <li>BARCHA HUQUQLAR HIMOYALANGAN!</li>
+          <li>MCHJ «REVX AGENCY» STIR: 308 818 335. Guvohnoma raqami: 1032191. </li>
+          <li>Email: info@prodigitalcourse.org</li>
         </ul>
-      </div>
-      <div className="container">
-        <div className="box">
-          <h1>Lorem ipsum dolor sit.</h1>
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officiis
-            voluptate dicta explicabo nulla quos pariatur! Iure voluptate optio
-            et obcaecati.
-          </p>
-        </div>
-        <div className="box">
-          <h1>Lorem ipsum dolor sit.</h1>
-          <p>Tel: +23232323</p>
-          <p>adress: 7395yuf</p>
-          <p>
-            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Alias
-            neque excepturi, non provident numquam iusto?
-          </p>
-        </div>
-        <div className="box">
-          <h1>Lorem ipsum dolor sit.</h1>
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officiis
-            voluptate dicta explicabo nulla quos pariatur! Iure voluptate optio
-            et obcaecati.
-          </p>
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officiis
-            voluptate dicta explicabo nulla quos pariatur! Iure voluptate optio
-            et obcaecati.
-          </p>
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officiis
-            voluptate dicta explicabo nulla quos pariatur! Iure voluptate optio
-            et obcaecati.
-          </p>
-        </div>
-        <div className="box">
-          <h1>Lorem ipsum dolor sit.</h1>
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officiis
-            voluptate dicta explicabo nulla quos pariatur! Iure voluptate optio
-            et obcaecati.
-          </p>
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officiis
-            voluptate dicta explicabo nulla quos pariatur! Iure voluptate optio
-            et obcaecati.
-          </p>
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officiis
-            voluptate dicta explicabo nulla quos pariatur! Iure voluptate optio
-            et obcaecati.
-          </p>
-        </div>
       </div>
     </Container>
   );
@@ -74,11 +18,11 @@ export default function Footer() {
 const Container = styled.div`
   background-color: #0b0e13;
   width: 100%;
-  height: 100vh;
+  height: 40vh;
   .infos {
     /* background-color: red; */
     text-align: center;
-    padding: 60px 0;
+    padding: 60px auto;
   }
   .infos ul {
     list-style: none;
@@ -89,19 +33,39 @@ const Container = styled.div`
     text-decoration: underline;
     cursor: pointer;
   }
-  .container {
-    display: flex;
-    width: 90%;
-    margin: 0 5%;
+
+
+  @media screen and (max-width: 800px) {
+    .infos ul{
+      padding-top: 50px;
+    }
+    .infos li{
+      font-size: 20px;
+      width: 90%;
+      margin: 0 auto 30px auto;
+    }
   }
-  p {
-    margin: 10px 0;
+
+  @media screen and (max-width: 600px) {
+    .infos ul{
+      padding-top: 50px;
+    }
+    .infos li{
+      font-size: 20px;
+      width: 90%;
+      margin: 0 auto 30px auto;
+
+    }
   }
-  .box {
-    margin: 5px;
-  }
-  h1 {
-    color: #fff;
-    font-size: 20px;
+  @media screen and (max-width: 376px) {
+    .infos ul{
+      padding-top: 50px;
+    }
+    .infos li{
+      font-size: 20px;
+      width: 90%;
+      margin: 0 auto 30px auto;
+
+    }
   }
 `;

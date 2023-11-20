@@ -36,7 +36,7 @@ export default function LoginPage() {
         if (userrole) {
           supernavigate("/AdminkaProDigitaladmin0202");
         } else {
-          noUserNavigate("/");
+          noUserNavigate("/courses");
         }
       });
     } catch (err) {

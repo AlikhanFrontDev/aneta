@@ -3,9 +3,11 @@ import styled from "styled-components";
 import logo from "../assets/img/logo.png";
 import { motion } from "framer-motion";
 import "../toggle.css";
+import { Link } from "react-router-dom";
 
 import background from "../assets/img/background.jpg";
 import jwt_decode from "jwt-decode";
+
 
 export default function GuestNan() {
   const [data, setData] = useState(null);
@@ -35,8 +37,8 @@ export default function GuestNan() {
       </div>
       {data ? (
         <ul className="links">
-          <li>Foydali linklar</li>
-          <li>Foydali fayllar</li>
+          <Link className="link" to={"/links"}>Foydali linklar</Link>
+          <Link className="link" to={"/files"}>Foydali fayllar</Link>
         </ul>
       ) : (
         ""
@@ -46,6 +48,10 @@ export default function GuestNan() {
 }
 
 const Nav = styled.nav`
+a{
+  color: #fff;
+  text-decoration: none;
+}
   height: 100px;
   position: static;
   top: 0;

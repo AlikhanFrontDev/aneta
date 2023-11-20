@@ -175,14 +175,13 @@ export default function ControlledAccordions() {
           </AccordionDetails>
         </Accordion>
       </div>
-      <div className="button">Join Now</div>
     </Container>
   );
 }
 
 const Container = styled.div`
   background-color: #0b0e13;
-  min-height: 120vh;
+  min-height: 100vh;
   .button {
     height: 80px;
     width: 400px;
