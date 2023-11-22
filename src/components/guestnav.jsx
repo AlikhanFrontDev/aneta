@@ -28,11 +28,11 @@ export default function GuestNan() {
 }, []);
   return (
     <Nav>
-      <div>
+      <Link to={"/"}>
         <motion.div whileTap={{ scale: 0.95 }} className="logoContainer">
           <img src={logo} alt="Logo" className="logo" />
         </motion.div>
-      </div>
+      </Link>
       {data ? (
         <ul className="links">
           <Link className="link" to={"/links"}>Foydali linklar</Link>

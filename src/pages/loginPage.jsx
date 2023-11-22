@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 import AuthService from "../AuthLogin";
 import jwt_decode from "jwt-decode";
 
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
 import Endpoint from "../endpoint";
 
@@ -18,13 +18,12 @@ export default function LoginPage() {
   const supernavigate = useNavigate();
   const noUserNavigate = useNavigate();
 
-
   const handleLogin = (e) => {
     e.preventDefault();
     const token = JSON.parse(localStorage.getItem("token"));
     const postData = {
-        username,
-        password,
+      username,
+      password,
     };
     console.log(postData);
     axios
@@ -32,7 +31,7 @@ export default function LoginPage() {
         headers: { Authorization: `Bearer ${token}` },
       })
       .then((res) => {
-        setRes(res.data)
+        setRes(res.data);
         if (res) {
           localStorage.setItem("token", JSON.stringify(res.data.item.token));
         }
@@ -58,36 +57,6 @@ export default function LoginPage() {
         console.log(err);
       });
   };
-
-
-  // const handleLogin = async (e) => {
-  //   e.preventDefault();
-
-  //   try {
-  //     await AuthService.login(username, password) .then((res) => {
-  //       console.log(res)
-  //       const users = JSON.parse(localStorage.getItem("token"));
-  //       const atts = jwt_decode(users);
-
-  //       console.log(atts);
-  //       const atributs = atts;
-  //       const roleName = atributs;
-  //       console.log(roleName.role);
-  //       const userrole = roleName.isAdmin;
-
-  //       console.log(userrole);
-
-  //       if (userrole) {
-  //         supernavigate("/AdminkaProDigitaladmin0202");
-  //       } else {
-  //         noUserNavigate("/courses");
-  //       }
-  //     });
-  //   } catch (err) {
-  //     console.log(err);
-  //   }
-  // };
-
   return (
     <Container>
       <img src={background} alt="" className="banimage" />
@@ -99,7 +68,7 @@ export default function LoginPage() {
         ""
       )}
       <div className="box">
-        <h1>Log in</h1>
+        <h1>Hisobga kirish</h1>
         <form onSubmit={handleLogin}>
           {/* // <input
             type="text"
@@ -107,12 +76,12 @@ export default function LoginPage() {
             onChange={(e) => setName(e.target.value)}
           /> */}
           <input
-            type="text"
+            type="email"
             placeholder="Username"
             onChange={(e) => setSurname(e.target.value)}
           />
           <input
-            type="text"
+            type="password"
             placeholder="Password"
             onChange={(e) => setPassword(e.target.value)}
           />
@@ -122,9 +91,16 @@ export default function LoginPage() {
             onChange={(e) => setNumber(e.target.value)}
           /> */}
           <motion.button whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.95 }}>
-            Yuborish
+            Hisobga kirish
           </motion.button>
         </form>
+        <br />
+        <p>Hisobingiz mavjud emasmi ?</p>
+        <Link to={"/register"}>
+          <motion.button whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.95 }}>
+            Ro'yxatdan o'tish
+          </motion.button>
+        </Link>
       </div>
     </Container>
   );

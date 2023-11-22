@@ -12,6 +12,7 @@ import axios from "axios";
 
 
 export default function RegisterPage() {
+  const supernavigate = useNavigate();
   // const [fullName, setName] = useState();
   const [username, setSurname] = useState("");
   const [password, setPassword] = useState("");
@@ -34,6 +35,7 @@ export default function RegisterPage() {
       })
       .then((res) => {
         setRes(res.data)
+        supernavigate("/AdminkaProDigitaladmin0202");
         console.log(res);
       })
       .catch((err) => {

@@ -108,10 +108,7 @@ export default function VideoPage() {
                         aria-controls={`panel1bh-content${topic.id}`}
                         id={`panel${topic.id}bh-header`}
                       >
-                        <Typography
-                          sx={{ width: "100%"}}
-                          className="summary"
-                        >
+                        <Typography sx={{ width: "100%" }} className="summary">
                           {topic.name}
                         </Typography>
                       </AccordionSummary>
@@ -134,9 +131,11 @@ export default function VideoPage() {
                 {!data.item.isAuthorized ? (
                   <>
                     <div className="lock color hidden">
-                      <h1 className="title">Kurs uchun ro'yxatdan o'ting</h1>
-                      <Link className="button" to={"/register"}>
-                        Hoziroq boshlash
+                      <h1 className="title">
+                        Kursdan foydalanish uchun hisobga kiring
+                      </h1>
+                      <Link className="button" to={"/loginPage"}>
+                        Kirish
                       </Link>
                     </div>
                   </>
@@ -169,10 +168,10 @@ export default function VideoPage() {
                       <>
                         <div className="lock color">
                           <h1 className="title">
-                            Kurs uchun ro'yxatdan o'ting
+                            Kursdan foydalanish uchun hisobga kiring
                           </h1>
-                          <Link className="button" to={"/register"}>
-                            Hoziroq boshlash
+                          <Link className="button" to={"/loginPage"}>
+                          Kirish
                           </Link>
                         </div>
                       </>
@@ -221,7 +220,7 @@ const Container = styled.div`
   .summary {
     text-align: start;
     width: 100%;
-    color: #000000;
+    color: #fff;
     font-size: 14px;
     width: 100%;
   }
@@ -236,7 +235,7 @@ const Container = styled.div`
     text-align: center;
     padding: 5px 0;
     cursor: pointer;
-    color: #000000;
+    color: #ffffff9e;
     font-size: 14px;
     text-align: start;
   }
@@ -309,7 +308,7 @@ const Container = styled.div`
   }
   .accordion {
     z-index: 1;
-    background-color: #00000094;
+    background-color: #000;
     color: #fff;
     height: 80vh;
     margin: 20px;
@@ -344,7 +343,7 @@ const Container = styled.div`
   }
   .top {
     width: 350px;
-    background-color: #ffffff50;
+    background-color: #000;
     border-bottom: 1px solid #88888826;
   }
   .courseName {
@@ -362,10 +361,10 @@ const Container = styled.div`
     /* background-color: #181b21; */
   }
   @media screen and (max-width: 800px) {
-    .top{
+    .top {
       width: 100%;
     }
-    .courseName{
+    .courseName {
       display: none;
     }
     .video {
@@ -407,10 +406,10 @@ const Container = styled.div`
     }
   }
   @media screen and (max-width: 600px) {
-    .top{
+    .top {
       width: 100%;
     }
-    .courseName{
+    .courseName {
       display: none;
     }
     .video {
@@ -451,10 +450,10 @@ const Container = styled.div`
     }
   }
   @media screen and (max-width: 376px) {
-    .top{
+    .top {
       width: 100%;
     }
-    .courseName{
+    .courseName {
       display: none;
     }
     .video {
@@ -493,6 +492,5 @@ const Container = styled.div`
     .lock {
       position: inherit;
     }
-
   }
 `;
