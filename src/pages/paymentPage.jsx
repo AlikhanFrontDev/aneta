@@ -3,6 +3,8 @@ import styled from "styled-components";
 import "../toggle.css";
 import axios from "axios";
 import Endpoint from "../endpoint";
+import jwt_decode from "jwt-decode";
+import { useNavigate } from "react-router";
 
 export default function PaymentPage() {
   const [modal1, setModal1] = useState(false);
@@ -15,6 +17,7 @@ export default function PaymentPage() {
     setModal1(!modal1);
   };
   //   ===============================================================================
+  const supernavigate = useNavigate();
 
   const [durationPrem, SetDuration] = useState(0);
   const [amount, setPrice] = useState(0);
@@ -65,11 +68,27 @@ export default function PaymentPage() {
       })
 
       .then((res) => {
-        // if (res.item.message) {
+        if (res) {
+            localStorage.setItem("token", JSON.stringify(res.data.item.tokenDto.token));
+          }
+          const users = JSON.parse(localStorage.getItem("token"));
+          const atts = jwt_decode(users);
+  
+          console.log(atts);
+          const atributs = atts;
+          const roleName = atributs;
+          console.log(roleName.role);
+          const userrole = roleName.isPremium;
+  
+          console.log(userrole);
+  
+          if (userrole) {
+            supernavigate("/courses");
+          } else {
+            console.log("fail")
+          }
+          console.log(res);
 
-        // } else {
-
-        // }
       })
       .catch((err) => {
         console.log(err);
