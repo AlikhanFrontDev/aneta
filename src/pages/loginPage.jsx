@@ -76,7 +76,7 @@ export default function LoginPage() {
             onChange={(e) => setName(e.target.value)}
           /> */}
           <input
-            type="email"
+            type="text"
             placeholder="Username"
             onChange={(e) => setSurname(e.target.value)}
           />
