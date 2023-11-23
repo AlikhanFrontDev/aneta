@@ -35,8 +35,14 @@ export default function RegisterPage() {
       })
       .then((res) => {
         setRes(res.data)
-        supernavigate("/courses");
-        console.log(res);
+        // supernavigate("/courses");
+        console.log(responce.success);
+        
+        if (responce.success) {
+          supernavigate("/courses");
+        } else {
+          console.log("fail")
+        }
       })
       .catch((err) => {
         console.log(err);
@@ -85,9 +91,9 @@ export default function RegisterPage() {
             placeholder="Telefon raqam"
             onChange={(e) => setNumber(e.target.value)}
           /> */}
-          {/* <motion.button whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.95 }}>
+          <motion.button whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.95 }}>
             Yuborish
-          </motion.button> */}
+          </motion.button>
         </form>
       </div>
     </Container>
