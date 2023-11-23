@@ -35,7 +35,7 @@ export default function RegisterPage() {
       })
       .then((res) => {
         setRes(res.data)
-        supernavigate("/AdminkaProDigitaladmin0202");
+        supernavigate("/courses");
         console.log(res);
       })
       .catch((err) => {
