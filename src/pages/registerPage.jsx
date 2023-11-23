@@ -85,9 +85,9 @@ export default function RegisterPage() {
             placeholder="Telefon raqam"
             onChange={(e) => setNumber(e.target.value)}
           /> */}
-          <motion.button whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.95 }}>
+          {/* <motion.button whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.95 }}>
             Yuborish
-          </motion.button>
+          </motion.button> */}
         </form>
       </div>
     </Container>
