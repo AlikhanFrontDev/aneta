@@ -8,6 +8,8 @@ import axios from "axios";
 export default function User() {
   const [query, setQuery] = useState("");
   const [userId, UserId] = useState("");
+  const [empty, emptyData] = useState("");
+  const [userIdd, setID] = useState("");
 
   // user add ===================================================
   const [fullName, setName] = useState("");
@@ -170,6 +172,18 @@ export default function User() {
     setModal4(!modal4);
   };
   //   ================================================================
+  const deleteRequestHandler = async (id) => {
+    setID(id)
+    const token = JSON.parse(localStorage.getItem("token"));
+    const response = await axios.delete(
+      Endpoint + `v1/delete-user`,
+
+      {
+        headers: { Authorization: `Bearer ${token}` },
+      },
+      userIdd
+    );
+  };
   return (
     <Container>
       <div className="add" onClick={toggleModal1}>
@@ -240,6 +254,14 @@ export default function User() {
                       onClick={() => UserId(data.id)}
                     >
                       Update
+                    </p>
+                  </td>
+                  <td>
+                    <p
+                      className="button orenge"
+                      onClick={() => deleteRequestHandler(data.id)}
+                    >
+                      Delete
                     </p>
                   </td>
                   <td onClick={toggleModal4}>

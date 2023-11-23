@@ -11,6 +11,7 @@ import RegisterPage from "./pages/registerPage";
 import CoursePage from "./pages/coursesPage";
 import Linklar from "./pages/linklar";
 import Fayllar from "./pages/fayllar";
+import PaymentPage from "./pages/paymentPage";
 
 function App() {
   return (
@@ -27,6 +28,7 @@ function App() {
           <Route path="/courses" element={<CoursePage />} />
           <Route path="/links" element={<Linklar />} />
           <Route path="/files" element={<Fayllar />} />
+          <Route path="/payment" element={<PaymentPage />} />
         </Routes>
       </Container>
     </div>
