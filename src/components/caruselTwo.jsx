@@ -40,7 +40,7 @@ export default function CaruselTwo() {
   return (
     <Container>
       <div className="carusel">
-        <h2 className="title">Muvoffaqiyatli o'quvchilar</h2>
+        <h2 className="title">Muvaffaqiyat o'quvchilar</h2>
         <Slider {...settings}>
           <div>
             <img src={image1} alt="" />

@@ -41,7 +41,12 @@ const Container = styled.div`
     width: 100%;
   }
   /* background-image: url(${watermark});
-background-size: contain; */
+  background-size: contain;
+  position: absolute;
+  height: 100vh;
+  width: 95vw;
+  top: 0;
+  left: 0; */
 `;
 
 export default App;

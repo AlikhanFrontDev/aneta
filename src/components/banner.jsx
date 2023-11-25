@@ -5,7 +5,7 @@ import MyCarousel from "./carusel";
 import background from "../assets/img/background.jpg";
 import imageOne from "../assets/img/bannerCaruse/b1.jpg";
 import imageTwo from "../assets/img/bannerCaruse/b2.jpg";
-import imageThree from "../assets/img/bannerCaruse/Google.jpg";
+import imageThree from "../assets/img/bannerCaruse/facebook.jpg";
 
 export default function Banner() {
   const items = [

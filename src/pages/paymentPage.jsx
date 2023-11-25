@@ -21,11 +21,21 @@ export default function PaymentPage() {
 
   const [durationPrem, SetDuration] = useState(0);
   const [amount, setPrice] = useState(0);
-  const [number, setNumber] = useState("");
-  const [expire, setExpire] = useState("");
+  const [number1, setNumber1] = useState("");
+  const [number2, setNumber2] = useState("");
+  const [number3, setNumber3] = useState("");
+  const [number4, setNumber4] = useState("");
+  const [expire1, setExpire1] = useState("");
+  const [expire2, setExpire2] = useState("");
   const [responce, setResponse] = useState("");
   const [code, setCode] = useState("");
   const [transactionId, setTransactionId] = useState(0);
+
+  const number = `${number1}${number2}${number3}${number4}`;
+  // console.log(concatinatedValues1);
+  const expire = `${expire1}${expire2}`;
+  // console.log(concatinatedValues2);
+
   const submitHandler = (e) => {
     e.preventDefault();
     const token = JSON.parse(localStorage.getItem("token"));
@@ -58,8 +68,8 @@ export default function PaymentPage() {
     e.preventDefault();
     const token = JSON.parse(localStorage.getItem("token"));
     const postData = {
-        transactionId,
-        code,
+      transactionId,
+      code,
     };
     console.log(postData);
     axios
@@ -69,32 +79,34 @@ export default function PaymentPage() {
 
       .then((res) => {
         if (res) {
-            localStorage.setItem("token", JSON.stringify(res.data.item.tokenDto.token));
-          }
-          const users = JSON.parse(localStorage.getItem("token"));
-          const atts = jwt_decode(users);
-  
-          console.log(atts);
-          const atributs = atts;
-          const roleName = atributs;
-          console.log(roleName.role);
-          const userrole = roleName.isPremium;
-  
-          console.log(userrole);
-  
-          if (userrole) {
-            supernavigate("/courses");
-          } else {
-            console.log("fail")
-          }
-          console.log(res);
+          localStorage.setItem(
+            "token",
+            JSON.stringify(res.data.item.tokenDto.token)
+          );
+        }
+        const users = JSON.parse(localStorage.getItem("token"));
+        const atts = jwt_decode(users);
 
+        console.log(atts);
+        const atributs = atts;
+        const roleName = atributs;
+        console.log(roleName.role);
+        const userrole = roleName.isPremium;
+
+        console.log(userrole);
+
+        if (userrole) {
+          supernavigate("/courses");
+        } else {
+          console.log("fail");
+        }
+        console.log(res);
       })
       .catch((err) => {
         console.log(err);
       });
   };
-    console.log(transactionId);
+  console.log(transactionId);
 
   return (
     <Container>
@@ -198,25 +210,18 @@ export default function PaymentPage() {
           <div className="modal1">
             <div onClick={toggleModal1} className="overlay1"></div>
             <div className="modal-content1">
-              {responce ? (
-                <div className="message">
-                  <h1>{responce.message}</h1>
-                </div>
-              ) : (
-                ""
-              )}
-              {responce.success ? (
-                <div className="message1">
-                  <h1>{responce.item.message}</h1>
-                </div>
-              ) : (
-                ""
-              )}
               <>
                 {responce.success ? (
-                  <div className="form">
-                    <form onSubmit={submitHandler1}>
-                      <textarea
+                  <div className="form1">
+                    <form className="codeForm" onSubmit={submitHandler1}>
+                      {responce.success ? (
+                        <div className="message1 height">
+                          <h1>{responce.item.message}</h1>
+                        </div>
+                      ) : (
+                        ""
+                      )}
+                      <input
                         type="number"
                         onChange={(e) => setCode(e.target.value)}
                         placeholder="Code XXXX"
@@ -226,18 +231,60 @@ export default function PaymentPage() {
                   </div>
                 ) : (
                   <div className="form">
-                    <form onSubmit={submitHandler}>
-                      <input
-                        type="text"
-                        onChange={(e) => setNumber(e.target.value)}
-                        placeholder="Number"
-                      />
-                      <input
-                        type="text"
-                        onChange={(e) => setExpire(e.target.value)}
-                        placeholder="Expire"
-                      />
-                      <button>Save</button>
+                    <form className="cardForm" onSubmit={submitHandler}>
+                      {responce ? (
+                        <div className="message">
+                          <h1>{responce.message}</h1>
+                        </div>
+                      ) : (
+                        ""
+                      )}
+                      <p className="name">Karta raqamingizni kiriting</p>
+                      <div className="number">
+                        <input
+                          type="text"
+                          onChange={(e) => setNumber1(e.target.value)}
+                          placeholder="xxxx"
+                          maxLength={4}
+                        />
+                        <input
+                          type="text"
+                          onChange={(e) => setNumber2(e.target.value)}
+                          placeholder="xxxx"
+                          maxLength={4}
+                        />
+                        <input
+                          type="text"
+                          onChange={(e) => setNumber3(e.target.value)}
+                          placeholder="xxxx"
+                          maxLength={4}
+                        />
+                        <input
+                          type="text"
+                          onChange={(e) => setNumber4(e.target.value)}
+                          placeholder="xxxx"
+                          maxLength={4}
+                        />
+                      </div>
+                      <p className="name margin">Amal qilish muddati</p>
+                      <div className="number">
+                        <input
+                          type="text"
+                          onChange={(e) => setExpire1(e.target.value)}
+                          placeholder="xx"
+                          maxLength={2}
+                        />
+                        <input
+                          type="text"
+                          onChange={(e) => setExpire2(e.target.value)}
+                          placeholder="xx"
+                          maxLength={2}
+                        />
+                      </div>
+                      <div className="buttons">
+                        <button>Yuborish</button>
+                        <button onClick={toggleModal1}>Bekor qilish</button>
+                      </div>
                     </form>
                   </div>
                 )}
@@ -253,39 +300,79 @@ export default function PaymentPage() {
 const Container = styled.div`
   height: 120vh;
   background-color: #000;
+  .name {
+    color: #fff;
+    margin: 0;
+    letter-spacing: 1px;
+  }
+  .number {
+    display: flex;
+  }
+  .number input {
+    width: 25%;
+  }
+  .margin {
+    margin-top: 20px;
+  }
   .message {
-    position: absolute;
-    top: 10px;
-    right: 10px;
     background-color: #ffffffa6;
-    border-radius: 20px;
+    width: 100%;
+    margin-bottom: 10px;
+    /* top: 99px;
+    right: 0;
+    right: 50%;
+    left: 30%;
+    position: absolute; */
   }
   .message1 {
-    position: absolute;
-    top: 100px;
-    right: 10px;
-    background-color: #ffffffa6;
-    border-radius: 20px;
+    /* margin-top: 100px; */
+    background-color: #000000a6;
+    width: 100%;
+
+    /* margin-bottom: 10px; */
   }
   .message h1 {
-    color: #00000084;
+    text-align: center;
+    font-size: 1rem;
+    color: #222;
     padding: 10px 30px;
   }
   .message1 h1 {
-    color: #00000084;
+    font-size: 16px;
+    color: #fff;
     padding: 10px 30px;
   }
   .form {
     width: 40%;
     margin: 10% 30%;
-    background-color: #0000008f;
+    /* margin-top: 50px; */
+    background-color: #000000c2;
     height: 60vh;
-    padding: 100px;
+    padding-left: 100px;
+    padding-right: 100px;
   }
-  form {
+  .cardForm {
+    height: 90%;
+    padding: 20% 0;
+    /* height: fit-content; */
     display: flex;
     flex-direction: column;
   }
+  .codeForm{
+    /* padding-top: 1px; */
+  }
+  .form1 {
+    width: 40%;
+    margin: 10% 30%;
+    /* margin-top: 50px; */
+    background-color: #000000c2;
+    height: 40vh;
+    padding-left: 100px;
+    padding-right: 100px;
+    display: flex;
+    align-items: center;
+  }
+
   input {
     padding: 10px 20px;
     border: none;
@@ -294,7 +381,11 @@ const Container = styled.div`
     margin: 2% 0;
     border-radius: 7px;
   }
+  .buttons {
+    width: 100%;
+  }
   button {
+    width: 50%;
     padding: 10px 20px;
     border: none;
     background-color: #000000b0;

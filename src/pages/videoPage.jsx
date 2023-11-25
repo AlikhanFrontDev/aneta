@@ -217,6 +217,10 @@ export default function VideoPage() {
 }
 
 const Container = styled.div`
+  .title{
+    width: 100%;
+    text-align: center;
+  }
   .summary {
     text-align: start;
     width: 100%;
@@ -265,8 +269,8 @@ const Container = styled.div`
     width: 72%;
     position: absolute;
     border-radius: 12px;
-    left: 25%;
-    top: 15%;
+    left: 400px;
+    top: 17%;
   }
   .video {
     border-radius: 10px;
