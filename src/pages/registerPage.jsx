@@ -39,7 +39,7 @@ export default function RegisterPage() {
         console.log(responce.success);
         
         if (responce.success) {
-          supernavigate("/courses");
+          supernavigate("/loginPage");
         } else {
           console.log("fail")
         }

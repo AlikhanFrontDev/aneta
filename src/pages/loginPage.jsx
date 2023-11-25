@@ -95,7 +95,7 @@ export default function LoginPage() {
           </motion.button>
         </form>
         <br />
-        <p>Akaunt mavjud emasmi ?</p>
+        <p className="question">Akaunt mavjud emasmi ?</p>
         <Link to={"/register"}>
           <motion.button whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.95 }}>
             Ro'yxatdan o'tish
@@ -144,6 +144,11 @@ const Container = styled.div`
     color: red;
     margin: 2% 0;
     border-radius: 7px;
+    width: 100%;
+  }
+  .question{
+    color: #fff;
+    text-align: center;
   }
   display: flex;
   align-items: center;

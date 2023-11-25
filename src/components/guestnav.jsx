@@ -6,26 +6,27 @@ import "../toggle.css";
 import { Link } from "react-router-dom";
 import jwt_decode from "jwt-decode";
 
-
 export default function GuestNan() {
   const [data, setData] = useState(null);
+  const [userName, setName] = useState(null);
 
   const users = JSON.parse(localStorage.getItem("token"));
   useEffect(() => {
-    const getUserInfo = (() => {
+    const getUserInfo = () => {
       if (users) {
         const atts = jwt_decode(users);
         // console.log(atts);
         const atributs = atts;
         const roleName = atributs;
-        // console.log(roleName.role);
+        console.log(roleName);
         const userrole = setData(roleName.isPremium);
-      }else{
-        console.log("no token")
+        const username = setName(roleName.username);
+      } else {
+        console.log("no token");
       }
-    })
+    };
     getUserInfo();
-}, []);
+  }, []);
   return (
     <Nav>
       <Link to={"/"}>
@@ -34,10 +35,17 @@ export default function GuestNan() {
         </motion.div>
       </Link>
       {data ? (
-        <ul className="links">
-          <Link className="link" to={"/links"}>Foydali linklar</Link>
-          <Link className="link" to={"/files"}>Foydali fayllar</Link>
-        </ul>
+        <div className="flex">
+          <p>{userName}</p>
+          <ul className="links">
+            <Link className="link" to={"/links"}>
+              Foydali linklar
+            </Link>
+            <Link className="link" to={"/files"}>
+              Foydali fayllar
+            </Link>
+          </ul>
+        </div>
       ) : (
         ""
       )}
@@ -46,13 +54,13 @@ export default function GuestNan() {
 }
 
 const Nav = styled.nav`
-display: flex;
-align-items: center;
-justify-content: center;
-a{
-  color: #fff;
-  text-decoration: none;
-}
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  a {
+    color: #fff;
+    text-decoration: none;
+  }
   height: 100px;
   position: static;
   top: 0;
@@ -63,12 +71,16 @@ a{
   align-items: center;
   width: 100%;
   z-index: 1;
+  .flex{
+    width: 220px;
+  }
   .links {
     margin: 0;
     display: flex;
     list-style: none;
-    width: 400px;
-    justify-content: space-around;
+    width: 100%;
+    justify-content: space-between;
+    padding: 0;
   }
   .links li {
     color: #fff;
@@ -83,16 +95,20 @@ a{
     /* background-color: red; */
     width: 100%;
     padding: 0;
-    .logo{
+    .logo {
       object-fit: cover;
     }
     .link {
       font-size: 0.8rem;
     }
+    .flex{
+      width: 50%;
+    }
     .links {
       padding: 0;
-      width: 50%;
-      justify-content: space-evenly;
+      width: 100%;
+      justify-content: space-between;
+      display: flex;
     }
   }
 `;
