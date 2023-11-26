@@ -15,7 +15,7 @@ export default function CaruselTwo() {
     dots: true,
     infinite: true,
     speed: 500,
-    slidesToShow: 3, // Number of slides to show at a time
+    slidesToShow: 4, // Number of slides to show at a time
     slidesToScroll: 1, // Number of slides to scroll
     responsive: [
       {
@@ -88,7 +88,7 @@ background-color: red;
   justify-content: space-evenly;
   img {
     /* object-fit: cover; */
-    width: 400px;
+    width: 300px;
     border-radius: 10px;
   }
   @media screen and (max-width: 1200px) {
@@ -99,9 +99,14 @@ background-color: red;
     height: 50vh;
     height: 120vh;
       img {
+        width: 100%;
         /* object-fit: contain; */
         /* height: 400px; */
         border-radius: 10px;
+      }
+      .carusel{
+        width: 87%;
+        margin: 0 auto;
       }
 
   }
@@ -109,9 +114,14 @@ background-color: red;
   @media screen and (max-width: 600px) {
     height: 120vh;
       img {
-        /* object-fit: contain; */
-        /* height: 400px; */
+        object-fit: contain;
+        width: 100%;
+        
         border-radius: 10px;
+      }
+      .carusel{
+        width: 87%;
+        margin: 0 auto;
       }
 
   }
@@ -119,7 +129,7 @@ background-color: red;
       height: 120vh;
       width: 100vw;
       .carusel{
-        width: 80%;
+        width: 87%;
         margin: 0 auto;
       }
       img {

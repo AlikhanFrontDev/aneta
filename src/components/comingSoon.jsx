@@ -32,13 +32,13 @@ export default function ComingSoon() {
     dots: true,
     infinite: true,
     speed: 500,
-    slidesToShow: 3, // Number of slides to show at a time
+    slidesToShow: 4, // Number of slides to show at a time
     slidesToScroll: 1, // Number of slides to scroll
     responsive: [
       {
         breakpoint: 1024, // Tablet breakpoint
         settings: {
-          slidesToShow: 2,
+          slidesToShow: 3,
           slidesToScroll: 1,
           infinite: true,
           dots: true,
@@ -88,16 +88,16 @@ const Container = styled.div`
     width: 90%;
     margin: 0 5%;
   }
-
+  width: 100%;
   background-color: red;
   height: 120vh;
   background-color: #0b0e13;
   display: flex;
   flex-direction: column;
-  justify-content: space-evenly;
+  justify-content: space-between;
   img {
     /* object-fit: cover; */
-    width: 400px;
+    width: 300px;
     border-radius: 10px;
   }
   @media screen and (max-width: 1200px) {
@@ -112,8 +112,13 @@ const Container = styled.div`
       /* height: 400px; */
       border-radius: 10px;
     }
+    .carusel{
+        width: 87%;
+        margin: 0 auto;
+      }
+  }
 
-    @media screen and (max-width: 600px) {
+  @media screen and (max-width: 600px) {
       height: 100vh;
       width: 100vw;
       img {
@@ -122,12 +127,16 @@ const Container = styled.div`
         border-radius: 10px;
         width: 100%;
       }
+      .carusel{
+        width: 87%;
+        margin: 0 auto;
+      }
     }
     @media screen and (max-width: 376px) {
       height: 100vh;
       width: 100vw;
       .carusel{
-        width: 80%;
+        width: 87%;
         margin: 0 auto;
       }
       img {
@@ -137,5 +146,4 @@ const Container = styled.div`
         border-radius: 10px;
       }
     }
-  }
-`;
+`
