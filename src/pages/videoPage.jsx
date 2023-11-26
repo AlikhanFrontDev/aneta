@@ -315,7 +315,8 @@ const Container = styled.div`
     background-color: #000;
     color: #fff;
     height: 80vh;
-    margin: 20px;
+    margin: 35px 20px;
+    /* margin-top: 10px; */
     width: 350px;
     text-align: center;
     border-top-left-radius: 10px;
