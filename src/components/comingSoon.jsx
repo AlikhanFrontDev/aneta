@@ -90,7 +90,7 @@ const Container = styled.div`
   }
   width: 100%;
   background-color: red;
-  height: 120vh;
+  height: fit-content;
   background-color: #0b0e13;
   display: flex;
   flex-direction: column;
@@ -105,7 +105,8 @@ const Container = styled.div`
   }
 
   @media screen and (max-width: 768px) {
-    height: 100vh;
+    height: fit-content;
+
     width: 100vw;
     img {
       /* object-fit: contain; */
@@ -119,7 +120,8 @@ const Container = styled.div`
   }
 
   @media screen and (max-width: 600px) {
-      height: 100vh;
+    height: fit-content;
+
       width: 100vw;
       img {
         /* object-fit: contain; */
