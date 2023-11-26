@@ -60,7 +60,7 @@ const Nav = styled.nav`
   z-index: 1;
   .ul {
     display: flex;
-    width: 200px;
+    width: 300px;
     height: 70px;
     /* background-color: red; */
     justify-content: space-between;
