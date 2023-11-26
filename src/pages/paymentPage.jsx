@@ -140,7 +140,7 @@ export default function PaymentPage() {
               setPrice(147000 * 100);
             }}
           >
-            <p onClick={toggleModal1}>Sotib olish</p>
+            <p>Sotib olish</p>
           </div>
         </div>
         <div className="box">
@@ -169,7 +169,7 @@ export default function PaymentPage() {
               setPrice(397000 * 100);
             }}
           >
-            <p onClick={toggleModal1}>Sotib olish</p>
+            <p>Sotib olish</p>
           </div>
         </div>
         <div className="box">
@@ -201,7 +201,7 @@ export default function PaymentPage() {
               setPrice(662000 * 100);
             }}
           >
-            <p onClick={toggleModal1}>Sotib olish</p>
+            <p >Sotib olish</p>
           </div>
         </div>
       </div>

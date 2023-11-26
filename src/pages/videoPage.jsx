@@ -143,9 +143,9 @@ export default function VideoPage() {
                   <>
                     <div className="lock color">
                       <h1 className="title">
-                        Kursni boshlash uchun obuna bo'ling
+                        Kursni boshlash uchun obuna bo'ling.
                       </h1>
-                      <Link className="button" to={"/loginPage"}>
+                      <Link className="button" to={"/payment"}>
                         Hoziroq obuna bo'lish
                       </Link>
                     </div>
@@ -168,7 +168,7 @@ export default function VideoPage() {
                       <>
                         <div className="lock color">
                           <h1 className="title">
-                            Kursdan foydalanish uchun hisobga kiring
+                            Kursdan foydalanish uchun shaxsiy kabinetga kiring
                           </h1>
                           <Link className="button" to={"/loginPage"}>
                           Kirish
@@ -179,9 +179,9 @@ export default function VideoPage() {
                       <>
                         <div className="lock color">
                           <h1 className="title">
-                            Kursni boshlash uchun obuna bo'ling
+                            Kursni boshlash uchun obuna bo'ling.
                           </h1>
-                          <Link className="button" to={"/loginPage"}>
+                          <Link className="button" to={"/payment"}>
                             Hoziroq obuna bo'lish
                           </Link>
                         </div>
