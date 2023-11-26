@@ -68,7 +68,7 @@ export default function LoginPage() {
         ""
       )}
       <div className="box">
-        <h1>Akauntga kirish</h1>
+        <h1>HISOBGA KIRISH</h1>
         <form onSubmit={handleLogin}>
           {/* // <input
             type="text"
@@ -95,7 +95,7 @@ export default function LoginPage() {
           </motion.button>
         </form>
         <br />
-        <p className="question">Akaunt mavjud emasmi ?</p>
+        <p className="question">PLATFORMADA KABINETINGIZ YO'QMI ?</p>
         <Link to={"/register"}>
           <motion.button whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.95 }}>
             Ro'yxatdan o'tish

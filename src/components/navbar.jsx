@@ -34,12 +34,12 @@ export default function Navbar() {
           // onClick={toggleModal}
         >
           <Link className="li" to={"/register"}>
-          Registratsiya
+          RO'YXATDAN O'TISH
           </Link>
         </motion.li>
         <motion.li whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.95 }}>
           <Link className="li" to={"/loginPage"}>
-          Kirish
+          KIRISH
           </Link>
         </motion.li>
       </ul>
