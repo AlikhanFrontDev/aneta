@@ -27,10 +27,10 @@ export default function GuestNan() {
     };
     getUserInfo();
   }, []);
-  const logOutHandler = (() =>{
-    localStorage.removeItem("token")
-    logOutNavigate("/") 
-  })
+  const logOutHandler = () => {
+    localStorage.removeItem("token");
+    logOutNavigate("/");
+  };
   return (
     <Nav>
       <Link to={"/"}>
@@ -39,20 +39,24 @@ export default function GuestNan() {
         </motion.div>
       </Link>
       {data ? (
-        <div className="flex">
-          <div className="log">
-            <p>{userName}</p>
-            <p className="logout" onClick={logOutHandler}>Chiqish</p>
+        <>
+          <div className="flex">
+            <div className="log">
+              <p>{userName}</p>
+              <p className="logout" onClick={logOutHandler}>
+                Chiqish
+              </p>
+            </div>
+            <ul className="links">
+              <Link className="link" to={"/links"}>
+                Foydali linklar
+              </Link>
+              <Link className="link" to={"/files"}>
+                Foydali fayllar
+              </Link>
+            </ul>
           </div>
-          <ul className="links">
-            <Link className="link" to={"/links"}>
-              Foydali linklar
-            </Link>
-            <Link className="link" to={"/files"}>
-              Foydali fayllar
-            </Link>
-          </ul>
-        </div>
+        </>
       ) : (
         ""
       )}
@@ -64,11 +68,15 @@ const Nav = styled.nav`
   display: flex;
   align-items: center;
   justify-content: center;
-  .log{
+  .log {
     display: flex;
     justify-content: space-between;
+    width: 300px;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
   }
-  .logout{
+  .logout {
     color: red;
     cursor: pointer;
   }
@@ -87,15 +95,17 @@ const Nav = styled.nav`
   width: 100%;
   z-index: 1;
   .flex {
-    width: 220px;
+    width: 320px;
+    /* background-color: red; */
   }
   .links {
     margin: 0;
     display: flex;
     list-style: none;
     width: 100%;
-    justify-content: space-between;
+    /* justify-content: space-between; */
     padding: 0;
+    gap: 20px;
   }
   .links li {
     color: #fff;
@@ -110,6 +120,21 @@ const Nav = styled.nav`
     /* background-color: red; */
     width: 100%;
     padding: 0;
+    .log{
+      flex-direction: column-reverse;
+      padding: 0;
+      margin: 0;
+      width: 100%;
+      justify-content: flex-start;
+      align-items: start;
+
+    }
+    .log p {
+      margin: 0;
+    }
+    .logout{
+      margin: 0;
+    }
     .logo {
       object-fit: cover;
     }
