@@ -3,13 +3,13 @@ import styled from "styled-components";
 import logo from "../assets/img/logo.png";
 import { motion } from "framer-motion";
 import "../toggle.css";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import jwt_decode from "jwt-decode";
 
 export default function GuestNan() {
   const [data, setData] = useState(null);
   const [userName, setName] = useState(null);
-
+  const logOutNavigate = useNavigate();
   const users = JSON.parse(localStorage.getItem("token"));
   useEffect(() => {
     const getUserInfo = () => {
@@ -27,6 +27,10 @@ export default function GuestNan() {
     };
     getUserInfo();
   }, []);
+  const logOutHandler = (() =>{
+    localStorage.removeItem("token")
+    logOutNavigate("/") 
+  })
   return (
     <Nav>
       <Link to={"/"}>
@@ -36,7 +40,10 @@ export default function GuestNan() {
       </Link>
       {data ? (
         <div className="flex">
-          <p>{userName}</p>
+          <div className="log">
+            <p>{userName}</p>
+            <p className="logout" onClick={logOutHandler}>Chiqish</p>
+          </div>
           <ul className="links">
             <Link className="link" to={"/links"}>
               Foydali linklar
@@ -57,6 +64,14 @@ const Nav = styled.nav`
   display: flex;
   align-items: center;
   justify-content: center;
+  .log{
+    display: flex;
+    justify-content: space-between;
+  }
+  .logout{
+    color: red;
+    cursor: pointer;
+  }
   a {
     color: #fff;
     text-decoration: none;
@@ -71,7 +86,7 @@ const Nav = styled.nav`
   align-items: center;
   width: 100%;
   z-index: 1;
-  .flex{
+  .flex {
     width: 220px;
   }
   .links {
@@ -101,7 +116,7 @@ const Nav = styled.nav`
     .link {
       font-size: 0.8rem;
     }
-    .flex{
+    .flex {
       width: 50%;
     }
     .links {
