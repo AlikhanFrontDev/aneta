@@ -68,7 +68,7 @@ export default function LoginPage() {
         ""
       )}
       <div className="box">
-        <h1>HISOBGA KIRISH</h1>
+        <h1>PLATFORMAGA KIRISH</h1>
         <form onSubmit={handleLogin}>
           {/* // <input
             type="text"
@@ -91,11 +91,11 @@ export default function LoginPage() {
             onChange={(e) => setNumber(e.target.value)}
           /> */}
           <motion.button whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.95 }}>
-            Hisobga kirish
+            Kirish
           </motion.button>
         </form>
         <br />
-        <p className="question">PLATFORMADA KABINETINGIZ YO'QMI ?</p>
+        <p className="question">PLATFORMADA KABINETINGIZ YO'QMI?</p>
         <Link to={"/register"}>
           <motion.button whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.95 }}>
             Ro'yxatdan o'tish
