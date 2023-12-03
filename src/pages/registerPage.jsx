@@ -82,7 +82,7 @@ export default function RegisterPage() {
           />
           <input
           required
-            type="number"
+            type="text"
             placeholder="Telefon raqam kiriting"
             onChange={(e) => setNumber(e.target.value)}
           />
