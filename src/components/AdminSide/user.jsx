@@ -8,7 +8,6 @@ import axios from "axios";
 export default function User() {
   const [query, setQuery] = useState("");
   const [userId, UserId] = useState("");
-  const [empty, emptyData] = useState("");
   const [userIdd, setID] = useState("");
 
   // user add ===================================================
@@ -172,18 +171,28 @@ export default function User() {
     setModal4(!modal4);
   };
   //   ================================================================
+  const [empty, setEmpty] = useState("");
   const deleteRequestHandler = async (id) => {
-    setID(id)
+    const emptyData = {
+      empty,
+    };
     const token = JSON.parse(localStorage.getItem("token"));
     const response = await axios.delete(
-      Endpoint + `v1/delete-user`,
+      Endpoint + `v1/delete-user?userId=${id}`,
 
       {
         headers: { Authorization: `Bearer ${token}` },
       },
-      userIdd
+      emptyData
     );
+    console.log(token);
+
+    // if (response.data.id) {
+    //   setMessage(response.data.id);
+    // }
+    // window.location.reload(false);
   };
+// ===================================================================
   return (
     <Container>
       <div className="add" onClick={toggleModal1}>
@@ -203,6 +212,7 @@ export default function User() {
           <th>Email</th>
           <th>Add Pro</th>
           <th>Update Pro</th>
+          <th>Delete</th>
           <th>Massage</th>
         </thead>
         {loading ? (
@@ -219,6 +229,10 @@ export default function User() {
                   return post;
                 } else if (
                   post.phoneNumber.toLowerCase().includes(query.toLowerCase())
+                ) {
+                  return post;
+                } else if (
+                  post.premium.toString().toLowerCase().includes(query.toLowerCase())
                 ) {
                   return post;
                 }
@@ -258,7 +272,7 @@ export default function User() {
                   </td>
                   <td>
                     <p
-                      className="button orenge"
+                      className="button red"
                       onClick={() => deleteRequestHandler(data.id)}
                     >
                       Delete
@@ -383,6 +397,9 @@ export default function User() {
 }
 
 const Container = styled.div`
+.red{
+  background-color: red;
+}
   .disabled {
     background-color: #999;
     cursor: default !important;
