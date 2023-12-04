@@ -29,6 +29,7 @@ export default function PaymentPage() {
   const [expire2, setExpire2] = useState("");
   const [responce, setResponse] = useState("");
   const [code, setCode] = useState("");
+  const [error, setErrorCode] = useState("");
   const [transactionId, setTransactionId] = useState(0);
 
   const number = `${number1}${number2}${number3}${number4}`;
@@ -78,6 +79,8 @@ export default function PaymentPage() {
       })
 
       .then((res) => {
+        console.log(res)
+        setErrorCode(res.data)
         if (res) {
           localStorage.setItem(
             "token",
@@ -107,7 +110,10 @@ export default function PaymentPage() {
       });
   };
   console.log(transactionId);
-
+  const cancelHandler = (() =>{
+    toggleModal1()
+    window.location.reload()
+  })
   return (
     <Container>
       <h1 className="title">
@@ -140,7 +146,7 @@ export default function PaymentPage() {
               setPrice(147000 * 100);
             }}
           >
-            <p>Sotib olish</p>
+            <p onClick={toggleModal1}>Sotib olish</p>
           </div>
         </div>
         <div className="box">
@@ -169,7 +175,7 @@ export default function PaymentPage() {
               setPrice(397000 * 100);
             }}
           >
-            <p>Sotib olish</p>
+            <p onClick={toggleModal1}>Sotib olish</p>
           </div>
         </div>
         <div className="box">
@@ -201,7 +207,7 @@ export default function PaymentPage() {
               setPrice(662000 * 100);
             }}
           >
-            <p >Sotib olish</p>
+            <p onClick={toggleModal1}>Sotib olish</p>
           </div>
         </div>
       </div>
@@ -221,12 +227,19 @@ export default function PaymentPage() {
                       ) : (
                         ""
                       )}
+                      { ! error.success ? (
+                        <div className="message1 height">
+                          <h1>{error.message}</h1>
+                        </div>
+                      ) : (
+                        ""
+                      )}
                       <input
                         type="number"
                         onChange={(e) => setCode(e.target.value)}
                         placeholder="Code XXXX"
                       />
-                      <button>Save</button>
+                      <button>Tasdiqlash</button>
                     </form>
                   </div>
                 ) : (
@@ -283,7 +296,7 @@ export default function PaymentPage() {
                       </div>
                       <div className="buttons">
                         <button>Yuborish</button>
-                        <button onClick={toggleModal1}>Bekor qilish</button>
+                        <button onClick={cancelHandler}>Bekor qilish</button>
                       </div>
                     </form>
                   </div>
@@ -394,10 +407,15 @@ const Container = styled.div`
     border-radius: 7px;
   }
   .button {
-    background-color: #ffffff98;
+    background-color: #ffffff47;
     padding: 10px 14px;
     border-radius: 10px;
     color: #fff;
+    cursor: pointer;
+  }
+  .button p {
+    margin: 0;
+    color: #000;
   }
   /* .mode{
     padding: 10px;
@@ -483,6 +501,34 @@ const Container = styled.div`
   }
   @media screen and (max-width: 600px) {
     height: fit-content;
+    .modal-content1{
+      margin: 50% auto;
+      /* background-color: red; */
+    }
+    .form{
+      width: 100%;
+      margin: 0;
+      
+    }
+    .form1{
+      width: 100%;
+      margin: 0;
+      
+    }
+    .number{
+      /* flex-direction: column; */
+    }
+    .number input{
+      width: 50%;
+    }
+
+    .form {
+      padding: 0;
+    }
+    .cardForm{
+      margin: 0 auto;
+      width: 90%;
+    }
     .title .red {
       font-size: 30px;
       padding: 30px 0;
