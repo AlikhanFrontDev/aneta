@@ -12,6 +12,7 @@ import CoursePage from "./pages/coursesPage";
 import Linklar from "./pages/linklar";
 import Fayllar from "./pages/fayllar";
 import PaymentPage from "./pages/paymentPage";
+import SuccesPage from "./pages/succesPage";
 
 function App() {
   return (
@@ -29,6 +30,7 @@ function App() {
           <Route path="/links" element={<Linklar />} />
           <Route path="/files" element={<Fayllar />} />
           <Route path="/payment" element={<PaymentPage />} />
+          <Route path="/success" element={<SuccesPage />} />
         </Routes>
       </Container>
     </div>

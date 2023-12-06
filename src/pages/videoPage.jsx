@@ -365,7 +365,7 @@ const Container = styled.div`
     overflow-x: hidden;
     /* background-color: #181b21; */
   }
-  @media screen and (max-width: 800px) {
+  @media screen and (max-width: 845px) {
     .top {
       width: 100%;
     }
@@ -375,7 +375,6 @@ const Container = styled.div`
     .video {
       position: fixed;
       left: 0;
-      right: 0;
       width: 100vw;
       height: 40vh;
       border-radius: 0;

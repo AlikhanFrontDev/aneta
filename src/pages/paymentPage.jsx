@@ -86,7 +86,12 @@ export default function PaymentPage() {
             "token",
             JSON.stringify(res.data.item.tokenDto.token)
           );
+          localStorage.setItem(
+            "messageData",
+            JSON.stringify(res.data)
+          );
         }
+
         const users = JSON.parse(localStorage.getItem("token"));
         const atts = jwt_decode(users);
 
@@ -99,7 +104,7 @@ export default function PaymentPage() {
         console.log(userrole);
 
         if (userrole) {
-          supernavigate("/courses");
+          supernavigate("/success");
         } else {
           console.log("fail");
         }
@@ -171,7 +176,7 @@ export default function PaymentPage() {
           <div
             className="button"
             onClick={() => {
-              SetDuration(2);
+              SetDuration(3);
               setPrice(397000 * 100);
             }}
           >
