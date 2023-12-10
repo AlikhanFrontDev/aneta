@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import styled from "styled-components";
 
 export default function Pricelist() {
@@ -27,6 +28,9 @@ export default function Pricelist() {
             <li className="line"> KUTUBXONA</li>
             {/* <li className="line">$49.99/month forever</li> */}
           </ul>
+          <Link className="button" to={"/register"}>
+            <p>Sotib olish</p>
+          </Link>
         </div>
         <div className="box">
           <h1 className="center mode">MEDIUM TERM</h1>
@@ -47,6 +51,9 @@ export default function Pricelist() {
             {/* <li className="line">Cancel anytime, risk-free</li>
             <li className="line">$49.99/month forever</li> */}
           </ul>
+          <Link className="button" to={"/register"}>
+            <p>Sotib olish</p>
+          </Link>
         </div>
         <div className="box">
           <h1 className="center mode">LONG TERM</h1>
@@ -69,6 +76,9 @@ export default function Pricelist() {
             <li className="line">Cancel anytime, risk-free</li>
             <li className="line">$49.99/month forever</li> */}
           </ul>
+          <Link className="button" to={"/register"}>
+            <p>Sotib olish</p>
+          </Link>
         </div>
       </div>
     </Container>
@@ -81,6 +91,29 @@ const Container = styled.div`
   /* .mode{
     padding: 10px;
   } */
+  a{
+    text-decoration: none;
+  }
+  button {
+    width: 50%;
+    padding: 10px 20px;
+    border: none;
+    background-color: #000000b0;
+    color: red;
+    margin: 2% 0;
+    border-radius: 7px;
+  }
+  .button {
+    background-color: #ffffff47;
+    padding: 10px 14px;
+    border-radius: 10px;
+    color: #fff;
+    cursor: pointer;
+  }
+  .button p {
+    margin: 0;
+    color: #000;
+  }
   .red {
     color: red;
     font-size: 50px;
@@ -98,7 +131,7 @@ const Container = styled.div`
   }
   .box {
     background-color: #0b0e13;
-    height: 85vh;
+    height: 90vh;
     width: 400px;
     border-radius: 12px;
     padding: 20px;
@@ -134,7 +167,7 @@ const Container = styled.div`
   }
   @media screen and (max-width: 992px) {
     height: fit-content;
-    .title .red{
+    .title .red {
       font-size: 30px;
       padding: 30px 0;
     }
@@ -153,16 +186,16 @@ const Container = styled.div`
       width: 80%;
       margin: 20px auto;
     }
-    .mode{
+    .mode {
       font-size: 26px;
     }
-    li{
+    li {
       font-size: 18px;
     }
   }
   @media screen and (max-width: 600px) {
     height: fit-content;
-    .title .red{
+    .title .red {
       font-size: 30px;
       padding: 30px 0;
     }
@@ -181,16 +214,16 @@ const Container = styled.div`
       width: 80%;
       margin: 20px auto;
     }
-    .mode{
+    .mode {
       font-size: 26px;
     }
-    li{
+    li {
       font-size: 18px;
     }
   }
   @media screen and (max-width: 376px) {
     height: fit-content;
-    .title .red{
+    .title .red {
       font-size: 30px;
       padding: 30px 0;
     }
@@ -208,10 +241,10 @@ const Container = styled.div`
       width: 80%;
       margin: 20px auto;
     }
-    .mode{
+    .mode {
       font-size: 26px;
     }
-    li{
+    li {
       font-size: 18px;
     }
   }
