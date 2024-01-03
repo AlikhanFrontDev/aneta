@@ -61,7 +61,7 @@ export default function GuestNan() {
       {data ? (
         <>
           <div className="time">
-            <p> {data1.day} kun {data1.hours} soat</p>
+            <p>Obuna tugashiga {data1.day} kun {data1.hours} soat qoldi.</p>
           </div>
           <div className="flex">
             <div className="log">
