@@ -5,9 +5,13 @@ import { motion } from "framer-motion";
 import "../toggle.css";
 import { Link, useNavigate } from "react-router-dom";
 import jwt_decode from "jwt-decode";
+import axios from "axios";
+import Endpoint from "../endpoint";
 
 export default function GuestNan() {
   const [data, setData] = useState(null);
+  const [loading, setLoading] = useState(true); // Add a loading state
+  const [data1, setData1] = useState([]);
   const [userName, setName] = useState(null);
   const logOutNavigate = useNavigate();
   const users = JSON.parse(localStorage.getItem("token"));
@@ -27,6 +31,22 @@ export default function GuestNan() {
     };
     getUserInfo();
   }, []);
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await axios.get(Endpoint + "v1/subscription/exp-time");
+
+        setData1(response.data.item);
+        console.log(data1);
+      } catch (error) {
+        console.error("Error:", error);
+      } finally {
+        // Set loading to false whether the request succeeds or fails
+        setLoading(false);
+      }
+    };
+    fetchData();
+  }, []);
   const logOutHandler = () => {
     localStorage.removeItem("token");
     logOutNavigate("/");
@@ -40,6 +60,9 @@ export default function GuestNan() {
       </Link>
       {data ? (
         <>
+          <div className="time">
+            <p> {data1.day} kun {data1.hours} soat</p>
+          </div>
           <div className="flex">
             <div className="log">
               <p>{userName}</p>
@@ -68,6 +91,13 @@ const Nav = styled.nav`
   display: flex;
   align-items: center;
   justify-content: center;
+  .time{
+    /* background-color: red; */
+    align-self: flex-end;
+  }
+  .time p{
+    color: red;
+  }
   .log {
     display: flex;
     justify-content: space-between;
@@ -116,23 +146,25 @@ const Nav = styled.nav`
   }
 
   @media only screen and (max-width: 768px) {
+    .time{
+      display: none;
+    }
     justify-content: space-around;
     /* background-color: red; */
     width: 100%;
     padding: 0;
-    .log{
+    .log {
       flex-direction: column-reverse;
       padding: 0;
       margin: 0;
       width: 100%;
       justify-content: flex-start;
       align-items: start;
-
     }
     .log p {
       margin: 0;
     }
-    .logout{
+    .logout {
       margin: 0;
     }
     .logo {
