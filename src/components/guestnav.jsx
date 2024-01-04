@@ -31,10 +31,13 @@ export default function GuestNan() {
     };
     getUserInfo();
   }, []);
+  const token = JSON.parse(localStorage.getItem("token"));
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get(Endpoint + "v1/subscription/exp-time");
+        const response = await axios.get(Endpoint + "v1/subscription/exp-time", {
+          headers: { Authorization: `Bearer ${token}` },
+        },);
 
         setData1(response.data.item);
         console.log(data1);
